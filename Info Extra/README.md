@@ -57,11 +57,15 @@ Con estos ítems podréis ir rellenando los siguientes apartados de la memoria:
 
 - Inicio Sesión / Registro
 
-- Dedicada Motocicleta 
+- Perfil (Puede que se le añada una parte social, en la que publicar información extra.)
+
+- Dedicada Motocicleta -> ( Cambia dependiendo del $_GET )
 
 - Dedicada Marca (Incluye: Info + Ultimos Modelos )
+  
+- Página de Noticias ?¿
 
-
+<!-- Habra mucho juego con las consultas SQL para las busquedas. -->
 
 ## VISTA ADMINISTRADOR
 
