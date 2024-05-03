@@ -1,6 +1,9 @@
 
 # TFG - MotoWiki | 2ºDAW - David Rodriguez Aparicio
 
+
+## ENTREGA PARCIAL 1 ()
+
 - Nombre de la aplicación -> MotoWiki
   
 - Investigación previa y explicación de la idea general
@@ -29,6 +32,27 @@
         -  Implementación
         -  Pruebas y Testeo
         -  Mantenimiento
+  
+
+## ENTREGA PARCIAL 2 ()
+
+- Análisis software
+    - Requisitos funcionales 
+    - Requisitos no funcionales
+    - Casos de uso
+  
+
+- Diseño lógico
+    - Arquitectura MVC
+    - Modelo Entidad-Relación
+    - Diagrama de clases
+  
+  
+- Diseño de interfaces / Diseño Centrado en el Usuario (DCU)
+    - Guía de estilo abreviada
+    - Prototipo de baja fidelidad
+    - Prototipo de alta fidelidad
+
 
 -------------------------------------------------------------------------------
 
@@ -49,21 +73,23 @@ Con estos ítems podréis ir rellenando los siguientes apartados de la memoria:
 
 
 
-## Secciones de MotoWiki
+## Secciones de Moto-Wiki
 
 ## VISTA USUARIO
 
-- Página Inicio
+- Página Inicio  **(DISEÑO ✓ )**
 
-- Inicio Sesión / Registro
+- Inicio Sesión / Registro **(DISEÑO ✓ )**
 
 - Perfil (Puede que se le añada una parte social, en la que publicar información extra.)
 
-- Dedicada Motocicleta -> ( Cambia dependiendo del $_GET )
+- Dedicada Motocicleta / Motos -> ( Cambia dependiendo del $_GET ) **(DISEÑO ✓ )**
 
-- Dedicada Marca (Incluye: Info + Ultimos Modelos )
+- Dedicada Marca (Incluye: Info + Ultimos Modelos ) **(DISEÑO ✓ )**
   
-- Página de Noticias ?¿
+- Dedicada de Noticias ?¿
+  
+- Galeria de Imagenes ?¿ -> De esta forma los usuarios podrían subir imágenes que podrían servir de ayuda.
 
 <!-- Habra mucho juego con las consultas SQL para las busquedas. -->
 
