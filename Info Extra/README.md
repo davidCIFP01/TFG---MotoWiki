@@ -38,24 +38,24 @@
     
   
 
-## ENTREGA PARCIAL 2 ()
+## ENTREGA PARCIAL 2 ( Primera entrega parcial )
 
 - Análisis software
-    - Requisitos funcionales 
-    - Requisitos no funcionales
+    - Requisitos funcionales  **( ✓ )**
+    - Requisitos no funcionales **( ✓ )**
     - Casos de uso
   
 
 - Diseño lógico
-    - Arquitectura MVC
-    - Modelo Entidad-Relación
+    - Arquitectura MVC **( ✓ )**
+    - Modelo Entidad-Relación **( ✓ )**
     - Diagrama de clases
   
   
 - Diseño de interfaces / Diseño Centrado en el Usuario (DCU)
     - Guía de estilo abreviada
-    - Prototipo de baja fidelidad
-    - Prototipo de alta fidelidad
+    - Prototipo de baja fidelidad **( X )**
+    - Prototipo de alta fidelidad 
 
 
 -------------------------------------------------------------------------------
