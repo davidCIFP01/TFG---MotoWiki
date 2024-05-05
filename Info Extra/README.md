@@ -27,6 +27,11 @@
         - Que sea una aplicación completamente manejable por los usuarios, y actualizable sin necesidad de tener conocimientos del código.
         - Tener una interfaz clara, que sea accesible y de fácil uso.
   
+    - Alternativas del Proyecto
+      - Gestor de Portfolios Web -> La idea era realizar una aplicación muy polivalente para que los usuarios pudiesen montar su propio portfolio en la web, con muchas posibilidades y haciendo que el acceso a este fuese mucho más sencillo. ( Finalmente descartado por su posible complejidad y busqueda de opciones más factibles )
+      - Gestor de APIs -> La idea de este proyecto era similar al anterior, pero dando la posibilidad a los usuarios de montar sus propias APIs desde el servicio web, y darle acceso a estos facilmente. ( Pienso que era buena idea, pero que se podía quedar algo corta pero compleja. )
+      - Página Web de Reservas de Restaurante -> Es una de las ideas más típicas para este tipo de proyectos, te permite usar todo lo aprendido sin complejidad alguna. ( Finalmente descartada por ser muy típica, y buscar algo más original y personal )
+  
 
 - Planificación de las diferentes fases que componen el proyecto
     - Diagrama de Gantt realizado con herramientas como Excel, Tom's Planner, diagrams.net o GanttProject
