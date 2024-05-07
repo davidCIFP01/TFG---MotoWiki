@@ -86,15 +86,15 @@ Con estos ítems podréis ir rellenando los siguientes apartados de la memoria:
 
 ## VISTA USUARIO
 
-- Página Inicio  **(DISEÑO ✓ )**
+- Página Inicio  **(DISEÑO ✓ / MOBILE ✓ )**
 
-- Inicio Sesión / Registro **(DISEÑO ✓ )**
+- Inicio Sesión / Registro **(DISEÑO ✓ / MOBILE ✓ )**
 
-- Perfil (Puede que se le añada una parte social, en la que publicar información extra.)
+- Perfil (Puede que se le añada una parte social, en la que publicar información extra.) **(DISEÑO ✓ / MOBILE ✓ )**
 
-- Dedicada Motocicleta / Motos -> ( Cambia dependiendo del $_GET ) **(DISEÑO ✓ )**
+- Dedicada Motocicleta / Motos -> ( Cambia dependiendo del $_GET ) **(DISEÑO ✓ / MOBILE ✓ )**
 
-- Dedicada Marca (Incluye: Info + Ultimos Modelos ) **(DISEÑO ✓ )**
+- Dedicada Marca (Incluye: Info + Ultimos Modelos ) **(DISEÑO ✓ / MOBILE ✓ )**
   
 - Dedicada de Noticias ?¿
   
@@ -104,17 +104,17 @@ Con estos ítems podréis ir rellenando los siguientes apartados de la memoria:
 
 ## VISTA ADMINISTRADOR
 
-- Página Inicio
+- Página Inicio **(DISEÑO ✓ / MOBILE ✓ )**
 
-- Inicio Sesión / Registro 
+- Inicio Sesión / Registro  **(DISEÑO ✓ / MOBILE ✓ )**
 
-- Dedicada Motocicleta + Funciones Extras **(DISEÑO ✓ )**
+- Dedicada Motocicleta + Funciones Extras 
   
-- Dedicada Marca + Funciones Extras **(DISEÑO ✓ )**
+- Dedicada Marca + Funciones Extras 
 
-- Gestión de Usuarios / Administradores **(DISEÑO ✓ )**
+- Gestión de Usuarios / Administradores 
 
-- Gestión y configuración API. **(DISEÑO ✓ )**
+- Gestión y configuración API. 
 
 
 ## OTROS COMPONENTES 
