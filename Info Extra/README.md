@@ -108,13 +108,15 @@ Con estos ítems podréis ir rellenando los siguientes apartados de la memoria:
 
 - Inicio Sesión / Registro  **(DISEÑO ✓ / MOBILE ✓ )**
 
-- Dedicada Motocicleta + Funciones Extras 
+- Dedicada Motocicleta + Funciones Extras  **(DISEÑO ✓ / MOBILE ✓ )**
   
-- Dedicada Marca + Funciones Extras 
+- Dedicada Marca + Funciones Extras  **(DISEÑO ✓ / MOBILE ✓ )**
 
-- Gestión de Usuarios / Administradores 
+- Gestión de Usuarios / Administradores  **(DISEÑO ✓ / MOBILE ✓ )**
 
-- Gestión y configuración API. 
+- Gestión y configuración API.  **(DISEÑO ✓ / MOBILE ✓ )**
+
+<!-- FALTA RETOCAR Y DAR ÚLTIMOS DETALLES AL DISEÑO -->
 
 
 ## OTROS COMPONENTES 
