@@ -1,0 +1,138 @@
+[
+    {
+      "id": 1,
+      "nombre": "Harley-Davidson",
+      "pais_origen": "Estados Unidos",
+      "fecha_fundada": "1903",
+      "sitio_web": "https://www.harley-davidson.com",
+      "descripcion_1": "Harley-Davidson es una de las marcas más icónicas en el mundo de las motocicletas, conocida por su estilo distintivo y su fuerte presencia en la cultura motera.",
+      "descripcion_2": "La compañía fue fundada en Milwaukee, Wisconsin, por William S. Harley, Arthur Davidson, Walter Davidson y William A. Davidson."
+    },
+    {
+      "id": 2,
+      "nombre": "Honda",
+      "pais_origen": "Japón",
+      "fecha_fundada": "1946",
+      "sitio_web": "https://www.honda.com",
+      "descripcion_1": "Honda es una de las marcas líderes en la industria de las motocicletas, reconocida por su innovación, confiabilidad y variedad de modelos.",
+      "descripcion_2": "La compañía fue fundada por Soichiro Honda y Takeo Fujisawa en Hamamatsu, Japón."
+    },
+    {
+      "id": 3,
+      "nombre": "Yamaha",
+      "pais_origen": "Japón",
+      "fecha_fundada": "1955",
+      "sitio_web": "https://www.yamahamotorsports.com",
+      "descripcion_1": "Yamaha es otra marca líder en el mercado de las motocicletas, conocida por sus modelos deportivos y de alto rendimiento.",
+      "descripcion_2": "La compañía fue fundada por Genichi Kawakami en Iwata, Shizuoka, Japón."
+    },
+    {
+      "id": 4,
+      "nombre": "Kawasaki",
+      "pais_origen": "Japón",
+      "fecha_fundada": "1896",
+      "sitio_web": "https://www.kawasaki.com",
+      "descripcion_1": "Kawasaki es una marca japonesa conocida por sus motocicletas deportivas, de aventura y off-road.",
+      "descripcion_2": "La compañía fue fundada por Shozo Kawasaki en Tokio, Japón."
+    },
+    {
+      "id": 5,
+      "nombre": "Suzuki",
+      "pais_origen": "Japón",
+      "fecha_fundada": "1909",
+      "sitio_web": "https://www.suzukicycles.com",
+      "descripcion_1": "Suzuki es una marca japonesa que fabrica una amplia gama de motocicletas, desde deportivas hasta cruiser y todo terreno.",
+      "descripcion_2": "La compañía fue fundada por Michio Suzuki en Hamamatsu, Japón."
+    },
+    {
+      "id": 6,
+      "nombre": "Ducati",
+      "pais_origen": "Italia",
+      "fecha_fundada": "1926",
+      "sitio_web": "https://www.ducati.com",
+      "descripcion_1": "Ducati es una marca italiana conocida por sus motocicletas de alto rendimiento y su participación en competiciones como MotoGP.",
+      "descripcion_2": "La compañía fue fundada por Antonio Cavalieri Ducati y sus tres hijos en Bolonia, Italia."
+    },
+    {
+      "id": 7,
+      "nombre": "BMW Motorrad",
+      "pais_origen": "Alemania",
+      "fecha_fundada": "1923",
+      "sitio_web": "https://www.bmwmotorcycles.com",
+      "descripcion_1": "BMW Motorrad es la división de motocicletas de BMW, conocida por sus modelos de turismo, aventura y deportivos.",
+      "descripcion_2": "La compañía fue fundada como una subsidiaria de BMW en Múnich, Alemania."
+    },
+    {
+      "id": 8,
+      "nombre": "Triumph",
+      "pais_origen": "Reino Unido",
+      "fecha_fundada": "1885",
+      "sitio_web": "https://www.triumphmotorcycles.co.uk",
+      "descripcion_1": "Triumph es una marca británica de motocicletas, conocida por sus modelos clásicos, cruiser y deportivos.",
+      "descripcion_2": "La compañía fue fundada por Siegfried Bettmann en Coventry, Inglaterra."
+    },
+    {
+      "id": 9,
+      "nombre": "KTM",
+      "pais_origen": "Austria",
+      "fecha_fundada": "1934",
+      "sitio_web": "https://www.ktm.com",
+      "descripcion_1": "KTM es una marca austriaca conocida por sus motocicletas de motocross, enduro y aventura.",
+      "descripcion_2": "La compañía fue fundada por Hans Trunkenpolz en Mattighofen, Austria."
+    },
+    {
+      "id": 10,
+      "nombre": "Aprilia",
+      "pais_origen": "Italia",
+      "fecha_fundada": "1945",
+      "sitio_web": "https://www.aprilia.com",
+      "descripcion_1": "Aprilia es una marca italiana conocida por sus motocicletas de carreras y deportivas de alta gama.",
+      "descripcion_2": "La compañía fue fundada por Alberto Beggio en Noale, Italia."
+    },
+    {
+      "id": 11,
+      "nombre": "Indian Motorcycle",
+      "pais_origen": "Estados Unidos",
+      "fecha_fundada": "1901",
+      "sitio_web": "https://www.indianmotorcycle.com",
+      "descripcion_1": "Indian Motorcycle es una de las marcas de motocicletas más antiguas de Estados Unidos, conocida por sus modelos clásicos y cruiser.",
+      "descripcion_2": "La compañía fue fundada por George M. Hendee y Carl Oscar Hedstrom en Springfield, Massachusetts."
+    },
+    {
+      "id": 12,
+      "nombre": "Royal Enfield",
+      "pais_origen": "India",
+      "fecha_fundada": "1901",
+      "sitio_web": "https://www.royalenfield.com",
+      "descripcion_1": "Royal Enfield es una marca india conocida por sus motocicletas clásicas y vintage, especialmente populares en el mercado de Asia y Europa.",
+      "descripcion_2": "La compañía fue fundada por Albert Eadie y R.W. Smith en Redditch, Reino Unido, y ahora tiene su sede en Chennai, India."
+    },
+    {
+      "id": 13,
+      "nombre": "Moto Guzzi",
+      "pais_origen": "Italia",
+      "fecha_fundada": "1921",
+      "sitio_web": "https://www.motoguzzi.com",
+      "descripcion_1": "Moto Guzzi es una marca italiana conocida por sus motocicletas cruiser y touring, con un estilo distintivo debido a su motor transversal.",
+      "descripcion_2": "La compañía fue fundada por Carlo Guzzi, Giorgio Parodi y Giovanni Ravelli en Mandello del Lario, Italia."
+    },
+    {
+      "id": 14,
+      "nombre": "Harley-Davidson",
+      "pais_origen": "Estados Unidos",
+      "fecha_fundada": "1903",
+      "sitio_web": "https://www.harley-davidson.com",
+      "descripcion_1": "Harley-Davidson es una de las marcas más icónicas en el mundo de las motocicletas, conocida por su estilo distintivo y su fuerte presencia en la cultura motera.",
+      "descripcion_2": "La compañía fue fundada en Milwaukee, Wisconsin, por William S. Harley, Arthur Davidson, Walter Davidson y William A. Davidson."
+    },
+    {
+      "id": 15,
+      "nombre": "Zero Motorcycles",
+      "pais_origen": "Estados Unidos",
+      "fecha_fundada": "2006",
+      "sitio_web": "https://www.zeromotorcycles.com",
+      "descripcion_1": "Zero Motorcycles es una marca estadounidense pionera en motocicletas eléctricas, conocida por su tecnología innovadora y rendimiento.",
+      "descripcion_2": "La compañía fue fundada por Neal Saiki en Scotts Valley, California."
+    }
+  ]
+  
