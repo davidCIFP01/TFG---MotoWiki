@@ -1,0 +1,6 @@
+
+/* USAR / HACER CUANDO SE HAYAN TRAIDO TODAS LAS MOTOCICLETAS QUE SE VAN A USAR */
+
+UPDATE tabla
+SET columna = valor
+WHERE columna = valor;
