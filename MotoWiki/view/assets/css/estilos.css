@@ -1,0 +1,190 @@
+
+:root{
+    /* Colores de la página. */
+    --naranjaPrimario: #E66B4C;
+    --azulSecundario: #17ACBD;
+    --colorBlanco: #FFFFFF;
+    --colorNegro: #000000;
+    --colorTexto:#192252;
+
+    /* FUENTES */
+    
+    /* font-family: "Racing Sans One", sans-serif;
+    font-weight: 400;
+    font-style: normal; */
+
+/*     font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:"slnt" 0; */
+
+/*     font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal; */
+
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+
+    background-color: #e8e8e8;
+    background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
+}
+
+a{
+    text-decoration: none;
+    color: var(--colorNegro);
+}
+
+
+.barraNavegadora{
+    width: 100vw;
+    height: 100px;
+
+    background-color: var(--colorNegro);
+    
+    position: relative;
+    font-family: "Racing Sans One", sans-serif;
+}
+
+.logoTítuloNav{
+    background-color: var(--naranjaPrimario);
+    height: 100%;
+
+    position: absolute;
+    z-index: 10;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 30px 20px 0px;
+
+    cursor: pointer;
+}
+
+.logoTítuloNav>img{
+    width: 130px;
+}
+
+.logoTítuloNav>span{
+    margin-left: 10px;
+
+    font-size: 3em;
+    font-weight: bold;
+    font-style: italic;
+    
+}
+
+.formaNav{
+    height: 75px;
+    width: 75px;
+    background-color: var(--naranjaPrimario);
+    margin-left: 395px;
+    transform: rotateZ(45deg) translateY(14px);
+}
+
+
+.contenedorEnlaces{
+    height: 100%;
+    /* width: 50%; */
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    top: 0;
+
+    color: var(--colorBlanco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedorEnlaces ul{
+    list-style: none;   
+    /* height: 100px; */
+    line-height: 100px;
+}
+
+.Principales{
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 170px;
+    /* border-left: 1px solid black; */
+    background-color: var(--colorNegro);
+    transition: all 0.3s linear;
+}
+.Principales:hover{
+    background-color:var(--naranjaPrimario);
+    /* border-bottom: 1px solid black; */
+}
+
+ul>li>a{
+    /* background-color: var(--naranjaPrimario); */
+    display: block;
+    text-align: center;
+    
+    padding: 0px 20px;
+    font-size: 1.7em;
+    letter-spacing: 2px;
+    color: var(--colorBlanco);
+
+    transition: background-color 0.5s ease;
+    
+}
+
+ul li ul{
+    display: none;
+    position: absolute;
+    height: 300px;
+    overflow: auto;
+    /* margin-top: 1px; */
+    border-top: 1px solid black;
+}
+
+ul li ul::-webkit-scrollbar{
+    width: 3px;
+    color: var(--colorNegro);
+}
+
+
+ul li:hover>ul{
+    display: block;
+}
+
+ul li ul li{
+    position: relative;
+    background-color: var(--naranjaPrimario);
+    width: 170px;
+}
+
+
+
+/* .contenedorEnlaces a{
+    display: flex;
+    align-items: center;
+    
+    height: 100%;
+    line-height: 100%;
+    padding: 20px;
+    
+    font-size: 1.7em;
+    letter-spacing: 2px;
+    color: var(--colorBlanco);
+
+    transition: all 0.5s linear;
+    
+    cursor: pointer;
+}
+
+.contenedorEnlaces>a:hover{
+    background-color: var(--naranjaPrimario);
+} */
