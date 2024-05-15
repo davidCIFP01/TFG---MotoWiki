@@ -1,4 +1,3 @@
-/* QUITAR -> ROOT va en    root.css / estilos.css */
 :root{
     /* Colores de la página. */
     --naranjaPrimario: #E66B4C;
@@ -23,13 +22,4 @@
     font-weight: 400;
     font-style: normal; */
 
-}
-
-.inicioFondo{
-    width: 100vw;
-    height: 100vh;
-
-    background-image: url("../images/web/momento-moto-dinno.jpg");
-    
-    background-size: 100% 100%;
 }

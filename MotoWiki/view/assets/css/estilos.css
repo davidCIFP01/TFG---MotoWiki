@@ -1,4 +1,4 @@
-
+/* QUITAR -> ROOT va en    root.css / estilos.css */
 :root{
     /* Colores de la página. */
     --naranjaPrimario: #E66B4C;
@@ -24,6 +24,7 @@
     font-style: normal; */
 
 }
+
 
 
 *{
