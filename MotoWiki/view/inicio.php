@@ -25,21 +25,53 @@
         <hr>
         <div class="contenedorTarjetas">
             <div class="tarjetaNoticia">
+                <div class="tarjetaContenedorImagen">
+
+                </div>
+                <div class="tarjetaConetendorContenido">
+
+                </div>
+            </div>
+
+            <div class="tarjetaNoticia">
+                <img>
+            </div>
+
+            <div class="tarjetaNoticia">
+                <img>
+            </div>
+
+            <div class="tarjetaNoticia">
+                <img>
+            </div>
+            
+            <div class="tarjetaNoticia">
+                <img>
+            </div>
+
+            <div class="tarjetaNoticia">
+                <img>
+            </div>
+            
+            <div class="tarjetaNoticia">
                 <img>
             </div>
         </div>
     </div>
 
     <div class="moduloHorizontal">
-
+        <h2>Últimas Novedades</h2>
+        <hr>
     </div>
 
     <div class="moduloHorizontal">
-
+        <h2>Motocicletas más populares</h2>
+        <hr>
     </div>
 
     <div class="moduloHorizontal">
-
+        <h2>Motocicletas más Baratas</h2>
+        <hr>
     </div>
     
 </section>

@@ -33,7 +33,7 @@
     background-image: url("../images/web/momento-moto-dinno.jpg");
     
     background-size: 100% 100%;
-    padding-top: 200px;
+    padding-top: 150px;
     margin-top: 100px;
 }
 
@@ -65,7 +65,7 @@
     display: block;
     width: 70%;
     margin: 0 auto;
-    padding-left: 370px;
+    padding-left: 25%;
 }
 
 
@@ -85,6 +85,59 @@
 }
 
 
+
+/* ---------- TODO EL CSS DE LOS MÓDULOS ---------- */
 .moduloHorizontal{
     padding: 50px;
+}
+
+.moduloHorizontal>h2{
+    color: var(--colorTexto);
+    letter-spacing: 1px;
+    font-size: 2em;
+    /* font-style: italic; */
+}
+
+.moduloHorizontal>hr{
+    height: 3px;
+    background-color: var(--colorTexto);
+    border: 0px solid black;
+    border-radius: 20px;
+}
+
+.contenedorTarjetas{
+    display: flex;
+    flex-wrap: nowrap;
+    max-height: 450px;
+    
+    padding: 40px 0px;
+    
+    overflow-x: auto;
+}
+
+.tarjetaNoticia{
+    border: 1px solid black;
+
+    display: inline-block;
+    
+    
+    margin-left: 35px;
+    margin-right: 35px;
+
+    min-width: 300px;
+    min-height: 350px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Parte Arriba Tarjeta */
+.tarjetaContenedorImagen{
+
+}
+
+
+/* Parte Abajo Tarjeta */
+.tarjetaConetendorContenido{
+
 }

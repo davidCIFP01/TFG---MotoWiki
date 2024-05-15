@@ -35,22 +35,24 @@
 
 body{
     width: 100vw;
+    font-family: "Racing Sans One", sans-serif;
 
     overflow-x: hidden;
     background-color: #e8e8e8;
     background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
 }
 
-body::-webkit-scrollbar{
+::-webkit-scrollbar{
     width: 4px;
+    height: 4px;
     background-color: var(--colorNegro);
     border-radius: 20px;
     
     position: relative;
 }
 
-body::-webkit-scrollbar-thumb {
-    background: #888; /* Color del pulgar */
+::-webkit-scrollbar-thumb {
+    background: var(--naranjaPrimario); /* Color del pulgar */
     border-radius: 5px; /* Borde redondeado */
 
     position: relative;
@@ -175,7 +177,7 @@ ul li ul{
 
 ul li ul::-webkit-scrollbar{
     width: 4px;
-    background-color: var(--colorNegro);
+    background-color: var(--naranjaPrimario);
     border-radius: 20px;
     
     position: relative;
@@ -187,7 +189,7 @@ ul li ul::-webkit-scrollbar-thumb {
 
     position: relative;
     right: 10px;
-  }
+}
 
 
 
