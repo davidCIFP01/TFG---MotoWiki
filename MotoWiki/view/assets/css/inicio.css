@@ -1,0 +1,11 @@
+
+
+
+.inicioFondo{
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url("../images/web/momento-moto-dinno.jpg");
+    
+    background-size: 100% 100%;
+}

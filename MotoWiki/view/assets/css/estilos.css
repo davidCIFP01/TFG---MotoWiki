@@ -51,7 +51,7 @@ a{
 
     background-color: var(--colorNegro);
     
-    position: relative;
+    position: absolute;
     font-family: "Racing Sans One", sans-serif;
 }
 

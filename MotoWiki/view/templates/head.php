@@ -15,7 +15,7 @@
     
     
     
-    <?php isset($css) ?? '<link rel="stylesheet" href="../view/assets/css/'.$css.'">'; ?>
+    <?= ( isset($css) ) ? '<link rel="stylesheet" href="../view/assets/css/'.$css.'">' : ''; ?>
     
 
     <title><?= (isset($titulo)) ? $titulo : "FALTA TÍTULO"; ?></title>
