@@ -36,14 +36,32 @@
 body{
     width: 100vw;
 
+    overflow-x: hidden;
     background-color: #e8e8e8;
     background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
 }
+
+body::-webkit-scrollbar{
+    width: 4px;
+    background-color: var(--colorNegro);
+    border-radius: 20px;
+    
+    position: relative;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #888; /* Color del pulgar */
+    border-radius: 5px; /* Borde redondeado */
+
+    position: relative;
+    right: 10px;
+  }
 
 a{
     text-decoration: none;
     color: var(--colorNegro);
 }
+
 
 
 .barraNavegadora{
@@ -52,7 +70,8 @@ a{
 
     background-color: var(--colorNegro);
     
-    position: absolute;
+    position: fixed;
+    top: 0;
     font-family: "Racing Sans One", sans-serif;
 }
 
@@ -69,7 +88,7 @@ a{
     justify-content: center;
     padding: 20px 30px 20px 0px;
 
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .logoTítuloNav>img{

@@ -32,5 +32,59 @@
 
     background-image: url("../images/web/momento-moto-dinno.jpg");
     
-    background-size: cover;
+    background-size: 100% 100%;
+    padding-top: 200px;
+    margin-top: 100px;
+}
+
+
+.tituloPáginaInicio{
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    font-size: 10em;
+    font-style: italic;
+    color: var(--azulSecundario);
+    text-align: center;
+
+    letter-spacing: 10px;
+    text-shadow: 3px 0px 5px #e66b4c, -3px 0px 5px #e66b4c, 0px 3px 5px #e66b4c, 0px -3px 5px #e66b4c;
+}
+
+
+.textoDescriptivoInicio{
+    font-family: "Racing Sans One", sans-serif;
+    font-weight: 400;
+    font-size: 3em;
+
+    color: var(--colorBlanco);
+    text-align: center;
+}
+.textoDescriptivoInicio>p{
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+    padding-left: 370px;
+}
+
+
+.contenedorBuscador{
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Después del Inicio con Fondo */
+
+.inicioContenido{
+    width: 100%;
+    min-height: 20vh;
+}
+
+
+.moduloHorizontal{
+    padding: 50px;
 }

@@ -1,0 +1,35 @@
+
+.search-box {
+    display: flex;
+    border: 2px solid var(--naranjaPrimario);
+    border-radius: 5px; /* / Bordes redondeados / */
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-box input {
+    border: none;
+    padding: 15px;
+    width: 400px;
+    outline: none;/*  / Elimina el contorno al enfocar / */
+    color: rgb(0, 0, 0); /* / Texto blanco / */
+    font-weight: bold;
+    font-size: 1em;
+    background: none;/*  / Fondo transparente / */
+}
+
+.search-box i{
+    padding: 15px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+/* / Ajuste para cuando se enfoque el input */ */
+.search-box input:focus {
+    border-color: red;
+    
+}

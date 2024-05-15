@@ -1,13 +1,13 @@
 
 
 <nav class="barraNavegadora">
-    <a href="#">
+    <!-- <a href="#" class="enlacelogoTítuloNav"> -->
         <div class="logoTítuloNav">
             <img src="../view/assets/images/logos/logo-motoWiki-no-bg.png" alt="Logo Motowiki">
             <span>MOTO-WIKI</span>
         </div>
         <div class="formaNav"></div>
-    </a>
+    <!-- </a> -->
     
     <div class="contenedorEnlaces">
         <ul class="ulPrincipal">
