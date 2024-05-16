@@ -73,6 +73,7 @@ a{
     background-color: var(--colorNegro);
     
     position: fixed;
+    z-index: 99;
     top: 0;
     font-family: "Racing Sans One", sans-serif;
 }
@@ -202,6 +203,28 @@ ul li ul li{
     background-color: var(--naranjaPrimario);
     width: 166px;
 }
+
+
+
+@media screen and (max-width:1200px) {
+    .contenedorEnlaces{
+        display: none;
+    }
+
+    
+}
+
+@media screen and (max-width:650px){
+    .formaNav{
+        display: none;   
+    }
+
+    .logoTítuloNav{
+        width: 100%;
+    }
+}
+
+
 
 
 
