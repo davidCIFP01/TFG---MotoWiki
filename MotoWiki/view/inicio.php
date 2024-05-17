@@ -18,9 +18,9 @@
 
 </section>
 
-<section class="inicioContenido">
+<main class="inicioContenido">
 
-    <div class="moduloHorizontal">
+    <section class="moduloHorizontal">
         <h2>Últimas Noticias</h2>
         <hr>
         
@@ -67,9 +67,9 @@
             </div>
             
         </div>
-    </div>
+    </section>
 
-    <div class="moduloHorizontal">
+    <section class="moduloHorizontal">
         <h2>Últimas Novedades</h2>
         <hr>
 
@@ -112,9 +112,9 @@
 
         </div>
 
-    </div>
+    </section>
 
-    <div class="moduloHorizontal">
+    <section class="moduloHorizontal">
         <h2>Más populares</h2>
         <hr>
 
@@ -156,9 +156,9 @@
             </div>
 
         </div>
-    </div>
+    </section>
 
-    <div class="moduloHorizontal">
+    <section class="moduloHorizontal">
         <h2>Más Baratas</h2>
         <hr>
 
@@ -200,6 +200,6 @@
             </div>
 
         </div>
-    </div>
+    </section>
     
-</section>
+</main>
