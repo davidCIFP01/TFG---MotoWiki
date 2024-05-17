@@ -1,0 +1,51 @@
+
+
+.generalMain{
+    margin-top: 100px;
+    width: 100vw;
+    
+}
+
+
+.sectionBuscador{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+
+    padding: 20px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.sectionBuscador>span{
+    font-size: 3em;
+    position: absolute;
+    left: 0;
+
+    max-width: 300px;
+    text-align: center;
+}
+
+.contenedorBotonFiltros{
+    
+}
+
+
+hr{ /* Estilos base en estilos.css */
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+
+.contenidoGeneral{
+    padding: 20px;
+    width: 90%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

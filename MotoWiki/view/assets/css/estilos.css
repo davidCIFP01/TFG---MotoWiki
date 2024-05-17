@@ -64,6 +64,12 @@ a{
     color: var(--colorNegro);
 }
 
+hr{
+    height: 3px;
+    background-color: var(--colorTexto);
+    border: 0px solid black;
+    border-radius: 20px;
+}
 
 
 .barraNavegadora{

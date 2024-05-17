@@ -3,22 +3,30 @@
 
 
 
-
-
 $titulo = "Motocicleta - MotoWiki";
-$css = "motocicleta.css";
 
-$dedicada = false;
+$css = "paginaGeneral.css"; /* Luego cambiará por condición. */
 
+if(isset($_GET['idMoto'])){
+
+    if(true){
+        $dedicada = true;
+    }else{
+        $dedicada = "NOT FOUND";
+    }
+    
+}else{
+    $dedicada = false;
+}
 
 
 include("../view/templates/head.php");
 include("../view/templates/nav.php");
 
-if($dedicada=="true"){
-    include("../view/dedicadaMotocicleta.php");
-}else{
+if($dedicada==false){
     include("../view/generalMotocicleta.php");
+}else{
+    include("../view/dedicadaMotocicleta.php");
 }
 
 include("../view/templates/footer.php");

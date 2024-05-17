@@ -5,7 +5,6 @@
     border-radius: 5px; /* / Bordes redondeados / */
     background-color: white;
 
-    display: flex;
     justify-content: center;
     align-items: center;
 }
