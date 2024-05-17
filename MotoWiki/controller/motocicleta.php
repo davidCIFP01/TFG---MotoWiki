@@ -5,7 +5,10 @@
 
 $titulo = "Motocicleta - MotoWiki";
 
-$css = "paginaGeneral.css"; /* Luego cambiará por condición. */
+// $css = "paginaGeneral.css"; /* Luego cambiará por condición. */
+$css = "dedicadaMoto.css";
+
+$_GET['idMoto'] = 1;
 
 if(isset($_GET['idMoto'])){
 

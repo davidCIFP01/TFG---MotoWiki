@@ -28,8 +28,17 @@
     text-align: center;
 }
 
+
 .contenedorBotonFiltros{
-    
+    font-size: 3em;
+    position: absolute;
+    right: 12%;
+
+    max-width: 300px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -42,7 +51,7 @@ hr{ /* Estilos base en estilos.css */
 
 .contenidoGeneral{
     padding: 20px;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 
     display: flex;

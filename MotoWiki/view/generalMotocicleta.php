@@ -13,7 +13,7 @@
 
 
         <div class="contenedorBotonFiltros">
-
+            <button class="botonAzul">FILTROS</button>
         </div>
 
     </section>
