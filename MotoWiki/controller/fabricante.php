@@ -7,7 +7,10 @@
 
 $titulo = "Fabricante - MotoWiki";
 
-$css = "paginaGeneral.css"; /* Luego cambiará por condición. */
+// $css = "paginaGeneral.css"; /* Luego cambiará por condición. */
+$css = "dedicadaMoto.css";
+
+$_GET['idFabricante'] = 1;
 
 
 if(isset($_GET['idFabricante'])){
@@ -29,7 +32,7 @@ include("../view/templates/nav.php");
 if($dedicada == false){
     include("../view/generalFabricante.php");
 }else{
-    include("../view/dedicadaMotocicleta.php");
+    include("../view/dedicadaFabricante.php");
 }
 
 include("../view/templates/footer.php");

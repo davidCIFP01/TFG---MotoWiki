@@ -15,7 +15,7 @@ if(isset($_GET['idMoto'])){
     if(true){
         $dedicada = true;
     }else{
-        $dedicada = "NOT FOUND";
+        // $dedicada = "NOT FOUND";
     }
     
 }else{

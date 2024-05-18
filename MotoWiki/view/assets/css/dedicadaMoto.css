@@ -1,7 +1,7 @@
 
 
 .informacionDedicadaMoto{
-    margin-top: 100px;
+    margin-top: 150px;
 
     display: flex;
     flex-direction: column;
@@ -11,4 +11,149 @@
 
 .presentacionMotocicleta{
     display: flex;
+    width: 100%;
+    
+}
+
+.contenedorImagenMotoMarca{
+    min-width: 400px;  
+    width: 400px;  
+}
+
+.contenedorImagenMotoMarca>img{
+    width: 70%;
+}
+
+
+.datosPresentacion{
+    /* width: calc(100% - 400px); */
+    
+    /* font-family: "Inter", sans-serif; */
+    color: var(--colorTexto);
+    font-weight: 700;
+}
+
+.datosMotoArriba{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+
+.nombreMoto{
+    font-weight: bold;
+    font-size: 1.9rem;
+    font-style: italic;
+}
+
+.marcaMoto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.miniTexto{
+    font-weight: 500;
+    /* text-align: center; */
+    margin: 0 auto;
+    font-style: italic;
+}
+
+.marcaMoto>p{
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.fechaMoto{
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+
+.variantesMoto>select{
+    font-family: "Racing Sans One", sans-serif;
+    color: var(--colorTexto);
+    font-weight: 700;
+    padding: 10px;
+    font-size: 1.2rem;
+
+    min-width: 200px;
+}
+
+
+
+
+
+.datosMotoAbajo{
+    margin-top: 30px;
+
+    padding-right: 70px;
+    font-size: 1.2rem;
+    word-spacing: 2px;
+    font-family: "Inter", sans-serif;
+    text-align: justify;
+
+}
+
+.textoExtra{
+    width: 95%;
+    margin-top: 30px;
+
+    padding: 20px;
+    font-size: 1.2rem;
+    word-spacing: 2px;
+    font-family: "Inter", sans-serif;
+    color: var(--colorTexto);
+    font-weight: 700;
+    text-align: justify;
+}
+
+.contenedorTablaDatos{
+    width: 100%;
+    padding: 20px 40px;
+    height: 200px;
+    max-height: 300px;
+    overflow-x: auto;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+
+    flex-wrap: nowrap;
+}
+
+.contenedorTablaDatos>table{
+
+    box-shadow: 0 7px 12px 0 var(--azulSecundario);
+    border-radius: 20px;
+    border-collapse: collapse;
+    letter-spacing: 1px;
+    max-height: 200px;
+
+    margin: 0 auto;
+    max-width: 100%;
+    overflow-x: auto;
+    
+}
+
+table, th, td {
+    border: 1px solid #a9b1cb;
+}
+
+.contenedorTablaDatos>table tr:nth-child(1)>td{
+    background-color: #58658c;
+    color: white;
+
+}
+
+.contenedorTablaDatos>table td{
+    padding: 15px;
+    background-color: white;
+    text-align: center;
+
+    min-width: 100px;
+    height: 50px;
+    max-height: 50px;
+    text-wrap: nowrap;
 }
