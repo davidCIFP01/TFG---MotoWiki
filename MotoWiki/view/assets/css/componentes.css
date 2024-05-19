@@ -55,3 +55,35 @@
     font-family: "Racing Sans One", sans-serif;
     /* box-shadow: 0 7px 12px 0 var(--colorBlanco); */
 }
+
+.botonNaranja{
+    background-color: var(--naranjaPrimario);
+    border: 1px solid white;
+    border-radius: 5px;
+    
+    padding: 10px 20px;
+    
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    font-family: "Racing Sans One", sans-serif;
+    /* box-shadow: 0 7px 12px 0 var(--colorBlanco); */
+}
+
+.botonRojo{
+    background-color: #e91e63;
+    border: 1px solid white;
+    border-radius: 5px;
+    
+    padding: 10px 20px;
+    
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    font-family: "Racing Sans One", sans-serif;
+    /* box-shadow: 0 7px 12px 0 var(--colorBlanco); */
+}
