@@ -1,0 +1,74 @@
+
+.mainPerfil{
+    margin-top: 150px;
+/*     display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+
+.mainPerfil>h2{
+    font-family: "Inter",sans-serif;
+    color: var(--colorTexto);
+    font-weight: bold;
+    font-style: italic;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.contenedorTusDatos{
+
+    margin: 50px auto;
+    background-color: white;
+    border: 1px solid var(--naranjaPrimario);
+    border-radius: 10px;
+
+    width: 80%;
+    max-width: 1400px;
+    position: relative;
+
+    padding: 70px 25px ;
+    display: grid;
+    /* grid-auto-flow: ; */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    justify-items: center;
+    gap: 30px;
+}
+
+.contInfoTusDatos{
+    display: flex;
+    flex-direction: column;
+
+    width: 300px;
+    
+    font-family: "Inter",sans-serif;
+    color: var(--colorTexto);
+    font-style: italic;
+}
+
+.contInfoTusDatos>span{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.contInfoTusDatos>p{
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+
+.contenedorTusDatos>span{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    text-decoration: underline;
+    font-family: "Inter",sans-serif;
+    color: var(--colorTexto);
+    font-weight: bold;
+    font-style: italic;
+}
+
+.contenedorTusDatos>button{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
