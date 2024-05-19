@@ -179,7 +179,7 @@ ul li ul{
     overflow: auto;
     /* margin-top: 1px; */
     border-top: 1px solid black;
-    /* direction: rtl; */
+    direction: rtl;
 }
 
 ul li ul::-webkit-scrollbar{
@@ -191,7 +191,7 @@ ul li ul::-webkit-scrollbar{
 }
 
 ul li ul::-webkit-scrollbar-thumb {
-    background: #888; /* Color del pulgar */
+    background: #ffffff; /* Color del pulgar */
     border-radius: 5px; /* Borde redondeado */
 
     position: relative;

@@ -56,13 +56,6 @@
     </section>
 
     <section class="moduloHorizontal">
-        <h2> DATOS PRINCIPALES </h2>
-        <hr>
-    
-    </section>
-
-
-    <section class="moduloHorizontal">
         <h2>Últimas Novedades</h2>
         <hr>
 

@@ -7,8 +7,8 @@
 
 $titulo = "Fabricante - MotoWiki";
 
-// $css = "paginaGeneral.css"; /* Luego cambiará por condición. */
-$css = "dedicadaMoto.css";
+ /* Luego cambiará por condición. */
+
 
 $_GET['idFabricante'] = 1;
 
@@ -17,12 +17,14 @@ if(isset($_GET['idFabricante'])){
     
     if(true){
         $dedicada = true;
+        $css = "dedicadaMoto.css";
     }else{
         $dedicada = "NOT FOUND";
     }
     
 }else{
     $dedicada = false;
+    $css = "paginaGeneral.css";
 }
 
 

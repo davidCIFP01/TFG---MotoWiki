@@ -1,0 +1,116 @@
+
+.registroMain{
+    /* margin-top: 150px; */
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.contenedorPrincipal{
+    width: 670px;
+    height: 640px;
+
+    box-shadow: 0 7px 12px 0 var(--azulSecundario);
+    border-radius: 10px;
+    background-color: white;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.seccionRegistro-Inicio{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.seccionRegistro-Inicio>h2{
+    text-align: center;
+    padding: 10px;
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+.botonCambio{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+
+}
+
+form{
+    width: 80%;
+}
+
+.contenedorFormulario{
+    margin-top: 50px;
+    box-shadow: 0 7px 12px 0 #919094;
+    border-radius: 10px;
+
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 20px;
+
+    font-family: "Inter",sans-serif;
+    color: var(--colorTexto);
+    font-weight: 500;
+    font-style: italic;
+}
+
+.contenedorCampo{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+
+.contenedorCampoInicioSesion{
+    grid-column: span 2;
+}
+
+.contenedorCampo>span{}
+
+.contenedorCampo>input{ 
+    padding: 10px 10px;
+    margin-top: 10px;
+    
+    border: 1px solid var(--colorTexto);
+    border-radius: 5px;
+
+    color: var(--colorTexto);
+    font-weight: 700;
+    font-style: italic;
+}
+
+.contenedorFormulario>button{
+    grid-column: span 2;
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+#seccionRegistro{
+    right: 0%;
+    transition: all 0.5s linear;
+}
+
+#seccionInicio{
+    left: 100%;
+    transition: all 0.5s linear;
+}
+
+
+/* #seccionRegistro{
+    right: 100%;
+}
+
+#seccionInicio{
+    left: 0%;
+} */
