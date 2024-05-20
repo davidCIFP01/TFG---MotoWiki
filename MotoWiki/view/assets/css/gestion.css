@@ -16,6 +16,7 @@ h1{
 }
 
 
+/* PARTE GESTION FABRICANTES / MOTOCICLETAS */
 
 .contenedorCambios{
     position: relative;
@@ -125,4 +126,68 @@ h1{
 .botonConfirmar{
     position: absolute;
     right: 30px;
+}
+
+
+
+
+
+/* PARTE GESTION USUARIO */
+
+.contenedorUsuarios{
+    /* margin-top: 40px; */
+}
+
+.tarjetaCambiosUsuario{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    min-width: 800px;
+    background-color: white;
+    padding: 10px 20px;
+    border: 2px solid var(--naranjaPrimario);
+    border-radius: 10px;
+
+    position: relative;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.spanID{
+    font-family: "Inter",sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+.spanUsername{
+    font-size: 1.5rem;
+    margin-left: 15px;
+}
+
+select{ 
+    padding: 5px 10px;
+    /* margin-top: 10px; */
+    
+    border: 1px solid var(--colorTexto);
+    border-radius: 5px;
+
+    color: var(--colorTexto);
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+
+
+.contenedorBotonesUsuario{
+/*     display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right:20px;
+    top: 10px; */
+
 }
