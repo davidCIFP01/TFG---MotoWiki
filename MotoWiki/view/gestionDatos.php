@@ -27,7 +27,7 @@
             </div>
 
             <div class="contenedorCambioDatos">
-                <label for="">DATO: </label> <input type="date" name="" id="" placeholder="INPUT DATO">
+                <label for="">DATO: </label> <input type="date"  name="" id="" placeholder="INPUT DATO">
             </div>
 
             <div class="contenedorDescripciones">

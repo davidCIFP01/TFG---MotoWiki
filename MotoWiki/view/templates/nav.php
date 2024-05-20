@@ -12,7 +12,7 @@
     <div class="contenedorEnlaces">
         <ul class="ulPrincipal">
             <li class="Principales"><a href="./perfilUsuario.php">PERFIL</a></li>
-            <li class="Principales"><a>MARCAS</a>
+            <li class="Principales"><a href="./fabricante.php">MARCAS</a>
                 <ul>
                     <li><a>KAWASAKI</a></li>
                     <li><a>KAWASAKI</a></li>
@@ -24,7 +24,7 @@
                     <li><a>KAWASAKI</a></li>
                 </ul>
             </li>
-            <li class="Principales"><a>MOTOS</a></li>
+            <li class="Principales"><a href="./motocicleta.php">MOTOS</a></li>
             <li class="Principales"><a>GESTIÓN</a>
                 <ul>
                     <li><a href="./gestionUsuarios.php">USUARIO</a></li>

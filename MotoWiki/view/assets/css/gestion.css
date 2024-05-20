@@ -144,7 +144,8 @@ h1{
     min-width: 800px;
     background-color: white;
     padding: 10px 20px;
-    border: 2px solid var(--naranjaPrimario);
+    /* border: 2px solid var(--naranjaPrimario); */
+    box-shadow: 0 7px 12px 0 var(--naranjaPrimario);
     border-radius: 10px;
 
     position: relative;
@@ -158,8 +159,11 @@ h1{
 
 .spanID{
     font-family: "Inter",sans-serif;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 0.8rem;
+
+    color: var(--colorTexto);
+    font-style: italic;
 }
 
 .spanUsername{
