@@ -14,9 +14,8 @@ class Fabricante{
     private $suspendido;
 
     // Constructor
-    public function __construct($idFabricante = null, $nombreFabricante = null, $paisOrigen = null, 
-                                $fechaFundada = null, $sitioWeb = null, $descripcion1 = null, 
-                                $descripcion2 = null, $imagenFabricante = null, $suspendido = 0) {
+    public function __construct($idFabricante = null, $nombreFabricante = null, $paisOrigen = null, $fechaFundada = null, $sitioWeb = null, $descripcion1 = null, $descripcion2 = null, $imagenFabricante = null, $suspendido = 0){
+
         $this->idFabricante = $idFabricante;
         $this->nombreFabricante = $nombreFabricante;
         $this->paisOrigen = $paisOrigen;
@@ -37,13 +36,43 @@ class Fabricante{
     }
 
 
+    public static function obtenerFabricantePorId($id){
+        $conexion = MotowikiDB::conexionDB();
+
+        $sql = "SELECT * FROM fabricante WHERE idFabricante = $id";
+
+        $result = $conexion->query($sql);
+
+        if($result->num_rows > 0){
+            $result = $result->fetch_object();
+
+            $objeto = new Fabricante(
+                $result->idFabricante,
+                $result->nombreFabricante,
+                $result->paisOrigen,
+                $result->fechaFundada,
+                $result->sitioWeb,
+                $result->descripcion1,
+                $result->descripcion2,
+                $result->imagenFabricante,
+                $result->suspendido
+            );
+            
+            return  $objeto;
+        }else{
+            return false;
+            /* Si no existe devuelve false */
+        }
+  
+    }
+
 
     public static function obtenerTodosFabricantes(){
         $objetosFabricantes = [];
         
         $conexion = MotowikiDB::conexionDB();
 
-        $sql = "SELECT * FROM fabricantes";
+        $sql = "SELECT * FROM fabricante";
         
         $result = $conexion->query($sql);
 
@@ -67,5 +96,15 @@ class Fabricante{
         return $objetosFabricantes;
 
     }
+
+
   
 }   
+
+
+
+/* PRUEBAS */
+
+/* foreach (Fabricante::obtenerTodosFabricantes() as $key => $value) {
+    echo "<br>$key -> ".$value->__get('nombreFabricante')." <br>";
+} */

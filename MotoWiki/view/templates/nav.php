@@ -1,5 +1,11 @@
 
 
+<?php
+
+    $todosFabricantes = Fabricante::obtenerTodosFabricantes();
+
+?>
+
 <nav class="barraNavegadora">
     <!-- <a href="#" class="enlacelogoTítuloNav"> -->
         <div class="logoTítuloNav" onclick="enviarInicio()">
@@ -14,14 +20,11 @@
             <li class="Principales"><a href="./perfilUsuario.php">PERFIL</a></li>
             <li class="Principales"><a href="./fabricante.php">MARCAS</a>
                 <ul>
-                    <li><a>KAWASAKI</a></li>
-                    <li><a>KAWASAKI</a></li>
-                    <li><a>KAWASAKI</a></li>
-                    <li><a>KAWASAKI</a></li>
-                    <li><a>Harley-Davidson</a></li>
-                    <li><a>KAWASAKI</a></li>
-                    <li><a>KAWASAKI</a></li>
-                    <li><a>KAWASAKI</a></li>
+                    <?php
+                    foreach ($todosFabricantes as $key => $value) {
+                        echo "<li><a href='./fabricante.php?idFabricante=".$value->__get('idFabricante')."'>".$value->__get('nombreFabricante')."</a></li>";
+                    }
+                    ?>
                 </ul>
             </li>
             <li class="Principales"><a href="./motocicleta.php">MOTOS</a></li>
