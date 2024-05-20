@@ -15,7 +15,7 @@
             </div>
 
             <div class="contenedorCambioDatos">
-                <label for="">DATO cascascascasc: </label> <input type="text" name="" id="" placeholder="INPUT DATO">
+                <label for="">NOMBRE FABRICANTE: </label> <input type="text" name="" id="" placeholder="INPUT DATO">
             </div>
 
             <div class="contenedorCambioDatos">
@@ -49,14 +49,14 @@
     </div>
 
     <!-- PARA MOTO -->
-    <div class="contenedorCambios" hidden>
+    <div class="contenedorCambios" >
         <form>
             <div class="contenedorImagenCambio">
-                <img src="" alt="">
+            <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="">
             </div>
 
             <div class="contenedorCambioDatos">
-                <label for="">DATO</label> <input type="text" name="" id="" placeholder="INPUT DATO">
+                <label for="">NOMBRE MOTOCICLETA: </label> <input type="text" name="" id="" placeholder="INPUT DATO">
             </div>
 
             <div class="contenedorCambioDatos">
@@ -72,13 +72,15 @@
             </div>
 
             <div class="contenedorDescripciones">
-                <textarea name="" id=""></textarea>
-                <textarea name="" id=""></textarea>
+                <div class="textareaContainer">
+                    <p>DESCRIPCION 1</p>
+                    <textarea name="" id=""></textarea>
+                </div>
             </div>
         </form>
 
-        <button class="">Borrar Motocicleta</button>
-        <button class="">Suspender Motocicleta</button>
-        <button class="">Confirmar Cambios</button>
+        <button class="botonBorrar botonesCambios botonRojo">Borrar Motocicleta</button>
+        <button class="botonSuspender botonesCambios botonNaranja">Suspender Motocicleta</button>
+        <button class="botonConfirmar botonesCambios botonAzul">Confirmar Cambios</button>
     </div>
 </main>

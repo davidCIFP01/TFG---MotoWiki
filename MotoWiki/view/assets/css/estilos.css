@@ -109,7 +109,7 @@ hr{
     justify-content: center;
     padding: 20px 30px 20px 0px;
 
-    /* cursor: pointer; */
+    cursor: pointer;
 }
 
 .logoTítuloNav>img{
@@ -131,6 +131,7 @@ hr{
     background-color: var(--naranjaPrimario);
     margin-left: 395px;
     transform: rotateZ(45deg) translateY(14px);
+    cursor: pointer;
 }
 
 
@@ -191,7 +192,7 @@ ul li ul{
     overflow: auto;
     /* margin-top: 1px; */
     border-top: 1px solid black;
-    direction: rtl;
+    /* direction: rtl; */
 }
 
 ul li ul::-webkit-scrollbar{
@@ -220,6 +221,37 @@ ul li ul li{
     position: relative;
     background-color: var(--naranjaPrimario);
     width: 166px;
+    max-width: 166px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid white;
+}
+
+ul li ul li a {
+    /* white-space: nowrap; */
+    /* text-wrap: nowrap; */
+    font-size: 1.2em;
+
+    font-size: 1.2em;
+    line-height: 30px;
+    height: 100px;
+    width: 90%;
+    overflow-x: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+ul li ul li a::-webkit-scrollbar-thumb {
+    background: #ffffff; /* Color del pulgar */
+    border-radius: 5px; /* Borde redondeado */
+
+    position: relative;
+    right: 10px;
 }
 
 
