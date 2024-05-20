@@ -17,7 +17,7 @@ if(isset($_GET['idFabricante'])){
     
     if(true){
         $dedicada = true;
-        $css = "dedicadaMoto.css";
+        $css = "paginaDedicada.css";
     }else{
         $dedicada = "NOT FOUND";
     }

@@ -110,6 +110,9 @@
     text-align: justify;
 }
 
+
+/* TABLA */
+
 .contenedorTablaDatos{
     width: 100%;
     padding: 20px 40px;
@@ -123,9 +126,11 @@
     flex-wrap: nowrap;
 }
 
+
+
 .contenedorTablaDatos>table{
 
-    box-shadow: 0 7px 12px 0 var(--azulSecundario);
+    box-shadow: 0 7px 12px 0 #58658c;
     border-radius: 20px;
     border-collapse: collapse;
     letter-spacing: 1px;

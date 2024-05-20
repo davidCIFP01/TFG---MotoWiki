@@ -27,7 +27,7 @@
             <li class="Principales"><a>MOTOS</a></li>
             <li class="Principales"><a>GESTIÓN</a>
                 <ul>
-                    <li><a href="./gestionUsuario.php">USUARIO</a></li>
+                    <li><a href="./gestionUsuarios.php">USUARIO</a></li>
                     <li><a href="./gestionDatos.php">API</a></li>
                     <li><a href="./gestionLogs.php">LOGS</a></li>
                 </ul>

@@ -1,0 +1,84 @@
+
+.mainGestion{
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.search-box{
+    margin-top: 20px;
+}
+
+
+.contenedorVerTodosRegistros{
+    margin-top: 30px;
+}
+
+.contenedorTablaRegistros{
+    margin: 30px auto;
+
+    width: 80%;
+    /* max-height: 400px; */
+    overflow: auto;
+    padding: 20px;
+}
+
+
+/* El estilo es casi identico a la otra tabla */
+.contenedorTablaDatos{
+    width: 100%;   
+}
+
+.contenedorTablaDatos>table{
+
+    box-shadow: 0 7px 12px 0 #58658c;
+    border-radius: 20px;
+    border-collapse: collapse;
+    letter-spacing: 1px;
+    max-height: 200px;
+
+    margin: 0 auto;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+table, th, td {
+    border: 1px solid #a9b1cb;
+}
+
+
+.contenedorTablaDatos>table td{
+    padding: 15px;
+    background-color: white;
+    text-align: center;
+
+    min-width: 125px;
+    height: 50px;
+    /* max-height: 50px; */
+    /* text-wrap: nowrap; */
+
+    font-family: "Inter",sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+
+.contenedorTablaDatos>table tr:nth-child(1)>td{
+    background-color: #58658c;
+    color: white;
+
+    font-family: "Racing Sans One",sans-serif;
+    font-weight: bold;
+    font-size: 0.9rem;
+
+}
+
+.contenedorTablaDatos>table tr>td:nth-child(4){
+    text-align: justify;
+}

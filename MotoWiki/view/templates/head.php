@@ -8,6 +8,8 @@
     
     <script src="https://kit.fontawesome.com/f7c8350fa2.js" crossorigin="anonymous"></script>
 
+    <link rel="shortcut icon" href="../view/assets/images/logos/logo-motoWiki-no-bg.png" type="image/x-icon">
+
     <link rel="stylesheet" href="../view/assets/css/root.css">  <!-- Root (Apartado con variables CSS) -->
     <link rel="stylesheet" href="../view/assets/css/estilos.css"> <!-- Estilos generales -->
     
