@@ -75,6 +75,27 @@ class Motocicleta {
 
         // print_r($result);
 
+        if($result["imagenMoto"] == null){
+            $result["imagenMoto"] = match ($result["tipoMotor"]) {
+                "ATV" => "",
+                "Sport touring" => "",
+                "Super motard" => "",
+                "Enduro / offroad" => "",
+                "Cross / motocross" => "",
+                "Sport" => "",
+                "Scooter" => "",
+                "Allround" => "",
+                "Naked bike" => "",
+                "Custom / cruiser" => "",
+                "Touring" => "",
+                "Trial" => "",
+                "Classic" => "",
+                "Minibike" => "",
+                "cross" => "",
+                default => "",
+            }
+        }
+
         $objetoMoto = new Motocicleta(
             $idMoto,
             $result["nombreModelo"],
