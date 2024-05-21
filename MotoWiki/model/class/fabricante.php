@@ -1,6 +1,6 @@
 <?php
 
-
+require_once("motowikiDB.php");
 
 class Fabricante{
     private $idFabricante;
@@ -44,18 +44,18 @@ class Fabricante{
         $result = $conexion->query($sql);
 
         if($result->num_rows > 0){
-            $result = $result->fetch_object();
+            $result = $result->fetch_assoc();
 
             $objeto = new Fabricante(
-                $result->idFabricante,
-                $result->nombreFabricante,
-                $result->paisOrigen,
-                $result->fechaFundada,
-                $result->sitioWeb,
-                $result->descripcion1,
-                $result->descripcion2,
-                $result->imagenFabricante,
-                $result->suspendido
+                $result['idFabricante'],
+                $result['nombreFabricante'],
+                $result['paisOrigen'],
+                $result['fechaFundada'],
+                $result['sitioWeb'],
+                $result['descripcion1'],
+                $result['descripcion2'],
+                $result['imagenFabricante'],
+                $result['suspendido']
             );
             
             return  $objeto;
@@ -97,13 +97,13 @@ class Fabricante{
 
     }
 
-
-  
 }   
 
 
 
 /* PRUEBAS */
+
+// print_r(Fabricante::obtenerFabricantePorId(1));
 
 /* foreach (Fabricante::obtenerTodosFabricantes() as $key => $value) {
     echo "<br>$key -> ".$value->__get('nombreFabricante')." <br>";

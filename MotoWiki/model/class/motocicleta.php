@@ -66,7 +66,7 @@ class Motocicleta {
     
 
     // Obtener una motocicleta por su ID
-    public static function obtenerPorId($idMoto) {
+    public static function obtenerPorId($idMoto) : object {
         $conexion = motowikiDB::conexionDB();
         
         $sql = "SELECT * FROM motocicleta WHERE idMoto = $idMoto";
@@ -109,7 +109,7 @@ class Motocicleta {
     }
 
     // Obtener todas las motocicletas
-    public static function obtenerTodas() {
+    public static function obtenerTodas() : array {
         $conexion = motowikiDB::conexionDB();
         $sql = "SELECT * FROM motocicleta";
         $result = $conexion->query($sql);
@@ -117,13 +117,127 @@ class Motocicleta {
         $motocicletas = [];
 
         while ($row = $result->fetch_assoc()) {
-            $motocicletas[] = $row;
+            $motocicletas[] = Motocicleta::obtenerPorId($row['idMoto']);
         }
         $conexion->close();
         return $motocicletas;
     }
 
+    /* Si se le pasa un fabricante se filtrará por este. */
+    public static function obtenerPopulares($idFabricante = null) : array {
+        $conexion = motowikiDB::conexionDB();
+       
+        if($idFabricante == null){
+            $sql = "SELECT * FROM motocicleta ORDER BY popularidad DESC LIMIT 10";
+        }else{
+            $sql = "SELECT * FROM motocicleta WHERE idFabricante = $idFabricante ORDER BY popularidad DESC LIMIT 10";
+        }
+
+        $result = $conexion->query($sql);
+        
+        $motocicletas = [];
+
+        while ($row = $result->fetch_assoc()) {
+            $motocicletas[] = Motocicleta::obtenerPorId($row['idMoto']);
+        }
+        $conexion->close();
+
+        /* Array de Objetos */
+        return $motocicletas;
+    }
+
+    public static function obtenerNuevas() : array {
+        $conexion = motowikiDB::conexionDB();
+        $sql = "SELECT * FROM motocicleta ORDER BY fechaFabricacion DESC, idMoto DESC LIMIT 10";
+        $result = $conexion->query($sql);
+        
+        $motocicletas = [];
+
+        while ($row = $result->fetch_assoc()) {
+            $motocicletas[] = Motocicleta::obtenerPorId($row['idMoto']);
+        }
+        $conexion->close();
+
+        /* Array de Objetos */
+        return $motocicletas;
+    }
+
+    public static function modelosSimilares($tipoMoto,$cilindrada) : array {
+        $conexion = motowikiDB::conexionDB();
+        $sql = "SELECT * FROM motocicleta WHERE tipoMoto = $tipoMoto AND cilindrada BETWEEN $cilindrada-30 AND $cilindrada+30 ORDER BY idMoto DESC LIMIT 10";
+        $result = $conexion->query($sql);
+        
+        $motocicletas = [];
+
+        while ($row = $result->fetch_assoc()) {
+            $motocicletas[] = Motocicleta::obtenerPorId($row['idMoto']);
+        }
+        $conexion->close();
+
+        /* Array de Objetos */
+        return $motocicletas;
+    }
+
+    /* Modo tiene que ser ASC / DESC */
+    public static function obtenerPorPrecio($modo) : array {
+        // Validar el modo para asegurarnos de que solo sea 'ASC' o 'DESC'
+        if (!in_array(strtoupper($modo), ['ASC', 'DESC'])) {
+            throw new InvalidArgumentException('El modo debe ser "ASC" o "DESC".');
+        }
+
+        $conexion = motowikiDB::conexionDB();
+        $sql = "SELECT * FROM motocicleta ORDER BY fechaFabricacion $modo, idMoto DESC LIMIT 10";
+        print_r($sql);
+        $result = $conexion->query($sql);
+        
+        $motocicletas = [];
+
+        while ($row = $result->fetch_assoc()) {
+            $motocicletas[] = Motocicleta::obtenerPorId($row['idMoto']);
+        }
+        $conexion->close();
+
+        /* Array de Objetos */
+        return $motocicletas;
+    }
+
+
+    /* Esta función está pensada para paginar todos los resultados que vayan saliendo en TODAS MOTOCICLETAS (No incluye filtros) */
+    public static function obtenerMotosPaginadas($cantidadMotos,$paginacion) : array {
+        $conexion = motowikiDB::conexionDB();
+        $sql = "SELECT * FROM motocicleta ORDER BY popularidad DESC LIMIT $paginacion*$cantidadMotos,$cantidadMotos";
+        $result = $conexion->query($sql);
+        
+        $motocicletas = [];
+
+        while ($row = $result->fetch_assoc()) {
+            $motocicletas[] = Motocicleta::obtenerPorId($row['idMoto']);
+        }
+        $conexion->close();
+        return $motocicletas;
+    }
+
+    public static function filtradoComplejoMotocicleta() : array {
+        /* LISTA DE FILTROS:
+            MARCA (Igual se añade en el buscador y ya) / PRECIO (MIN-MAX)  / CILINDRADA (Rango) / TIPOMOTO (CHECKBOX) /
+            POPULARIDAD (ASC/DESC) / AÑO FABRICACION (SELECT AÑO) / TIPO MOTOR (?¿) / POTENCIA (?¿) / 
+            Marchas (¿?) / TipoCarnet (?¿) / Peso-Altura (?¿)
+        */
+        
+        $conexion = motowikiDB::conexionDB();
+        $sql = "SELECT * FROM motocicleta ORDER BY idMotocicleta DESC";
+        $result = $conexion->query($sql);
+        
+        $motocicletas = [];
+
+        while ($row = $result->fetch_assoc()) {
+            $motocicletas[] = Motocicleta::obtenerPorId($row['idMoto']);
+        }
+        $conexion->close();
+        return $motocicletas;
+    }
     
+
         // Insertar nueva motocicleta en la base de datos
 /*     public function insertar() {
         $db = motowikiDB::conexionDB();
@@ -161,6 +275,13 @@ class Motocicleta {
     }
  */
 }
+
+
+/* PRUEBAS */
+
+// print_r(Motocicleta::obtenerPorPrecio("ASC"))
+
+// print_r(Motocicleta::modelosPopularesMismaMarca(3)[8]->__get("nombreModelo"));
 
 ?>
 
