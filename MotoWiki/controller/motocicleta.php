@@ -8,20 +8,19 @@ require_once("../model/class/usuario.php");
 
 $titulo = "Motocicleta - MotoWiki";
 
-//  /* Luego cambiará por condición. */
-
-
-$_GET['idMoto'] = 1;
 
 if(isset($_GET['idMoto'])){
 
-    if(true){
+    $Motocicleta = Motocicleta::obtenerPorId($_GET['idMoto']);
+
+    if($Motocicleta != false){
         $dedicada = true;
         $css = "paginaDedicada.css";
-    }else{
+    
+    }else if($Motocicleta == false){
         $dedicada = "NOT FOUND";
-        
-    }
+
+    } 
     
 }else{
     $dedicada = false;

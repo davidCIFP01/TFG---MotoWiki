@@ -66,67 +66,108 @@ class Motocicleta {
     
 
     // Obtener una motocicleta por su ID
-    public static function obtenerPorId($idMoto) : object {
+    public static function obtenerPorId($idMoto){
         $conexion = motowikiDB::conexionDB();
         
         $sql = "SELECT * FROM motocicleta WHERE idMoto = $idMoto";
 
-        $result = $conexion->query($sql)->fetch_assoc();
+        $result = $conexion->query($sql);
 
         // print_r($result);
 
-        if($result["imagenMoto"] == null){
-            $result["imagenMoto"] = match ($result["tipoMotor"]) {
-                "ATV" => "",
-                "Sport touring" => "",
-                "Super motard" => "",
-                "Enduro / offroad" => "",
-                "Cross / motocross" => "",
-                "Sport" => "",
-                "Scooter" => "",
-                "Allround" => "",
-                "Naked bike" => "",
-                "Custom / cruiser" => "",
-                "Touring" => "",
-                "Trial" => "",
-                "Classic" => "",
-                "Minibike" => "",
-                "cross" => "",
-                default => "",
-            }
-        }
+        if($result->num_rows>0){
+            
+            $result=$result->fetch_assoc();
 
-        $objetoMoto = new Motocicleta(
-            $idMoto,
-            $result["nombreModelo"],
-            $result["fechaFabricacion"],
-            $result["tipoMoto"],
-            $result["cilindrada"],
-            $result["potencia1"],
-            $result["potencia2"],
-            $result["refrigeracion"],
-            $result["tipoMotor"],
-            $result["marchas"],
-            $result["transmision"],
-            $result["capacidad"],
-            $result["arranque"],
-            $result["tag"],
-            $result["tipoCarnet"],
-            $result["popularidad"],
-            $result["precioMin"],
-            $result["precioMax"],
-            $result["descripcion"],
-            $result["imagenMoto"],
-            $result["suspendida"],
-            $result["idFabricante"],
-            $result["altura"],
-            $result["peso"]
-        );
+            if($result["imagenMoto"] == null){
+            
+                $result["imagenMoto"] = match ($result["tipoMoto"]) {
+                    "ATV" => "../view/assets/images/motocicleta/default-ATV.jpg",
+                    "Sport touring" => "../view/assets/images/motocicleta/default_sport_touring.webp",
+                    "Super motard" => "../view/assets/images/motocicleta/default_super_motard.jpg",
+                    "Enduro / offroad" => "../view/assets/images/motocicleta/default_super_motard.jpg",
+                    "Cross / motocross" => "../view/assets/images/motocicleta/default_super_motard.jpg",
+                    "Sport" => "../view/assets/images/motocicleta/default_motocicleta.jpg",
+                    "Scooter" => "../view/assets/images/motocicleta/default_scooter.png",
+                    "Allround" => "",
+                    "Naked bike" => "../view/assets/images/motocicleta/default_naked.avif",
+                    "Custom / cruiser" => "../view/assets/images/motocicleta/default_custom.jpg",
+                    "Touring" => "../view/assets/images/motocicleta/default_sport_touring.webp",
+                    "Trial" => "../view/assets/images/motocicleta/default_trial.jpg",
+                    "Classic" => "../view/assets/images/motocicleta/default_classic.avif",
+                    "Minibike" => "../view/assets/images/motocicleta/default_super_motard.jpg",
+                    "cross" => "../view/assets/images/motocicleta/default_super_motard.jpg",
+                    default => "../view/assets/images/motocicleta/default_motocicleta.jpg"
+                };
+            }
+    
+            $objetoMoto = new Motocicleta(
+                $idMoto,
+                $result["nombreModelo"],
+                $result["fechaFabricacion"],
+                $result["tipoMoto"],
+                $result["cilindrada"],
+                $result["potencia1"],
+                $result["potencia2"],
+                $result["refrigeracion"],
+                $result["tipoMotor"],
+                $result["marchas"],
+                $result["transmision"],
+                $result["capacidad"],
+                $result["arranque"],
+                $result["tag"],
+                $result["tipoCarnet"],
+                $result["popularidad"],
+                $result["precioMin"],
+                $result["precioMax"],
+                ($result["descripcion"] == null ) ? "Aún no hay descripción de esta motocicleta." : $result["descripcion"],
+                $result["imagenMoto"],
+                $result["suspendida"],
+                $result["idFabricante"],
+                $result["altura"],
+                $result["peso"]
+            );
+        }else{
+            return false;
+        }
 
 
         $conexion->close();
 
         return $objetoMoto;
+    }
+
+    public function obtenerNombreMarcaPorId(){
+        $conexion = motowikiDB::conexionDB();
+        $sql = "SELECT nombreFabricante FROM fabricante WHERE idFabricante = $this->idFabricante";
+        $result = $conexion->query($sql)->fetch_assoc();
+
+        // print_r($result);
+
+        return $result['nombreFabricante'];
+    }
+
+    public function obtenerMotosPorTag($tag){
+        $conexion = motowikiDB::conexionDB();
+
+        if($tag != null ){
+            $sql = "SELECT idMoto FROM motocicleta WHERE tag = $tag";
+            $result = $conexion->query($sql);
+
+            if($result->num_rows>0){
+                
+                while ($row = $result->fetch_assoc()) {
+                    $motocicletas[] = Motocicleta::obtenerPorId($row['idMoto']);
+                }
+                $conexion->close();
+                return $motocicletas;
+
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
     }
 
     // Obtener todas las motocicletas
@@ -166,6 +207,8 @@ class Motocicleta {
         /* Array de Objetos */
         return $motocicletas;
     }
+
+    
 
     public static function obtenerNuevas() : array {
         $conexion = motowikiDB::conexionDB();
@@ -304,5 +347,6 @@ class Motocicleta {
 
 // print_r(Motocicleta::modelosPopularesMismaMarca(3)[8]->__get("nombreModelo"));
 
+// print_r(Motocicleta::obtenerPorId(300)->obtenerNombreMarcaPorId())
 ?>
 

@@ -2,44 +2,54 @@
 <main class="dedicadaMain">
     <section class="informacionDedicadaMoto">
         
+        <?php 
+        if($dedicada != true){
+            echo "<h2>No se ha encontrado ninguna motocicleta.</h2></section>";
+        }else{
+        ?>
         <div class="presentacionMotocicleta">
             <div class="contenedorImagenMotoMarca">
-                <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
+                <img src="<?= $Motocicleta->__get("imagenMoto"); ?>" alt="fotoMotocicleta">
             </div>
             
             <div class="datosPresentacion">
                 <div class="datosMotoArriba">
                     
                     <div class="nombreMoto">
-                        <h2>YBR 125 ED</h2>
+                        <h2><?= $Motocicleta->__get("nombreModelo"); ?></h2>
                     </div>
                     
                     <div class="marcaMoto">
                         <span class="miniTexto">MARCA:</span>
-                        <p>HONDA MOTOR</p>
+                        <p><?= $Motocicleta->obtenerNombreMarcaPorId()?></p>
                     </div>
                     
                     <div class="fechaMoto">
-                        <p>RELEASE: 2010</p>
+                        <p>RELEASE: <?= $Motocicleta->__get("fechaFabricacion")?></p>
                     </div>
 
+                    <?php 
+                    $variantes = $Motocicleta->obtenerMotosPorTag($Motocicleta->__get("tag"));
+                    if($variantes != false){
+                    
+                    ?>
+                        
                     <div class="variantesMoto">
                         <select>
-                            <option value="" selected hidden >VARIANTES DEL MODELO</option>
-                            <option value="">VARIANTE 1</option>
-                            <option value="">VARIANTE 2</option>
-                            <option value="">VARIANTE 3</option>
+                            <?php
+                            echo '<option value="" selected hidden >VARIANTES DEL MODELO</option>';
+                            foreach($variantes as $key=>$moto){
+                                echo '<option value="'.$moto->__get("idMoto").'">'.$moto->__get("nombreModelo").'</option>';
+                            }
+
+                            ?>
                         </select>
                     </div>
+                    <?php }?>
                 </div>
 
                 <div class="datosMotoAbajo">
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo, libero quaerat architecto ducimus earum, totam, eligendi eum sit est ratione reiciendis nemo! Veniam laudantium accusantium, quibusdam optio dignissimos minus iusto.
-                    Hic necessitatibus eaque incidunt perferendis nostrum! Aspernatur laboriosam labore commodi. Ducimus asperiores, aliquid architecto autem ad odio esse reiciendis natus facilis inventore libero ex eligendi numquam tenetur veritatis corrupti tempore?
-                    Alias consequatur enim, numquam hic est saepe magni nobis voluptatibus esse tempora delectus sequi aut necessitatibus laboriosam, error nostrum iure sed odio sunt natus, blanditiis qui laborum quasi voluptas. Quod!
-                    Repellendus laboriosam sint cupiditate officiis vel assumenda dolorum autem reprehenderit nostrum quia nobis magni, ut error veniam numquam modi recusandae perferendis sapiente voluptates facilis esse earum exercitationem incidunt eius. Id.
-                    Impedit qui fugit, explicabo cum corrupti itaque sequi nesciunt tempora sunt. Suscipit odio assumenda quae. Commodi necessitatibus sunt explicabo molestias illum impedit similique, exercitationem itaque, officia id consectetur dignissimos quasi.
-                    Dolorum necessitatibus distinctio minus laborum doloribus, ducimus hic maiores voluptates fuga consequuntur soluta incidunt mollitia officia at. Magni repellat, saepe omnis, nostrum aliquid debitis quo ex necessitatibus, deserunt ad modi?</p>
+                    <p><?= $Motocicleta->__get("descripcion")?></p>
                 </div>
             </div>
         </div>
@@ -55,59 +65,43 @@
         <div class="contenedorTablaDatos">
             <table>
                 <tr>
-                    <td>DATO 1</td>
-                    <td>DATO 2</td>
-                    <td>DATO 3</td>
-                    <td>DATO 4</td>
-                    <td>DATO 5</td>
-                    <td>DATO 1</td>
-                    <td>DATO 2</td>
-                    <td>DATO 3</td>
-                    <td>DATO 4</td>
-                    <td>DATO 5</td>
-                    <td>DATO 1</td>
-                    <td>DATO 2</td>
-                    <td>DATO 3</td>
-                    <td>DATO 4</td>
-                    <td>DATO 5</td>
-                    <td>DATO 1</td>
-                    <td>DATO 2</td>
-                    <td>DATO 3</td>
-                    <td>DATO 4</td>
-                    <td>DATO 5</td>
-                    <td>DATO 1</td>
-                    <td>DATO 2</td>
-                    <td>DATO 3</td>
-                    <td>DATO 4</td>
-                    <td>DATO 5</td>
+                    <td>ID MOTO</td>
+                    <td>MODELO</td>
+                    <td>FECHA FABRICACION</td>
+                    <td>TIPO MOTO</td>
+                    <td>CILINDRADA</td>
+                    <td>POTENCIA (HP)</td>
+                    <td>POTENCIA (KW)</td>
+                    <td>REFRIGERACIÓN</td>
+                    <td>TIPO MOTOR</td>
+                    <td>MARCHAS</td>
+                    <td>TRANSMISIÓN</td>
+                    <td>CAPACIDAD</td>
+                    <td>ARRANQUE</td>
+                    <td>TIPO CARNET</td>
+                    <td>MEDIA PRECIO</td>
+                    <td>ALTURA</td>
+                    <td>PESO</td>
                 </tr>
-                
+
                 <tr>
-                    <td>VALOR 1</td>
-                    <td>VALOR 2</td>
-                    <td>VALOR 3</td>
-                    <td>VALOR 4</td>
-                    <td>VALOR 5</td>
-                    <td>VALOR 1</td>
-                    <td>VALOR 2</td>
-                    <td>VALOR 3</td>
-                    <td>VALOR 4</td>
-                    <td>VALOR 5</td>
-                    <td>VALOR 1</td>
-                    <td>VALOR 2</td>
-                    <td>VALOR 3</td>
-                    <td>VALOR 4</td>
-                    <td>VALOR 5</td>
-                    <td>VALOR 1</td>
-                    <td>VALOR 2</td>
-                    <td>VALOR 3</td>
-                    <td>VALOR 4</td>
-                    <td>VALOR 5</td>
-                    <td>VALOR 1</td>
-                    <td>VALOR 2</td>
-                    <td>VALOR 3</td>
-                    <td>VALOR 4</td>
-                    <td>VALOR 5</td>
+                    <td><?= $Motocicleta->__get("idMoto");?></td>
+                    <td><?= $Motocicleta->__get("nombreModelo");?></td>
+                    <td><?= $Motocicleta->__get("fechaFabricacion");?></td>
+                    <td><?= $Motocicleta->__get("tipoMoto");?></td>
+                    <td><?= $Motocicleta->__get("cilindrada");?></td>
+                    <td><?= $Motocicleta->__get("potencia1");?></td>
+                    <td><?= $Motocicleta->__get("potencia2");?></td>
+                    <td><?= $Motocicleta->__get("refrigeracion")?></td>
+                    <td><?= $Motocicleta->__get("tipoMotor")?></td>
+                    <td><?= $Motocicleta->__get("marchas");?></td>
+                    <td><?= $Motocicleta->__get("transmision");?></td>
+                    <td><?= $Motocicleta->__get("capacidad");?></td>
+                    <td><?= $Motocicleta->__get("arranque");?></td>
+                    <td><?= $Motocicleta->__get("tipoCarnet");?></td>
+                    <td> - </td>
+                    <td><?= $Motocicleta->__get("altura");?> mm</td>
+                    <td><?= $Motocicleta->__get("peso");?> KG</td>
                 </tr>
             </table>
         </div>
@@ -247,4 +241,5 @@
 
         </div>
     </section>
+    <?php } ?>
 </main>

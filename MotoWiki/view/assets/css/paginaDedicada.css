@@ -27,7 +27,7 @@
 
 
 .datosPresentacion{
-    /* width: calc(100% - 400px); */
+    width: calc(100% - 400px);
     
     /* font-family: "Inter", sans-serif; */
     color: var(--colorTexto);

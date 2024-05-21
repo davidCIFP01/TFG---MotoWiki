@@ -44,6 +44,7 @@ class Fabricante{
         $result = $conexion->query($sql);
 
         if($result->num_rows > 0){
+            
             $result = $result->fetch_assoc();
 
             $objeto = new Fabricante(

@@ -6,20 +6,12 @@ require_once("../model/class/fabricante.php");
 require_once("../model/class/motocicleta.php");
 require_once("../model/class/usuario.php");
 
-
-
 $titulo = "Fabricante - MotoWiki";
-
- /* Luego cambiará por condición. */
-
-
-
 
 
 if(isset($_GET['idFabricante'])){
     
     $Fabricante = Fabricante::obtenerFabricantePorId($_GET['idFabricante']);
-
     // print_r($Fabricante);
 
     if($Fabricante != false){
@@ -30,7 +22,7 @@ if(isset($_GET['idFabricante'])){
     }else if($Fabricante == "false"){
         $dedicada = "NOT FOUND";
 
-    }
+    } 
     
 }else{
     $dedicada = false;
