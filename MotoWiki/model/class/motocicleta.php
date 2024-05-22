@@ -226,9 +226,9 @@ class Motocicleta {
         return $motocicletas;
     }
 
-    public static function modelosSimilares($tipoMoto,$cilindrada) : array {
+    public function modelosSimilares() : array {
         $conexion = motowikiDB::conexionDB();
-        $sql = "SELECT * FROM motocicleta WHERE tipoMoto = $tipoMoto AND cilindrada BETWEEN $cilindrada-30 AND $cilindrada+30 ORDER BY idMoto DESC LIMIT 10";
+        $sql = "SELECT * FROM motocicleta WHERE tipoMoto = $this->tipoMoto AND cilindrada BETWEEN $this->cilindrada-30 AND $this->cilindrada+30 ORDER BY idMoto DESC LIMIT 10";
         $result = $conexion->query($sql);
         
         $motocicletas = [];
@@ -308,6 +308,35 @@ class Motocicleta {
         $result = $conexion->query($sql);
 
         return ($result->num_rows >0) ? '<i class="fa-solid fa-star" data-idMoto="'.$this->id.'" ></i>' : '<i class="fa-regular fa-star"  data-idMoto="'.$this->id.'" ></i>' ;
+    }
+
+
+    
+    public static function generarModulo($modo,$Fabricante = null,$objetoUsuario = null,$objetoMoto = null){
+        if (!in_array(strtoupper($modo), ['populares', 'nuevas','baratas','favoritas','similares'])) {
+            throw new InvalidArgumentException('El modo no es correcto.');
+        }
+
+        $motosModulo=match ($modo) {
+            "populares" => Motocicleta::obtenerPopulares($Fabricante),
+            "nuevas" => Motocicleta::obtenerNuevas(),
+            "baratas" => Motocicleta::obtenerPorPrecio("DESC"),
+            "favoritas" => ($objetoUsuario == null) ? "" : $objetoUsuario->obtenerTusFavoritas(),
+            "similares" => ($objetoMoto == null) ? "" : $objetoMoto->modelosSimilares()
+        };
+        
+
+        foreach ($motosModulo as $key => $objetoMotoBucle) {
+
+            $tarjeta = '<div class="tarjetaMotoMarca">
+                            <div class="contenedorImagenMotoMarca">
+                                <i class="fa-regular fa-star"  ></i>
+                                <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
+                            </div>
+                            <a href="#"><h2>YBR125</h2></a>
+                        </div>';
+        }
+        
     }
     
 

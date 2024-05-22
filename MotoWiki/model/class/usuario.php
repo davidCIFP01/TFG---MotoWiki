@@ -41,12 +41,12 @@ class Usuario {
 
 
 
-    public function obtenerTusFavoritas($idUsuario){
+    public function obtenerTusFavoritas(){
         $conexion = motowikiDB::conexionDB();
 
         // $sql = "SELECT idMoto FROM favoritas WHERE idUsuario = $idUsuario";
 
-        $sql ="SELECT idMoto FROM favoritas WHERE idUsuario = $idUsuario";
+        $sql ="SELECT idMoto FROM favoritas WHERE idUsuario = $this->idUsuario";
         $result = $conexion->query($sql);
         
         if($result->num_rows > 0){
@@ -61,4 +61,5 @@ class Usuario {
             return false;
         }
     }
+    
 }

@@ -69,6 +69,8 @@
         </div>
     </section>
 
+    
+
     <section class="moduloHorizontal">
         <h2>Últimas Novedades</h2>
         <hr>
