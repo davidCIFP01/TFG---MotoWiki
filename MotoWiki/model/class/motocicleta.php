@@ -313,7 +313,7 @@ class Motocicleta {
 
     
     public static function generarModulo($modo,$Fabricante = null,$objetoUsuario = null,$objetoMoto = null){
-        if (!in_array(strtoupper($modo), ['populares', 'nuevas','baratas','favoritas','similares'])) {
+        if (!in_array(strtolower($modo), ['populares', 'nuevas','baratas','favoritas','similares'])) {
             throw new InvalidArgumentException('El modo no es correcto.');
         }
 
@@ -325,17 +325,21 @@ class Motocicleta {
             "similares" => ($objetoMoto == null) ? "" : $objetoMoto->modelosSimilares()
         };
         
+        $tarjetas = "";
 
         foreach ($motosModulo as $key => $objetoMotoBucle) {
 
-            $tarjeta = '<div class="tarjetaMotoMarca">
+            $tarjetas .= '<div class="tarjetaMotoMarca">
                             <div class="contenedorImagenMotoMarca">
                                 <i class="fa-regular fa-star"  ></i>
-                                <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
+                                <img src="'.$objetoMotoBucle->__get("imagenMoto").'" alt="fotoMotocicleta">
                             </div>
-                            <a href="#"><h2>YBR125</h2></a>
+                            <a href="./motocicleta.php?idMoto='.$objetoMotoBucle->__get("idMoto").'"><h2>'.$objetoMotoBucle->__get("nombreModelo").'</h2></a>
                         </div>';
+            
         }
+
+        return $tarjetas;
         
     }
     

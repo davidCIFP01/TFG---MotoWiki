@@ -17,7 +17,8 @@
 
 .contenedorImagenMotoMarca{
     min-width: 400px;  
-    width: 400px;  
+    width: 410px; 
+    padding: 25px 10px; 
 }
 
 .contenedorImagenMotoMarca>img{
