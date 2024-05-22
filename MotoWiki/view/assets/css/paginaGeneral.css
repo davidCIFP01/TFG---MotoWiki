@@ -58,3 +58,12 @@ hr{ /* Estilos base en estilos.css */
     flex-wrap: wrap;
     justify-content: center;
 }
+
+
+@media screen and (max-width:1200px) {
+
+    .sectionBuscador>span{
+        display: none;
+    }
+
+}

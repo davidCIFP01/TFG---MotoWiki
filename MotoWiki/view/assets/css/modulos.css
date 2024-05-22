@@ -11,6 +11,7 @@
         color: var(--colorTexto);
         letter-spacing: 1px;
         font-size: 2em;
+        
         /* font-style: italic; */
     }
     
@@ -188,4 +189,15 @@
         font-style: italic;
         color: var(--colorTexto);
         /* line-height: 100%; */
+        text-wrap: nowrap;
+        max-width: 250px;
+        overflow: auto;
+    }
+
+
+    @media screen and (max-width:1200px) {
+        
+        .contenedorImagenMotoMarca>i{
+            display: none;
+        }
     }

@@ -40,12 +40,12 @@
 
 </nav>
 
+<nav class="barraNavegadoraMobile">
+    
+        <div class="contenedorIconosNavMobile" data-src="./perfilUsuario.php" ><i class="fa-regular fa-user"></i></div>
+        <div class="contenedorIconosNavMobile" data-src="./fabricante.php" ><i class="fa-solid fa-city"></i></div>
+        <div class="contenedorIconosNavMobile" data-src="./motocicleta.php" ><i class="fa-solid fa-motorcycle"></i></div>
+        <div class="contenedorIconosNavMobile" data-src="" ><i class="fa-solid fa-gears"></i></div>
+</nav>
 
-<script>
-    function enviarInicio(){
-        window.location.href = "./inicio.php";
-    }
 
-    // document.getElementById("logoTítuloNav").addEventListener("click",enviarInicio());
-    // document.getElementById("formaNav").addEventListener("click",enviarInicio());
-</script>

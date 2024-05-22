@@ -85,3 +85,32 @@
 }
 
 
+
+
+@media screen and (max-width:1200px) {
+    .inicioFondo{
+
+        background-image: url("../images/web/fondo_mid.jpg");
+        margin-top: 0px;
+    }
+
+    .tituloPáginaInicio{
+        font-size: 6em;
+    }
+
+    .textoDescriptivoInicio>p{
+        display: block;
+        width: 70%;
+        margin: 20px auto;
+        padding-left: 10%;
+        font-size: 0.75em;
+    }
+}
+
+@media screen and (max-width:650px){
+    .inicioFondo{
+
+        background-image: url("../images/web/inicioMobile.jpg");
+    }
+
+}

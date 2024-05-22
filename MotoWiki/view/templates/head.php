@@ -30,6 +30,11 @@
 
     <title><?= (isset($titulo)) ? $titulo : "FALTA TÍTULO"; ?></title>
 
+    <script>
+        function enviarInicio(){
+            window.location.href = "./inicio.php";
+        }
 
+    </script>
 </head>
 <body>
