@@ -77,6 +77,7 @@
 
             <div class="tarjetaMotoMarca">
                 <div class="contenedorImagenMotoMarca">
+                    <i class="fa-regular fa-star"  ></i>
                     <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
                 </div>
                 <a href="#"><h2>YBR125</h2></a>
@@ -84,6 +85,7 @@
 
             <div class="tarjetaMotoMarca">
                 <div class="contenedorImagenMotoMarca">
+                    <i class="fa-solid fa-star" ></i>
                     <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
                 </div>
                 <h2>YBR125</h2>
@@ -203,3 +205,25 @@
     </section>
     
 </main>
+
+<script>
+function toggleFavorito(element) {
+  if (element.classList.contains('fa-regular')) {
+    element.classList.remove('fa-regular');
+    element.classList.add('fa-solid');
+  } else if (element.classList.contains('fa-solid')) {
+    element.classList.remove('fa-solid');
+    element.classList.add('fa-regular');
+  }
+
+  /* FALTA AÑADIR LÓGICA DE SUMAR-RESTAR A POPULAR  */
+}
+
+
+    document.querySelectorAll('.fa-star').forEach(element => {
+        element.addEventListener('click', function() {
+            toggleFavorito(this);
+        });
+    });
+
+</script>
