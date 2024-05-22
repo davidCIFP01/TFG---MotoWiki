@@ -300,6 +300,15 @@ class Motocicleta {
         $conexion->close();
         return $motocicletas;
     }
+
+
+    public function comprobarFavoritasUsuario($idUsuario){
+        $conexion = motowikiDB::conexionDB();
+        $sql = "SELECT * FROM favoritas WHERE idUsuario =$idUsuario AND $this->id";
+        $result = $conexion->query($sql);
+
+        return ($result->num_rows >0) ? '<i class="fa-solid fa-star" data-idMoto="'.$this->id.'" ></i>' : '<i class="fa-regular fa-star"  data-idMoto="'.$this->id.'" ></i>' ;
+    }
     
 
         // Insertar nueva motocicleta en la base de datos
