@@ -186,11 +186,10 @@ function toggleFavorito(element) {
   /* FALTA AÑADIR LÓGICA DE SUMAR-RESTAR A POPULAR  */
 }
 
-
-    document.querySelectorAll('.fa-star').forEach(element => {
-        element.addEventListener('click', function() {
-            toggleFavorito(this);
-        });
+document.querySelectorAll('.fa-star').forEach(element => {
+    element.addEventListener('click', function() {
+        toggleFavorito(this);
     });
+});
 
 </script>
