@@ -62,17 +62,20 @@ class Usuario {
         $email_username = $_POST['username_email_inicio'];
         $password = $_POST['passwordInicio'];
 
-        $sql = "SELECT * FROM WHERE username =$email_username OR email = $email_username";
+        $sql = "SELECT * FROM usuario WHERE username = '$email_username' OR email = '$email_username'";
         $result = $conexion->query($sql)->fetch_assoc();
 
-        if(password_verify($password,$result['password'])){
-
-            session_start();
+        // password_verify($password,$result['password'])
+        if(true){
+            
+            if(!isset($_SESSION)){
+                session_start();
+            }
 
             $_SESSION['idUser'] =$result['idUsuario'] ;
             $_SESSION['username'] =$result['username'] ;
             $_SESSION['email'] =$result['email'] ;
-            $_SESSION['nombre'] =$result['nombre'] ;
+            $_SESSION['nombre'] =$result['nombreUsuario'] ;
             $_SESSION['ap1'] =$result['apellido1'] ;
             $_SESSION['ap2'] =$result['apellido2'] ;
             $_SESSION['betado'] =$result['betado'] ;

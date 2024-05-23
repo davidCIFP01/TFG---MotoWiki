@@ -63,7 +63,7 @@
             <button class="botonAzul botonCambio cambioGrande" id="cambioAInicio"> REGISTRO </button>
             <button class="botonAzul botonCambio cambioChico"><i class="fa-solid fa-rotate"></i></button>
 
-            <form>
+            <form action="../AJAX/inicioSesion.php" method="post">
                 <div class="contenedorFormulario">
                     
                     <div class="contenedorCampo contenedorCampoInicioSesion">

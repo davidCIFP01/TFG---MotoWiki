@@ -4,7 +4,12 @@ require_once("../model/class/motowikiDB.php");
 require_once("../model/class/fabricante.php");
 require_once("../model/class/motocicleta.php");
 require_once("../model/class/usuario.php");
+session_start();
 
+
+if(!empty($_SESSION)){
+   header("Location: ./inicio.php"); 
+}
 
 $titulo = "Registro - MotoWiki";
 $css = "registro-inicioSesion.css";

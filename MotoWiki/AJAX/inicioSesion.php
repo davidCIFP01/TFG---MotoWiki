@@ -9,6 +9,8 @@ if( isset($_POST['iniciarSesion']) ){
 
     Usuario::iniciarSesion();
     
-    header("Location: ./inicio.php");
+    // print_r($_SESSION['idUser']);
+
+    header("Location: ../controller/inicio.php");
 }
 
