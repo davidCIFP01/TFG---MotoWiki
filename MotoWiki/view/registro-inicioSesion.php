@@ -6,7 +6,8 @@
         <section class="seccionRegistro-Inicio" id="seccionRegistro">
            
             <h2>REGISTRO</h2>
-            <button class="botonAzul botonCambio" id="cambioARegistro"> INICIAR SESIÓN </button>
+            <button class="botonAzul botonCambio cambioGrande" id="cambioARegistro"> INICIAR SESIÓN </button>
+            <button class="botonAzul botonCambio cambioChico"><i class="fa-solid fa-rotate"></i></button>
             
             <form action="../AJAX/registrarUsuario.php" method="post">
                 <div class="contenedorFormulario">
@@ -59,7 +60,8 @@
         <section class="seccionRegistro-Inicio" id="seccionInicio">
             
             <h2>INICIO SESIÓN</h2>
-            <button class="botonAzul botonCambio" id="cambioAInicio"> REGISTRO </button>
+            <button class="botonAzul botonCambio cambioGrande" id="cambioAInicio"> REGISTRO </button>
+            <button class="botonAzul botonCambio cambioChico"><i class="fa-solid fa-rotate"></i></button>
 
             <form>
                 <div class="contenedorFormulario">
@@ -86,14 +88,23 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", (event) => {
-        document.getElementById("cambioAInicio").addEventListener("click", (ev) => {
-            document.getElementById("seccionRegistro").style.right = "0%";
-            document.getElementById("seccionInicio").style.left = "100%";
-        });
+        cambiado = false;
 
-        document.getElementById("cambioARegistro").addEventListener("click", (ev) => {
-            document.getElementById("seccionRegistro").style.right = "100%";
-            document.getElementById("seccionInicio").style.left = "0%";
+        botonesCambio = document.querySelectorAll(".botonCambio");
+
+        botonesCambio.forEach(element => {
+            
+            element.addEventListener("click",(ev)=>{
+                if(cambiado == true){
+                    document.getElementById("seccionRegistro").style.right = "0%";
+                    document.getElementById("seccionInicio").style.left = "100%";
+                    cambiado = false;
+                }else{
+                    document.getElementById("seccionRegistro").style.right = "100%";
+                    document.getElementById("seccionInicio").style.left = "0%";
+                    cambiado = true;
+                }
+            })
         });
     });
 </script>
