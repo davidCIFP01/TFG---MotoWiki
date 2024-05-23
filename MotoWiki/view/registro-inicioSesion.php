@@ -66,15 +66,15 @@
                     
                     <div class="contenedorCampo contenedorCampoInicioSesion">
                         <span>Username / Email</span>
-                        <input type="text" class="campoRegistro" placeholder="Username / Email">
+                        <input type="text" class="campoRegistro"  name="username_email_inicio" placeholder="Username / Email">
                     </div>
 
                     <div class="contenedorCampo contenedorCampoInicioSesion">
                         <span>Contraseña</span>
-                        <input type="text" class="campoRegistro" placeholder="Contraseña">
+                        <input type="text" class="campoRegistro" name="passwordInicio"  placeholder="Contraseña">
                     </div>
 
-                    <button type="submit" class="botonAzul">INICIAR SESION</button>
+                    <button type="submit" name="iniciarSesion" class="botonAzul">INICIAR SESION</button>
                 </div> 
             </form> 
         </section>

@@ -37,8 +37,6 @@ class Usuario {
         $this->$propiedad = $valor;
     }
 
-
-
     public static function registrarUsuario(){
         $conexion = motowikiDB::conexionDB();
 
@@ -57,6 +55,32 @@ class Usuario {
             'user')";
         
         $conexion->query($sql);
+    }
+
+    public static function iniciarSesion(){
+        $conexion = motowikiDB::conexionDB();
+        $email_username = $_POST['username_email_inicio'];
+        $password = $_POST['passwordInicio'];
+
+        $sql = "SELECT * FROM WHERE username =$email_username OR email = $email_username";
+        $result = $conexion->query($sql)->fetch_assoc();
+
+        if(password_verify($password,$result['password'])){
+
+            session_start();
+
+            $_SESSION['idUser'] =$result['idUsuario'] ;
+            $_SESSION['username'] =$result['username'] ;
+            $_SESSION['email'] =$result['email'] ;
+            $_SESSION['nombre'] =$result['nombre'] ;
+            $_SESSION['ap1'] =$result['apellido1'] ;
+            $_SESSION['ap2'] =$result['apellido2'] ;
+            $_SESSION['betado'] =$result['betado'] ;
+            $_SESSION['tipoUsuario'] =$result['tipoUsuario'] ;
+            
+        }else{
+            return false;
+        }
     }
 
 
