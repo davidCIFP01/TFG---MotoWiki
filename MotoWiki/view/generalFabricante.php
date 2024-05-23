@@ -19,6 +19,7 @@
     </section>
     <hr>
 
+
     <section class="contenidoGeneral">
             <div class="tarjetaMotoMarca">
                 <div class="contenedorImagenMotoMarca">

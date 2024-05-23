@@ -48,6 +48,15 @@ hr{ /* Estilos base en estilos.css */
 }
 
 
+.contenedorFiltrosMotos{
+    width: 90%;
+    margin: 0 auto;
+    min-height: 150px;
+
+    background-color: white;
+    border: 1px solid black;
+}
+
 
 .contenidoGeneral{
     padding: 20px;

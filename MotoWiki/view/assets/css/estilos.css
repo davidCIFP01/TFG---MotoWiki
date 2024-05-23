@@ -171,6 +171,14 @@ hr{
     /* border-bottom: 1px solid black; */
 }
 
+.registro{
+    background-color: var(--azulSecundario);
+}
+
+.registro:hover{
+    background-color: var(--azulSecundario);
+}
+
 ul>li>a{
     /* background-color: var(--naranjaPrimario); */
     display: block;

@@ -13,11 +13,15 @@
 
 
         <div class="contenedorBotonFiltros">
-            <button class="botonAzul">FILTROS</button>
+            <button class="botonAzul" id="botonFiltros">FILTROS</button>
         </div>
 
     </section>
     <hr>
+    <div class="contenedorFiltrosMotos" id="contenedorFiltrosMotos" hidden>
+        
+    </div>
+
 
     <section class="contenidoGeneral">
             <div class="tarjetaMotoMarca">
@@ -98,3 +102,15 @@
             </div>
     </section>
 </main>
+
+<script>
+    document.getElementById("botonFiltros").addEventListener("click",()=>{
+        divFiltros = document.getElementById("contenedorFiltrosMotos");
+
+        if(divFiltros.hasAttribute('hidden')){
+            divFiltros.removeAttribute('hidden');
+        } else {
+            divFiltros.setAttribute('hidden', '');
+        }
+    })
+</script>

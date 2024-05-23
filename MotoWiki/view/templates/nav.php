@@ -17,7 +17,9 @@
     
     <div class="contenedorEnlaces">
         <ul class="ulPrincipal">
+            <?php if(!empty($_SESSION)){ ?>
             <li class="Principales"><a href="./perfilUsuario.php">PERFIL</a></li>
+            <?php }?>
             <li class="Principales"><a href="./fabricante.php">MARCAS</a>
                 <ul>
                     <?php
@@ -35,6 +37,9 @@
                     <li><a href="./gestionLogs.php">LOGS</a></li>
                 </ul>
             </li>
+            <?php if(empty($_SESSION)){ ?>
+            <li class="Principales registro"><a href="./registro-inicioSesion.php">REGISTRO</a></li>
+            <?php }?>
         </ul>
     </div>
 
