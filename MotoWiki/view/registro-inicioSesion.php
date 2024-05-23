@@ -8,50 +8,50 @@
             <h2>REGISTRO</h2>
             <button class="botonAzul botonCambio" id="cambioARegistro"> INICIAR SESIÓN </button>
             
-            <form>
+            <form action="../AJAX/registrarUsuario.php" method="post">
                 <div class="contenedorFormulario">
                     
                     <div class="contenedorCampo">
-                        <span>NombreCampo</span>
-                        <input type="text" class="campoRegistro" placeholder="Input Campo">
+                        <span>Nombre </span>
+                        <input type="text" class="campoRegistro" name="registroNombre" placeholder="Input Campo" pattern="^[\p{L}]+$" >
                     </div>
 
                     <div class="contenedorCampo">
-                        <span>NombreCampo</span>
-                        <input type="text" class="campoRegistro" placeholder="Input Campo">
+                        <span>Username</span>
+                        <input type="text" class="campoRegistro" name="registroUsername" placeholder="Input Campo" >
                     </div>
 
                     <div class="contenedorCampo">
-                        <span>NombreCampo</span>
-                        <input type="text" class="campoRegistro" placeholder="Input Campo">
+                        <span>Apellido 1</span>
+                        <input type="text" class="campoRegistro" name="registroAp1" placeholder="Input Campo" >
                     </div>
 
                     <div class="contenedorCampo">
-                        <span>NombreCampo</span>
-                        <input type="text" class="campoRegistro" placeholder="Input Campo">
+                        <span>Apellido 2</span>
+                        <input type="text" class="campoRegistro" name="registroAp2" placeholder="Input Campo" >
                     </div>
 
                     <div class="contenedorCampo">
-                        <span>NombreCampo</span>
-                        <input type="text" class="campoRegistro" placeholder="Input Campo">
+                        <span>Contraseña</span>
+                        <input type="password" class="campoRegistro" name="registroPwd" placeholder="Input Campo">
                     </div>
 
                     <div class="contenedorCampo">
-                        <span>NombreCampo</span>
-                        <input type="text" class="campoRegistro" placeholder="Input Campo">
+                        <span>Confirmar Contraseña</span>
+                        <input type="password" class="campoRegistro" name="registroConfirmPwd" placeholder="Input Campo" >
                     </div>
                     
                     <div class="contenedorCampo">
-                        <span>NombreCampo</span>
-                        <input type="text" class="campoRegistro" placeholder="Input Campo">
+                        <span>Email</span>
+                        <input type="text" class="campoRegistro" name="registroEmail" placeholder="Input Campo" >
                     </div>
 
                     <div class="contenedorCampo">
-                        <span>NombreCampo</span>
-                        <input type="text" class="campoRegistro" placeholder="Input Campo">
+                        <span>Fecha Nacimiento</span>
+                        <input type="date" class="campoRegistro" name="registroNacimiento" placeholder="Input Campo" >
                     </div>
 
-                    <button type="submit" class="botonAzul">REGISTRAR USUARIO</button>
+                    <button type="submit" name="enviarRegistro" id="submit" class="botonAzul">REGISTRAR USUARIO</button>
                 </div> 
             </form> 
         </section>

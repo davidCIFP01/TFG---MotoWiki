@@ -39,6 +39,25 @@ class Usuario {
 
 
 
+    public static function registrarUsuario(){
+        $conexion = motowikiDB::conexionDB();
+
+        $sql = "INSERT 
+        INTO usuario ( nombreUsuario, apellido1, apellido2, username, email, password, fechaRegistro, fechaNacimiento, betado,	tipoUsuario) 
+        VALUES ( 
+            '".$_POST['registroNombre']."', 
+            '".$_POST['registroAp1']."', 
+            '".$_POST['registroAp2']."', 
+            '".$_POST['registroUsername']."', 
+            '".$_POST['registroEmail']."', 
+            '".password_hash($_POST['registroPwd'],PASSWORD_DEFAULT)."', 
+            '".date("Y-m-d")."', 
+            '".$_POST['registroNacimiento']."', 
+            false,
+            'user')";
+        
+        $conexion->query($sql);
+    }
 
 
     public function obtenerTusFavoritas(){

@@ -375,7 +375,8 @@ CREATE TABLE `usuario` (
   `password` varchar(45) COLLATE utf8mb4_spanish2_ci NOT NULL,
   `fechaRegistro` date NOT NULL,
   `fechaNacimiento` date DEFAULT NULL,
-  `betado` tinyint(4) NOT NULL
+  `betado` tinyint(4) NOT NULL,
+  `nombreUsuario` varchar(50) COLLATE utf8mb4_spanish2_ci NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 --
