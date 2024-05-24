@@ -9,6 +9,13 @@
         <div class="search-box">
             <i class="fa-solid fa-magnifying-glass"></i>
             <input type="search" placeholder="Busqueda por Fabricante">
+            
+            <div class="contenedorResultados">
+                <div class="resultadoBuscador" data-src="1">(ID: 1) CBR 500  (HONDA)</div>
+                <div class="resultadoBuscador" data-src="1">(ID: 1) CBR 500  (HONDA)</div>
+                <div class="resultadoBuscador" data-src="1">(ID: 1) CBR 500  (HONDA)</div>
+                <div class="resultadoBuscador" data-src="1">(ID: 1) CBR 500  (HONDA)</div>
+            </div>
         </div>
 
 

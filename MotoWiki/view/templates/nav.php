@@ -47,10 +47,10 @@
 
 <nav class="barraNavegadoraMobile">
     
-        <div class="contenedorIconosNavMobile" data-src="./perfilUsuario.php" ><i class="fa-regular fa-user"></i></div>
-        <div class="contenedorIconosNavMobile" data-src="./fabricante.php" ><i class="fa-solid fa-city"></i></div>
-        <div class="contenedorIconosNavMobile" data-src="./motocicleta.php" ><i class="fa-solid fa-motorcycle"></i></div>
-        <div class="contenedorIconosNavMobile" data-src="" ><i class="fa-solid fa-gears"></i></div>
+        <div class="contenedorIconosNavMobile enlazado" data-src="./perfilUsuario.php" ><i class="fa-regular fa-user"></i></div>
+        <div class="contenedorIconosNavMobile enlazado" data-src="./fabricante.php" ><i class="fa-solid fa-city"></i></div>
+        <div class="contenedorIconosNavMobile enlazado" data-src="./motocicleta.php" ><i class="fa-solid fa-motorcycle"></i></div>
+        <!-- <div class="contenedorIconosNavMobile enlazado" data-src="" ><i class="fa-solid fa-gears"></i></div> -->
 </nav>
 
 

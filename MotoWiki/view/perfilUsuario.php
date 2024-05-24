@@ -7,36 +7,38 @@
         <span>TUS DATOS</span>
 
         <div class="contInfoTusDatos">
-            <span>DATO 1</span>
-            <p>VALOR 1</p>
+            <span>Username</span>
+            <p><?= $_SESSION['username'];?></p>
         </div>
 
         <div class="contInfoTusDatos">
-            <span>DATO 1</span>
-            <p>VALOR 1</p>
+            <span>Email</span>
+            <p><?= $_SESSION['email'];?></p>
         </div>
 
         <div class="contInfoTusDatos">
-            <span>DATO 1</span>
-            <p>VALOR 1</p>
+            <span>Nombre</span>
+            <p><?= $_SESSION['nombre'];?></p>
         </div>
 
         <div class="contInfoTusDatos">
-            <span>DATO 1</span>
-            <p>VALOR 1</p>
+            <span>Apellidos</span>
+            <p><?= $_SESSION['ap1']." ".$_SESSION['ap2'];?></p>
         </div>
 
         <div class="contInfoTusDatos">
-            <span>DATO 1</span>
-            <p>VALOR 1</p>
+            <span>Tipo de Usuario</span>
+            <p><?= $_SESSION['tipoUsuario']; ?></p>
         </div>
 
         <div class="contInfoTusDatos">
-            <span>DATO 1</span>
-            <p>VALOR 1</p>
+            <span>Fecha Nacimiento</span>
+            <p><?= $_SESSION['fechaNac']; ?></p>
         </div>
 
-        <button class="botonAzul">EDITAR DATOS</button>
+        <button class="botonRojo btn1 enlazado" data-src="../AJAX/cerrarSesion.php">Cerrar Sesión</button>
+        <button class="botonAzul btn2">EDITAR DATOS</button>
+
     </div>
 
 
@@ -128,3 +130,18 @@
     </section>
 
 </main>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded",()=>{
+        todosEnlaces =document.querySelectorAll(".enlazado");
+
+        todosEnlaces.forEach(element => {
+            element.addEventListener("click",(ev)=>{
+
+                enlaceFabricante = ev.target.getAttribute("data-src");
+                window.location.href= enlaceFabricante;
+            })
+        });
+    })
+</script>

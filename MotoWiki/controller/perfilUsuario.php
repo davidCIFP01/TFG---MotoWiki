@@ -6,6 +6,12 @@ require_once("../model/class/motocicleta.php");
 require_once("../model/class/usuario.php");
 session_start();
 
+if(empty($_SESSION)){
+    header("Location: ./registro-InicioSesion.php"); 
+ }
+
+ print_r($_SESSION);
+
 $titulo = "Perfil - MotoWiki";
 $css = "perfilUsuario.css";
 

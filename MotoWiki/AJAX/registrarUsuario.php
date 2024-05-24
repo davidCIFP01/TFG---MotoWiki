@@ -3,7 +3,7 @@
 require_once("../model/class/motowikiDB.php");
 require_once("../model/class/usuario.php");
 
-// session_start();
+session_start();
 
 
 if( isset($_POST['enviarRegistro']) ){
@@ -12,8 +12,12 @@ if( isset($_POST['enviarRegistro']) ){
 
     Usuario::registrarUsuario();
 
-    print_r($_SESSION);
+    // print_r($_SESSION);
+
+    header("Location: ../controller/registro-inicioSesion.php");
     
     /* Añadir header a pagina de Inicio / Inicio de Sesion */
+
+
 }
 

@@ -186,7 +186,7 @@
         window.location.href=enlaceFabricante;
     })
 
-/*     
+    
     todosEnlaces =document.querySelectorAll("enlazado");
 
     todosEnlaces.forEach(element => {
@@ -195,5 +195,5 @@
             enlaceFabricante = ev.target.getAttribute("data-src");
             window.location.href= enlaceFabricante;
         })
-    }); */
+    });
 </script>

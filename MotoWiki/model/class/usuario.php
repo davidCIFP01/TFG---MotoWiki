@@ -65,8 +65,9 @@ class Usuario {
         $sql = "SELECT * FROM usuario WHERE username = '$email_username' OR email = '$email_username'";
         $result = $conexion->query($sql)->fetch_assoc();
 
-        // password_verify($password,$result['password'])
-        if(true){
+
+        if(password_verify($password,$result['password'])){
+        // if(true){
             
             if(!isset($_SESSION)){
                 session_start();
@@ -80,12 +81,20 @@ class Usuario {
             $_SESSION['ap2'] =$result['apellido2'] ;
             $_SESSION['betado'] =$result['betado'] ;
             $_SESSION['tipoUsuario'] =$result['tipoUsuario'] ;
+            $_SESSION['fechaNac'] =$result['fechaNacimiento'] ;
+            $_SESSION['fechaReg'] =$result['fechaRegistro'] ;
             
+            return true;
         }else{
             return false;
         }
     }
 
+
+    public static function cerrarSesion(){
+        session_unset();
+        session_destroy();
+    }
 
     public function obtenerTusFavoritas(){
         $conexion = motowikiDB::conexionDB();

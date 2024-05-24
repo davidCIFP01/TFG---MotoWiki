@@ -67,8 +67,14 @@
     font-style: italic;
 }
 
-.contenedorTusDatos>button{
+.btn2{
     position: absolute;
     bottom: 15px;
     right: 15px;
+}
+
+.btn1{
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
 }

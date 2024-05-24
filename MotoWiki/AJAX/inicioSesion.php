@@ -7,10 +7,13 @@ if( isset($_POST['iniciarSesion']) ){
     
     /* Añadir funcion con comprobaciones */
 
-    Usuario::iniciarSesion();
+    $resultado = Usuario::iniciarSesion();
     
-    // print_r($_SESSION['idUser']);
+    if(!$resultado){
+        header("Location: ../controller/registro-InicioSesion.php");
+    }else{
+        header("Location: ../controller/inicio.php");
+    }
 
-    header("Location: ../controller/inicio.php");
 }
 
