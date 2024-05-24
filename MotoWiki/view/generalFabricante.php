@@ -8,13 +8,10 @@
 
         <div class="search-box">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="search" placeholder="Busqueda por Fabricante">
+            <input type="search" id="inputBuscador" placeholder="Busqueda por Fabricante">
             
-            <div class="contenedorResultados">
-                <div class="resultadoBuscador" data-src="1">(ID: 1) CBR 500  (HONDA)</div>
-                <div class="resultadoBuscador" data-src="1">(ID: 1) CBR 500  (HONDA)</div>
-                <div class="resultadoBuscador" data-src="1">(ID: 1) CBR 500  (HONDA)</div>
-                <div class="resultadoBuscador" data-src="1">(ID: 1) CBR 500  (HONDA)</div>
+            <div class="contenedorResultados" id="contenedorResultados" hidden>
+            
             </div>
         </div>
 
@@ -106,3 +103,49 @@
             </div>
     </section>
 </main>
+
+
+<script>
+
+    function llamadaConsultaBusqueda(modo,string){
+        data = {
+            modo: modo,
+            textoBusqueda: string
+        };
+
+        url = "../AJAX/busquedaMotocicletaMarca.php"
+
+        fetch(url, {
+            method: 'POST', // Método de la solicitud
+            headers: {
+                'Content-Type': 'form-data' // Indica que se enviarán datos en formato JSON
+            },
+            body: JSON.stringify(data) // Convertir el objeto de datos a una cadena JSON
+        })
+
+        .then(response => response.text())
+
+        .then(responseData =>{
+            console.log(responseData)
+            // console.log("Hola")
+            document.getElementById("contenedorResultados").innerHTML =responseData
+
+            /* Creamos divs y los metemos en el contenedor de Resultados. */
+        })
+    }
+
+
+    document.getElementById("inputBuscador").addEventListener("input",(ev)=>{
+        string = ev.target.value;
+        llamadaConsultaBusqueda("ambas",string)
+
+        if(string == ""){
+            document.getElementById("contenedorResultados").hidden = true;
+        }else{
+            document.getElementById("contenedorResultados").hidden = false;
+        }
+
+    })
+
+    
+</script>
