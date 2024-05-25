@@ -11,12 +11,12 @@
     </div>
 
 
-    <!-- PARA MARCA -->
-    <div class="contenedorCambios" id="contenedorCambios">
+    <!-- PARA MARCA / MOTO -->
+    <div class="contenedorCambios" id="contenedorCambios" hidden>
 
     </div>
 
-    <!-- PARA MOTO -->
+
 </main>
 
 <script src="../view/assets/js/toggleFavorito.js"></script>
@@ -26,7 +26,8 @@
 
     document.getElementById("inputBuscador").addEventListener("input",(ev)=>{
         string = ev.target.value;
-        llamadaConsultaBusqueda("ambas",string)
+
+        buscadorSinEnlacesGestionDatos(string)
 
         if(string == ""){
             document.getElementById("contenedorResultados").hidden = true;
@@ -34,6 +35,12 @@
             document.getElementById("contenedorResultados").hidden = false;
         }
 
+        if(string == ""){
+            document.getElementById("contenedorCambios").hidden = true;
+        }
     })
+
+
     
 </script>
+

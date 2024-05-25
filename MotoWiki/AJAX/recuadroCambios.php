@@ -9,7 +9,7 @@ require_once("../model/class/motocicleta.php");
 
 $datosEnviados = json_decode(file_get_contents('php://input'),true);
 
-$tipoCambio = "moto"; /* "fabricante" */
+$tipoCambio = $datosEnviados['modo'];
 
 $idRecibido = $datosEnviados['idCambio'];
 
@@ -58,7 +58,7 @@ if(isset($tipoCambio)){
         <button class="botonConfirmar botonesCambios botonAzul">Confirmar Cambios</button>';
 
 
-    }elseif($tipoCambio == "fabricante"){
+    }else if($tipoCambio == "fabricante"){
 
         $objFabricante = Fabricante::obtenerFabricantePorId($idRecibido);
 
@@ -98,7 +98,7 @@ if(isset($tipoCambio)){
 
     }
 
-    // echo $contenedorCambios;
+
 }
 
 
