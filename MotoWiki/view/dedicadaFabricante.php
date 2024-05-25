@@ -9,8 +9,8 @@
         ?>
 
         <div class="presentacionMotocicleta">
-            <div class="contenedorImagenMotoMarca">
-                <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta" id="enlaceFabricante" data-src="<?= $Fabricante->__get("sitioWeb")?>">
+            <div class="contenedorImagenMotoMarca contenedorImagenMotoMarcaPresentacion">
+                <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta" id="enlaceFabricante" class="enlazado" data-src="<?= $Fabricante->__get("sitioWeb")?>">
             </div>
             
             <div class="datosPresentacion">
@@ -180,20 +180,12 @@
 
 
 <script>
-    document.getElementById("enlaceFabricante").addEventListener("click",(ev)=>{
+/*     document.getElementById("enlaceFabricante").addEventListener("click",(ev)=>{
         enlaceFabricante = ev.target.getAttribute("data-src");
 
         window.location.href=enlaceFabricante;
     })
+ */
 
-    
-    todosEnlaces =document.querySelectorAll("enlazado");
 
-    todosEnlaces.forEach(element => {
-        element.addEventListener("click",(ev)=>{
-
-            enlaceFabricante = ev.target.getAttribute("data-src");
-            window.location.href= enlaceFabricante;
-        })
-    });
 </script>

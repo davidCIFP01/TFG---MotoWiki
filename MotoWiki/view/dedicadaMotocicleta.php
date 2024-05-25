@@ -8,7 +8,7 @@
         }else{
         ?>
         <div class="presentacionMotocicleta">
-            <div class="contenedorImagenMotoMarca">
+            <div class="contenedorImagenMotoMarca contenedorImagenMotoMarcaPresentacion">
                 <img src="<?= $Motocicleta->__get("imagenMoto"); ?>" alt="fotoMotocicleta">
             </div>
             

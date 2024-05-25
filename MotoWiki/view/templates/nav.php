@@ -32,7 +32,9 @@
             <li class="Principales"><a href="./motocicleta.php">MOTOS</a></li>
             <li class="Principales"><a>GESTIÓN</a>
                 <ul>
+                <?php if($_SESSION['tipoUsuario'] == "admin"){?>
                     <li><a href="./gestionUsuarios.php">USUARIO</a></li>
+                <?php }?>
                     <li><a href="./gestionDatos.php">API</a></li>
                     <li><a href="./gestionLogs.php">LOGS</a></li>
                 </ul>

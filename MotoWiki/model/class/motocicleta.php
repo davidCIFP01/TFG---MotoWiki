@@ -251,7 +251,7 @@ class Motocicleta {
 
         $conexion = motowikiDB::conexionDB();
         $sql = "SELECT * FROM motocicleta ORDER BY fechaFabricacion $modo, idMoto DESC LIMIT 10";
-        print_r($sql);
+        // print_r($sql);
         $result = $conexion->query($sql);
         
         $motocicletas = [];
@@ -332,7 +332,7 @@ class Motocicleta {
             $tarjetas .= '<div class="tarjetaMotoMarca">
                             <div class="contenedorImagenMotoMarca">
                                 <i class="fa-regular fa-star"  ></i>
-                                <img src="'.$objetoMotoBucle->__get("imagenMoto").'" alt="fotoMotocicleta">
+                                <img src="'.$objetoMotoBucle->__get("imagenMoto").'" alt="fotoMotocicleta" data-src="./motocicleta.php?idMoto='.$objetoMotoBucle->__get("idMoto").'" onclick="redirigirEnlace(this)">
                             </div>
                             <a href="./motocicleta.php?idMoto='.$objetoMotoBucle->__get("idMoto").'"><h2>'.$objetoMotoBucle->__get("nombreModelo").'</h2></a>
                         </div>';

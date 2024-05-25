@@ -18,7 +18,7 @@ if(isset($datosEnviados['textoBusqueda']) && isset($datosEnviados['modo'])){
     $cadena = $datosEnviados['textoBusqueda'];
     $modo = $datosEnviados['modo'];
 
-    $sqlMotos  = "SELECT * FROM motocicleta WHERE idMoto LIKE '%$cadena%' OR nombreModelo LIKE '%$cadena%' ";
+    $sqlMotos  = "SELECT motocicleta.*,fabricante.nombreFabricante FROM motocicleta JOIN fabricante ON motocicleta.idFabricante = fabricante.idFabricante WHERE idMoto LIKE '%$cadena%' OR nombreModelo LIKE '%$cadena%' ";
 
     $sqlFabricantes = "SELECT * FROM fabricante WHERE idFabricante LIKE '%$cadena%' OR nombreFabricante LIKE '%$cadena%'";
 
@@ -43,7 +43,7 @@ if(isset($datosEnviados['textoBusqueda']) && isset($datosEnviados['modo'])){
 
     if(isset($result1)){
         while ($row = $result1->fetch_assoc()) {
-            $contenidoMostrado .= '<div class="resultadoBuscador" data-src="./motocicleta.php?idMoto='.$row['idMoto'].'">(ID: '.$row['idMoto'].') '.$row['nombreModelo'].'  ('.Fabricante::obtenerFabricantePorId($row['idFabricante'])->__get("nombreFabricante").')</div>';
+            $contenidoMostrado .= '<div class="resultadoBuscador" data-src="./motocicleta.php?idMoto='.$row['idMoto'].'">(ID: '.$row['idMoto'].') '.$row['nombreModelo'].'  ('.$row['nombreFabricante'].')</div>';
         }
     }
 
@@ -53,7 +53,13 @@ if(isset($datosEnviados['textoBusqueda']) && isset($datosEnviados['modo'])){
         }
     }
 
-    echo "$contenidoMostrado";
+    
+
+    if($contenidoMostrado == ""){
+        
+    }else{
+        echo "$contenidoMostrado";
+    }
     
     /* Estos resultados se devolverán por txt/json por un fetch en un div/datalist. */
 }
