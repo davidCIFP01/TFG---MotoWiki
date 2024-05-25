@@ -307,7 +307,7 @@ class Motocicleta {
         $sql = "SELECT * FROM favoritas WHERE idUsuario =$idUsuario AND $this->id";
         $result = $conexion->query($sql);
 
-        return ($result->num_rows >0) ? '<i class="fa-solid fa-star" data-idMoto="'.$this->id.'" ></i>' : '<i class="fa-regular fa-star"  data-idMoto="'.$this->id.'" ></i>' ;
+        return ($result->num_rows >0) ? '<i class="fa-solid fa-star" data-idMoto="'.$this->id.'" onclick="toggleFavorito(this)" ></i>' : '<i class="fa-regular fa-star"  data-idMoto="'.$this->id.'" onclick="toggleFavorito(this)></i>' ;
     }
 
 
@@ -332,7 +332,7 @@ class Motocicleta {
 
                 $tarjetas .= '<div class="tarjetaMotoMarca">
                                 <div class="contenedorImagenMotoMarca">
-                                    <i class="fa-regular fa-star"  ></i>
+                                    '.$objetoMotoBucle->comprobarFavoritasUsuario($_SESSION['idUser']).'
                                     <img src="'.$objetoMotoBucle->__get("imagenMoto").'" loading="lazy" alt="fotoMotocicleta" data-src="./motocicleta.php?idMoto='.$objetoMotoBucle->__get("idMoto").'" onclick="redirigirEnlace(this)">
                                 </div>
                                 <a href="./motocicleta.php?idMoto='.$objetoMotoBucle->__get("idMoto").'"><h2>'.$objetoMotoBucle->__get("nombreModelo").'</h2></a>

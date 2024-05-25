@@ -10,7 +10,7 @@ if(empty($_SESSION)){
     header("Location: ./registro-InicioSesion.php"); 
  }
 
- print_r($_SESSION);
+//  print_r($_SESSION);
 
 $titulo = "Perfil - MotoWiki";
 $css = "perfilUsuario.css";
