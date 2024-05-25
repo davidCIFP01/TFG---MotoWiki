@@ -103,14 +103,21 @@
     </section>
 </main>
 
+<script src="../view/assets/js/toggleFavorito.js"></script>
+<script src="../view/assets/js/funcionesRedireccion.js"></script>
+<script src="../view/assets/js/llamadaBuscador.js"></script>
 <script>
-    document.getElementById("botonFiltros").addEventListener("click",()=>{
-        divFiltros = document.getElementById("contenedorFiltrosMotos");
 
-        if(divFiltros.hasAttribute('hidden')){
-            divFiltros.removeAttribute('hidden');
-        } else {
-            divFiltros.setAttribute('hidden', '');
+    document.getElementById("inputBuscador").addEventListener("input",(ev)=>{
+        string = ev.target.value;
+        llamadaConsultaBusqueda("moto",string)
+
+        if(string == ""){
+            document.getElementById("contenedorResultados").hidden = true;
+        }else{
+            document.getElementById("contenedorResultados").hidden = false;
         }
+
     })
+    
 </script>

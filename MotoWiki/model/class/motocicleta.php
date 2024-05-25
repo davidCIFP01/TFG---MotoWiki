@@ -312,7 +312,7 @@ class Motocicleta {
 
 
     
-    public static function generarModulo($modo,$Fabricante = null,$objetoUsuario = null,$objetoMoto = null){
+    public static function generarModulo($modo,$Fabricante = null,$idUsuario = null,$objetoMoto = null){
         if (!in_array(strtolower($modo), ['populares', 'nuevas','baratas','favoritas','similares'])) {
             throw new InvalidArgumentException('El modo no es correcto.');
         }
@@ -321,22 +321,26 @@ class Motocicleta {
             "populares" => Motocicleta::obtenerPopulares($Fabricante),
             "nuevas" => Motocicleta::obtenerNuevas(),
             "baratas" => Motocicleta::obtenerPorPrecio("DESC"),
-            "favoritas" => ($objetoUsuario == null) ? "" : $objetoUsuario->obtenerTusFavoritas(),
-            "similares" => ($objetoMoto == null) ? "" : $objetoMoto->modelosSimilares()
+            "favoritas" => ($idUsuario == null) ? "" : Usuario::obtenerTusFavoritas($idUsuario),
+            "similares" => ($objetoMoto == null) ? "" : $objetoMoto->modelosSimilares(),
         };
         
         $tarjetas = "";
 
-        foreach ($motosModulo as $key => $objetoMotoBucle) {
+        if($motosModulo != "" && $motosModulo != false){
+            foreach ($motosModulo as $key => $objetoMotoBucle) {
 
-            $tarjetas .= '<div class="tarjetaMotoMarca">
-                            <div class="contenedorImagenMotoMarca">
-                                <i class="fa-regular fa-star"  ></i>
-                                <img src="'.$objetoMotoBucle->__get("imagenMoto").'" alt="fotoMotocicleta" data-src="./motocicleta.php?idMoto='.$objetoMotoBucle->__get("idMoto").'" onclick="redirigirEnlace(this)">
-                            </div>
-                            <a href="./motocicleta.php?idMoto='.$objetoMotoBucle->__get("idMoto").'"><h2>'.$objetoMotoBucle->__get("nombreModelo").'</h2></a>
-                        </div>';
-            
+                $tarjetas .= '<div class="tarjetaMotoMarca">
+                                <div class="contenedorImagenMotoMarca">
+                                    <i class="fa-regular fa-star"  ></i>
+                                    <img src="'.$objetoMotoBucle->__get("imagenMoto").'" loading="lazy" alt="fotoMotocicleta" data-src="./motocicleta.php?idMoto='.$objetoMotoBucle->__get("idMoto").'" onclick="redirigirEnlace(this)">
+                                </div>
+                                <a href="./motocicleta.php?idMoto='.$objetoMotoBucle->__get("idMoto").'"><h2>'.$objetoMotoBucle->__get("nombreModelo").'</h2></a>
+                            </div>';
+                
+            }
+        }else{
+            $tarjetas = "<h2>No hay motocicletas aún</h2>";
         }
 
         return $tarjetas;

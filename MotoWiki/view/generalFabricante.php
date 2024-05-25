@@ -105,12 +105,14 @@
 </main>
 
 
+<script src="../view/assets/js/toggleFavorito.js"></script>
+<script src="../view/assets/js/funcionesRedireccion.js"></script>
 <script src="../view/assets/js/llamadaBuscador.js"></script>
 <script>
 
     document.getElementById("inputBuscador").addEventListener("input",(ev)=>{
         string = ev.target.value;
-        llamadaConsultaBusqueda("ambas",string)
+        llamadaConsultaBusqueda("fabricante",string)
 
         if(string == ""){
             document.getElementById("contenedorResultados").hidden = true;
@@ -119,6 +121,5 @@
         }
 
     })
-
     
 </script>

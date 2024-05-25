@@ -96,12 +96,12 @@ class Usuario {
         session_destroy();
     }
 
-    public function obtenerTusFavoritas(){
+    public static function obtenerTusFavoritas($idUsuario){
         $conexion = motowikiDB::conexionDB();
 
         // $sql = "SELECT idMoto FROM favoritas WHERE idUsuario = $idUsuario";
 
-        $sql ="SELECT idMoto FROM favoritas WHERE idUsuario = $this->idUsuario";
+        $sql ="SELECT idMoto FROM favoritas WHERE idUsuario = $idUsuario";
         $result = $conexion->query($sql);
         
         if($result->num_rows > 0){

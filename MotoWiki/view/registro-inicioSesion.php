@@ -73,7 +73,7 @@
 
                     <div class="contenedorCampo contenedorCampoInicioSesion">
                         <span>Contraseña</span>
-                        <input type="text" class="campoRegistro" name="passwordInicio"  placeholder="Contraseña">
+                        <input type="password" class="campoRegistro" name="passwordInicio"  placeholder="Contraseña">
                     </div>
 
                     <button type="submit" name="iniciarSesion" class="botonAzul">INICIAR SESION</button>

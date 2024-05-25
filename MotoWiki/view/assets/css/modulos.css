@@ -57,6 +57,7 @@
     .tarjetaContenedorImagen>img{
         width: 100%;
         height: 100%;
+        background-color: white;
     }
     
     /* Parte Abajo Tarjeta */
@@ -179,6 +180,7 @@
         box-shadow: 0 7px 12px 0 var(--azulSecundario);
         border-radius: 20px;
         cursor: pointer;
+        background-color: white;
     }
     
     .tarjetaMotoMarca h2{

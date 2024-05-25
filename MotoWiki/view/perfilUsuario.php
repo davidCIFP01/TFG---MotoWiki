@@ -33,10 +33,10 @@
 
         <div class="contInfoTusDatos">
             <span>Fecha Nacimiento</span>
-            <p><?= $_SESSION['fechaNac']; ?></p>
+            <p><?= (isset($_SESSION['fechaNac'])) ? $_SESSION['fechaNac'] : "-"; ?></p>
         </div>
 
-        <button class="botonRojo btn1 enlazado" data-src="../AJAX/cerrarSesion.php">Cerrar Sesión</button>
+        <button class="botonRojo btn1 enlazado" data-src="../AJAX/cerrarSesion.php" onclick="redirigirEnlace(this)">Cerrar Sesión</button>
         <button class="botonAzul btn2">EDITAR DATOS</button>
 
     </div>
@@ -48,82 +48,9 @@
 
         <div class="contenedorTarjetas">
 
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <a href="#"><h2>YBR125</h2></a>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
+            <?= 
+                Motocicleta::generarModulo($modo="favoritas",$idUsuario = $_SESSION['idUser']);
+            ?>
 
         </div>
 
@@ -131,17 +58,20 @@
 
 </main>
 
-
+<script src="../view/assets/js/toggleFavorito.js"></script>
+<script src="../view/assets/js/funcionesRedireccion.js"></script>
+<script src="../view/assets/js/llamadaBuscador.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded",()=>{
-        todosEnlaces =document.querySelectorAll(".enlazado");
 
-        todosEnlaces.forEach(element => {
-            element.addEventListener("click",(ev)=>{
+    document.getElementById("inputBuscador").addEventListener("input",(ev)=>{
+        string = ev.target.value;
+        llamadaConsultaBusqueda("fabricante",string)
 
-                enlaceFabricante = ev.target.getAttribute("data-src");
-                window.location.href= enlaceFabricante;
-            })
-        });
+        if(string == ""){
+            document.getElementById("contenedorResultados").hidden = true;
+        }else{
+            document.getElementById("contenedorResultados").hidden = false;
+        }
+
     })
 </script>

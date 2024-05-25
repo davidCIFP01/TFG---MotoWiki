@@ -32,7 +32,7 @@
             <li class="Principales"><a href="./motocicleta.php">MOTOS</a></li>
             <li class="Principales"><a>GESTIÓN</a>
                 <ul>
-                <?php if($_SESSION['tipoUsuario'] == "admin"){?>
+                <?php if(!empty($_SESSION) && ($_SESSION['tipoUsuario'] == "admin" )){?>
                     <li><a href="./gestionUsuarios.php">USUARIO</a></li>
                 <?php }?>
                     <li><a href="./gestionDatos.php">API</a></li>
@@ -49,10 +49,14 @@
 
 <nav class="barraNavegadoraMobile">
     
-        <div class="contenedorIconosNavMobile enlazado" data-src="./perfilUsuario.php" ><i class="fa-regular fa-user"></i></div>
-        <div class="contenedorIconosNavMobile enlazado" data-src="./fabricante.php" ><i class="fa-solid fa-city"></i></div>
-        <div class="contenedorIconosNavMobile enlazado" data-src="./motocicleta.php" ><i class="fa-solid fa-motorcycle"></i></div>
-        <!-- <div class="contenedorIconosNavMobile enlazado" data-src="" ><i class="fa-solid fa-gears"></i></div> -->
+        <div class="contenedorIconosNavMobile enlazado" data-src="./perfilUsuario.php" onclick="redirigirEnlace(this)"><i class="fa-regular fa-user" data-src="./perfilUsuario.php" onclick="redirigirEnlace(this)"></i></div>
+        <div class="contenedorIconosNavMobile enlazado" data-src="./fabricante.php" onclick="redirigirEnlace(this)"><i class="fa-solid fa-city" data-src="./fabricante.php" onclick="redirigirEnlace(this)"></i></div>
+        <div class="contenedorIconosNavMobile enlazado" data-src="./motocicleta.php" onclick="redirigirEnlace(this)"><i class="fa-solid fa-motorcycle" data-src="./motocicleta.php" onclick="redirigirEnlace(this)"></i></div>
+        
+        <?php if(!empty($_SESSION) && ($_SESSION['tipoUsuario'] == "admin" || $_SESSION['tipoUsuario'] == "colab")){ ?>
+            <div class="contenedorIconosNavMobile enlazado" data-src="./gestionMobile.php" onclick="redirigirEnlace(this)"><i class="fa-solid fa-gears" data-src="./gestionMobile.php" onclick="redirigirEnlace(this)"></i></div>
+        <?php }?>
+            
 </nav>
 
 

@@ -18,9 +18,9 @@ if(isset($datosEnviados['textoBusqueda']) && isset($datosEnviados['modo'])){
     $cadena = $datosEnviados['textoBusqueda'];
     $modo = $datosEnviados['modo'];
 
-    $sqlMotos  = "SELECT motocicleta.*,fabricante.nombreFabricante FROM motocicleta JOIN fabricante ON motocicleta.idFabricante = fabricante.idFabricante WHERE idMoto LIKE '%$cadena%' OR nombreModelo LIKE '%$cadena%' ";
+    $sqlMotos  = "SELECT motocicleta.*,fabricante.nombreFabricante FROM motocicleta JOIN fabricante ON motocicleta.idFabricante = fabricante.idFabricante WHERE idMoto LIKE '%$cadena%' OR nombreModelo LIKE '%$cadena%' LIMIT 10";
 
-    $sqlFabricantes = "SELECT * FROM fabricante WHERE idFabricante LIKE '%$cadena%' OR nombreFabricante LIKE '%$cadena%'";
+    $sqlFabricantes = "SELECT * FROM fabricante WHERE idFabricante LIKE '%$cadena%' OR nombreFabricante LIKE '%$cadena%' LIMIT 10";
 
     $contenidoMostrado= "";
 
