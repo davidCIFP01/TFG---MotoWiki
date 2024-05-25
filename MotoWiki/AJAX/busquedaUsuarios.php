@@ -34,8 +34,8 @@ if( isset($datosEnviados['textoBusqueda']) ){
         '   <div class="tarjetaCambiosUsuario">
                 <span class="spanID">( ID: '.$row['idUsuario'].' )</span>
                 <span class="spanUsername">'.$row['username'].'</span>
-                <select class="">
-                    <option value="'.$row['tipoUsuario'].'" hidden disabled>'.
+                <select class="selectUsuario" data-idUser="'.$row['idUsuario'].'">
+                    <option value="'.$row['tipoUsuario'].'" hidden disabled selected>'.
                         
                         match ($row['tipoUsuario']) {
                             "user"=> "Usuario",

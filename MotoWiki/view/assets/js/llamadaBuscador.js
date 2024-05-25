@@ -49,6 +49,6 @@ function llamadaConsultaUsuarios(string){
 
         document.getElementById("contenedorUsuarios").innerHTML =responseData
 
-        /* Creamos divs y los metemos en el contenedor de Resultados. */
+        cambiarPermisos();
     })
 }

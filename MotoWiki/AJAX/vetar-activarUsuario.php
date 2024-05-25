@@ -3,8 +3,6 @@
 require_once("../model/class/motowikiDB.php");
 require_once("../model/class/usuario.php");
 
-session_start();
-
 $datosEnviados = json_decode(file_get_contents('php://input'),true);
 
 $idUsuario = $datosEnviados['idUsuario'];

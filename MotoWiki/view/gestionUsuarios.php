@@ -15,6 +15,8 @@
 <script src="../view/assets/js/toggleFavorito.js"></script>
 <script src="../view/assets/js/toggleVetado.js"></script>
 
+<script src="../view/assets/js/cambiarPermisos.js"></script>
+
 <script src="../view/assets/js/funcionesRedireccion.js"></script>
 <script src="../view/assets/js/llamadaBuscador.js"></script>
 <script>
@@ -28,7 +30,7 @@
         }else{
             document.getElementById("contenedorUsuarios").hidden = false;
         }
-
+        
     })
     
 </script>
