@@ -304,20 +304,25 @@ class Motocicleta {
 
     public function comprobarFavoritasUsuario($idUsuario){
         $conexion = motowikiDB::conexionDB();
-        $sql = "SELECT * FROM favoritas WHERE idUsuario =$idUsuario AND $this->id";
+        $sql = "SELECT * FROM favoritas WHERE idUsuario = $idUsuario AND idMoto = $this->idMoto";
         $result = $conexion->query($sql);
 
-        return ($result->num_rows >0) ? '<i class="fa-solid fa-star" data-idMoto="'.$this->id.'" onclick="toggleFavorito(this)" ></i>' : '<i class="fa-regular fa-star"  data-idMoto="'.$this->id.'" onclick="toggleFavorito(this)></i>' ;
+        return ($result->num_rows >0) ? '<i class="fa-solid fa-star" data-idMoto="'.$this->idMoto.'" onclick="toggleFavorito(this)" > </i>' : '<i class="fa-regular fa-star"  data-idMoto="'.$this->idMoto.'" onclick="toggleFavorito(this)" > </i>' ;
     }
 
 
     
     public static function generarModulo($modo,$Fabricante = null,$idUsuario = null,$objetoMoto = null){
+        
         if (!in_array(strtolower($modo), ['populares', 'nuevas','baratas','favoritas','similares'])) {
             throw new InvalidArgumentException('El modo no es correcto.');
         }
 
-        $motosModulo=match ($modo) {
+        $idUsuario = $_SESSION['idUser'];
+
+        // print_r($modo);
+
+        $motosModulo = match ($modo) {
             "populares" => Motocicleta::obtenerPopulares($Fabricante),
             "nuevas" => Motocicleta::obtenerNuevas(),
             "baratas" => Motocicleta::obtenerPorPrecio("DESC"),
@@ -326,6 +331,8 @@ class Motocicleta {
         };
         
         $tarjetas = "";
+
+        // print_r($motosModulo);
 
         if($motosModulo != "" && $motosModulo != false){
             foreach ($motosModulo as $key => $objetoMotoBucle) {

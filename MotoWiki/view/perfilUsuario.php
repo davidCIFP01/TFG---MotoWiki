@@ -49,7 +49,7 @@
         <div class="contenedorTarjetas">
 
             <?= 
-                Motocicleta::generarModulo($modo="favoritas",$idUsuario = $_SESSION['idUser']);
+                Motocicleta::generarModulo( $modo="favoritas");
             ?>
 
         </div>
