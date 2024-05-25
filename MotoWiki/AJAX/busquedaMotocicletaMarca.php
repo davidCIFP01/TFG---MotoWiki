@@ -43,13 +43,13 @@ if(isset($datosEnviados['textoBusqueda']) && isset($datosEnviados['modo'])){
 
     if(isset($result1)){
         while ($row = $result1->fetch_assoc()) {
-            $contenidoMostrado .= '<div class="resultadoBuscador" data-src="./motocicleta.php?idMoto='.$row['idMoto'].'">(ID: '.$row['idMoto'].') '.$row['nombreModelo'].'  ('.$row['nombreFabricante'].')</div>';
+            $contenidoMostrado .= '<div class="resultadoBuscador" data-src="./motocicleta.php?idMoto='.$row['idMoto'].'" onclick="redirigirEnlace(this)">(ID: '.$row['idMoto'].') '.$row['nombreModelo'].'  ('.$row['nombreFabricante'].')</div>';
         }
     }
 
     if(isset($result2)){
         while ($row = $result2->fetch_assoc()) {
-            $contenidoMostrado .='<div class="resultadoBuscador" data-src="./fabricante.php?idFabricante='.$row['idFabricante'].'">(ID: '.$row['idFabricante'].') '.$row['nombreFabricante'].'</div>';
+            $contenidoMostrado .='<div class="resultadoBuscador" data-src="./fabricante.php?idFabricante='.$row['idFabricante'].'" onclick="redirigirEnlace(this)">(ID: '.$row['idFabricante'].') '.$row['nombreFabricante'].'</div>';
         }
     }
 
