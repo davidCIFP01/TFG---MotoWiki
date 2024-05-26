@@ -20,6 +20,7 @@
 </main>
 
 <script src="../view/assets/js/toggleFavorito.js"></script>
+<script src="../view/assets/js/toggleSuspendido.js"></script>
 <script src="../view/assets/js/funcionesRedireccion.js"></script>
 <script src="../view/assets/js/llamadaBuscador.js"></script>
 <script>

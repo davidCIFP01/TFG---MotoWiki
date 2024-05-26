@@ -103,6 +103,7 @@ function crearRecuadrosGestionDatos(modo,idCambio){
     .then(responseData =>{
         console.log(responseData)
 
+        document.getElementById("contenedorResultados").hidden = true;
         document.getElementById("contenedorCambios").hidden = false;
         document.getElementById("contenedorCambios").innerHTML =responseData
 

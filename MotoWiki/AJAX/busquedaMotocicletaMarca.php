@@ -46,13 +46,13 @@ if(isset($datosEnviados['textoBusqueda']) && isset($datosEnviados['modo'])){
     if(isset($datosEnviados['gestionDatos']) && $datosEnviados['gestionDatos'] == true){
         if(isset($result1)){
             while ($row = $result1->fetch_assoc()) {
-                $contenidoMostrado .= '<div class="resultadoBuscador" onclick="buscadorSinEnlacesGestionDatos(`moto`,`'.$row['idMoto'].'`)">(ID: '.$row['idMoto'].') '.$row['nombreModelo'].'  ('.$row['nombreFabricante'].')</div>';
+                $contenidoMostrado .= '<div class="resultadoBuscador" onclick="crearRecuadrosGestionDatos(`moto`,`'.$row['idMoto'].'`)">(ID: '.$row['idMoto'].') '.$row['nombreModelo'].'  ('.$row['nombreFabricante'].')</div>';
             }
         }
     
         if(isset($result2)){
             while ($row = $result2->fetch_assoc()) {
-                $contenidoMostrado .='<div class="resultadoBuscador" onclick="buscadorSinEnlacesGestionDatos(`fabricante`,`'.$row['idFabricante'].'`)">(ID: '.$row['idFabricante'].') '.$row['nombreFabricante'].'</div>';
+                $contenidoMostrado .='<div class="resultadoBuscador" onclick="crearRecuadrosGestionDatos(`fabricante`,`'.$row['idFabricante'].'`)">(ID: '.$row['idFabricante'].') '.$row['nombreFabricante'].'</div>';
             }
         }
     }else{

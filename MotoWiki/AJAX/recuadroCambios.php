@@ -13,92 +13,183 @@ $tipoCambio = $datosEnviados['modo'];
 
 $idRecibido = $datosEnviados['idCambio'];
 
-if(isset($tipoCambio)){
+
+if( isset($tipoCambio) ){
     if($tipoCambio == "moto"){
 
         $objMoto = Motocicleta::obtenerPorId($idRecibido);
 
+        // print_r($objMoto);
+
         $contenedorCambios = '
-        <form>
+        <form id="formularioDatos" >
             <div class="contenedorImagenCambio">
-                <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="">
+                <img src="'.$objMoto->__get("imagenMoto").'" alt="imagenMoto">
             </div>
 
             <div class="contenedorCambioDatos">
-                <label for="">NOMBRE FABRICANTE: </label> <input type="text" name="" id="" placeholder="INPUT DATO">
+                <label for="">NOMBRE MOTO: </label> <input type="text" name="nombreMoto" id="nombreMoto" placeholder="Nombre Motocicleta" value="'.$objMoto->__get("nombreModelo").'">
             </div>
 
             <div class="contenedorCambioDatos">
-                <label for="">DATO: </label> <input type="text" name="" id="" placeholder="INPUT DATO">
+                <label for="">TIPO DE MOTO: </label> 
+                <input type="text" name="tipoMoto" id="tipoMoto" placeholder="Tipo de Motocicleta" value="'.$objMoto->__get("tipoMoto").'">';  
+
+        $contenedorCambios .= '
+                </input>
+            </div> 
+            
+            <div class="contenedorCambioDatos">
+                <label for="">CILINDRADA: </label> <input type="number" step="1" max="3000" min="1" name="cilindradaMoto" id="cilindradaMoto" placeholder="Cilindrada" value="'.$objMoto->__get("cilindrada").'">
             </div>
 
             <div class="contenedorCambioDatos">
-                <label for="">DATO: </label> <input type="text" name="" id="" placeholder="INPUT DATO">
+                <label for="">POTENCIA (CV): </label> <input type="number" step="1" max="3000" min="1" name="potencia1" id="potencia1" placeholder="Cilindrada (CV)" value="'.$objMoto->__get("potencia1").'">
+            </div>
+            
+            <div class="contenedorCambioDatos">
+                <label for="">POTENCIA (KW): </label> <input type="number" step="1" max="3000" min="1" name="potencia2" id="potencia2" placeholder="Cilindrada (KW)" value="'.$objMoto->__get("potencia2").'">
             </div>
 
             <div class="contenedorCambioDatos">
-                <label for="">DATO: </label> <input type="date"  name="" id="" placeholder="INPUT DATO">
+                <label for="">REFRIGERACIÓN: </label> <input type="text" name="refrigeracion" id="refrigeracion" placeholder="Refrigeracion" value="'.$objMoto->__get("refrigeracion").'">
+            </div>
+
+            <div class="contenedorCambioDatos">
+                <label for="">Tipo Motor: </label> <input type="text" name="tipoMotor" id="tipoMotor" placeholder="Tipo Motor" value="'.$objMoto->__get("tipoMotor").'">
+            </div>
+
+            <div class="contenedorCambioDatos">
+                <label for="">Marchas: </label> <input type="text" name="marchas" id="marchas" placeholder="Marchas" value="'.$objMoto->__get("marchas").'">
+            </div>
+
+            <div class="contenedorCambioDatos">
+                <label for="">Transmisión: </label> <input type="text" name="transmision" id="transmision" placeholder="Transmisión" value="'.$objMoto->__get("transmision").'">
+            </div>
+
+            <div class="contenedorCambioDatos">
+                <label for="">Capacidad: </label> <input type="number" step="0.01" name="capacidad" id="capacidad" placeholder="Capacidad" value="'.$objMoto->__get("capacidad").'">
+            </div>
+
+            <div class="contenedorCambioDatos">
+                <label for="">Arranque: </label> <input type="text" name="arranque" id="arranque" placeholder="Arranque" value="'.$objMoto->__get("arranque").'">
+            </div>
+
+            <div class="contenedorCambioDatos">
+                <label for="">TAG: </label> <input type="text" name="tag" id="tag" placeholder="TAG" value="'.$objMoto->__get("tag").'">
+            </div>
+            
+            <div class="contenedorCambioDatos">
+                <label for="">Tipo Carnet: </label> <input type="text" name="tipoCarnet" id="tipoCarnet" placeholder="Tipo Carnet" value="'.$objMoto->__get("tipoCarnet").'">
+            </div>
+
+            <div class="contenedorCambioDatos">
+                <label for="">Precio Minimo: </label> <input type="number" name="precioMin" id="precioMin" placeholder="Precio Minimo" value="'.$objMoto->__get("precioMin").'">
+            </div>
+
+            <div class="contenedorCambioDatos">
+                <label for="">Precio Maximo: </label> <input type="number" name="precioMax" id="precioMax" placeholder="Precio Maximo" value="'.$objMoto->__get("precioMax").'">
+            </div>
+
+            <div class="contenedorCambioDatos">
+                <label for="">Altura: </label> <input type="number" name="altura" id="altura" placeholder="Altura" value="'.$objMoto->__get("altura").'">
+            </div>
+
+            <div class="contenedorCambioDatos">
+                <label for="">Peso: </label> <input type="number" name="peso" id="peso" placeholder="Peso" value="'.$objMoto->__get("peso").'">
+            </div>
+            
+            <div class="contenedorCambioDatos">
+                <label for="">Fabricante: </label> 
+                <select name="fabricante" class="" id="peso" placeholder="Fabricante">
+                    <option disabled selected hidden value="'.$objMoto->__get("idFabricante").'">'.Fabricante::obtenerFabricantePorId($objMoto->__get("idFabricante"))->__get("nombreFabricante").'</option>
+            ';
+
+            foreach(Fabricante::obtenerTodosFabricantes() as $clave=>$Fabricante){
+
+                $contenedorCambios .= '<option value="'.$Fabricante->__get("idFabricante").'">'.$Fabricante->__get("nombreFabricante").'</option>';
+            }
+
+            $contenedorCambios .='
+                </select>
+            </div>
+            <div class="contenedorCambioDatos">
+                <label for="">FECHA FABRICACIÓN: </label> <input type="date"  name="fechaFabricacion" id="yearFabricacion" placeholder="INPUT DATO" value="'.$objMoto->__get("fechaFabricacion").'">
             </div>
 
             <div class="contenedorDescripciones">
                 <div class="textareaContainer">
                     <p>DESCRIPCION 1</p>
-                    <textarea name="" id=""></textarea>
-                </div>
-                
-                <div class="textareaContainer">
-                    <p>DESCRIPCION 2</p>
-                    <textarea name="" id=""></textarea>
+                    <textarea name="descripcionMoto" id="descripcionMoto">'.$objMoto->__get("descripcion").'</textarea>
                 </div>
             </div>
         </form>
 
-        <button class="botonBorrar botonesCambios botonRojo">Borrar Motocicleta</button>
-        <button class="botonSuspender botonesCambios botonNaranja">Suspender Motocicleta</button>
-        <button class="botonConfirmar botonesCambios botonAzul">Confirmar Cambios</button>';
+        <button class="botonBorrar botonesCambios botonRojo" id="botonBorrarMotocicleta" >Borrar Motocicleta</button> ';
+
+       $contenedorCambios .= ($objMoto->__get("suspendida")) 
+        ? '<button class="botonSuspender botonesCambios botonAzul" id="botonActivar" onclick=toggleSuspendido(`'.$objMoto->__get("idMoto").'`,`activar`,`moto`)   >Activar Motocicleta</button> <button class="botonSuspender botonesCambios botonNaranja" id="botonSuspender" onclick=toggleSuspendido(`'.$objMoto->__get("idMoto").'`,`suspender`,`moto`)  hidden>Suspender Motocicleta</button>'
+        : '<button class="botonSuspender botonesCambios botonAzul" id="botonActivar" onclick=toggleSuspendido(`'.$objMoto->__get("idMoto").'`,`activar`,`moto`)   hidden>Activar Motocicleta</button> <button class="botonSuspender botonesCambios botonNaranja" id="botonSuspender" onclick=toggleSuspendido(`'.$objMoto->__get("idMoto").'`,`suspender`,`moto`)   >Suspender Motocicleta</button>';
+
+        $contenedorCambios .= '<button class="botonConfirmar botonesCambios botonAzul" id="botonConfirmarCambios" >Confirmar Cambios</button>';
 
 
     }else if($tipoCambio == "fabricante"){
 
         $objFabricante = Fabricante::obtenerFabricantePorId($idRecibido);
 
+        // print_r($objFabricante);
+
         $contenedorCambios = '
-        <form>
+        <form id="formularioDatos" >
             <div class="contenedorImagenCambio">
-            <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="">
+            <img src="'.$objFabricante->__get("imagenFabricante").'" alt="">
             </div>
 
             <div class="contenedorCambioDatos">
-                <label for="">NOMBRE MOTOCICLETA: </label> <input type="text" name="" id="" placeholder="INPUT DATO">
+                <label for="">Nombre Fabricante: </label> <input type="text" name="nombreFabricante" id="nombreFabricante" placeholder="Nombre Fabricante" value="'.$objFabricante->__get("nombreFabricante").'">
             </div>
 
             <div class="contenedorCambioDatos">
-                <label for="">DATO</label> <input type="text" name="" id="" placeholder="INPUT DATO">
+                <label for="">Pais Origen</label> <input type="text" name="paisOrigen" id="paisOrigen" placeholder="Pais Origen" value="'.$objFabricante->__get("paisOrigen").'">
             </div>
 
             <div class="contenedorCambioDatos">
-                <label for="">DATO</label> <input type="text" name="" id="" placeholder="INPUT DATO">
+                <label for="">Fecha Fundada</label> <input type="number" name="fechaFundada" id="fechaFundada" placeholder="Fecha Fundada" value="'.$objFabricante->__get("fechaFundada").'">
             </div>
 
             <div class="contenedorCambioDatos">
-                <label for="">DATO</label> <input type="text" name="" id="" placeholder="INPUT DATO">
+                <label for="">Sitio Web</label> <input type="text" name="sitioWeb" id="sitioWeb" placeholder="Sitio Web" value="'.$objFabricante->__get("sitioWeb").'">
             </div>
 
             <div class="contenedorDescripciones">
                 <div class="textareaContainer">
                     <p>DESCRIPCION 1</p>
-                    <textarea name="" id=""></textarea>
+                    <textarea name="descripcionFabricante1" id="descripcionFabricante1">'.$objFabricante->__get("descripcion1").'</textarea>
+                </div>
+
+                <div class="textareaContainer">
+                    <p>DESCRIPCION 2</p>
+                    <textarea name="descripcionFabricante2" id="descripcionFabricante2">'.$objFabricante->__get("descripcion2").'</textarea>
                 </div>
             </div>
         </form>
 
-        <button class="botonBorrar botonesCambios botonRojo">Borrar Motocicleta</button>
-        <button class="botonSuspender botonesCambios botonNaranja">Suspender Motocicleta</button>
-        <button class="botonConfirmar botonesCambios botonAzul">Confirmar Cambios</button>';
+        <button class="botonBorrar botonesCambios botonRojo" id="botonBorrarFabricante">Borrar Fabricante</button>';
+
+        $contenedorCambios .= ($objFabricante->__get("suspendido")) 
+        ? '<button class="botonSuspender botonesCambios botonAzul" id="botonActivar" onclick=toggleSuspendido(`'.$objMoto->__get("idMoto").'`,`activar`,`fabricante`) >Activar Fabricante</button> <button class="botonSuspender botonesCambios botonNaranja" id="botonSuspender" onclick=toggleSuspendido(`'.$objMoto->__get("idMoto").'`,`suspender`,`fabricante`) hidden >Suspender Fabricante</button>' 
+        : '<button class="botonSuspender botonesCambios botonAzul" id="botonActivar" onclick=toggleSuspendido(`'.$objMoto->__get("idMoto").'`,`activar`,`fabricante`) hidden>Activar Fabricante</button> <button class="botonSuspender botonesCambios botonNaranja" id="botonSuspender" onclick=toggleSuspendido(`'.$objMoto->__get("idMoto").'`,`suspender`,`fabricante`)  >Suspender Fabricante</button>';
+        
+        $contenedorCambios .= '<button class="botonConfirmar botonesCambios botonAzul" id="botonConfirmarCambiosFabricante">Confirmar Cambios</button>';
+
+    }else if($tipoCambio == "nuevaMoto"){
+
+    }else if($tipoCambio == "nuevoFabricante"){
 
     }
 
-
+    echo $contenedorCambios;
 }
 
 
@@ -106,6 +197,3 @@ if(isset($tipoCambio)){
 
 
 ?>
-
-
-

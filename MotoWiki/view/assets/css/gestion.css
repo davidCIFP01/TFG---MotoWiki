@@ -18,6 +18,9 @@ h1{
 
 /* PARTE GESTION FABRICANTES / MOTOCICLETAS */
 
+
+
+
 .contenedorCambios{
     position: relative;
     margin-top: 50px;
@@ -171,16 +174,27 @@ h1{
     margin-left: 15px;
 }
 
-select{ 
-    padding: 5px 10px;
-    /* margin-top: 10px; */
-    
-    border: 1px solid var(--colorTexto);
+select{
+    font-family: "Racing Sans One", sans-serif;
+    color: var(--colorTexto);
+    font-weight: 700;
+    padding: 10px;
+    font-size: 1.2rem;
+    min-width: 200px;
+
+    border: 2px solid #a9b1cb;
+    width: 300px;
+    position: absolute;
+    right: 50px;
+    margin-top: 0px;
+    margin-left: 20px;
+
+    padding: 10px 10px;
     border-radius: 5px;
 
     color: var(--colorTexto);
     font-weight: 700;
-    font-style: italic;
+    font-style: italic; 
 }
 
 

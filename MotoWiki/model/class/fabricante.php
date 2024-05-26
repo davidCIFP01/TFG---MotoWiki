@@ -55,7 +55,7 @@ class Fabricante{
                 $result['sitioWeb'],
                 $result['descripcion1'],
                 $result['descripcion2'],
-                $result['imagenFabricante'],
+                ($result['imagenFabricante'] == null ) ? "../view/assets/images/motocicleta/default_motocicleta.jpg" : $result['imagenFabricante'],
                 $result['suspendido']
             );
             
