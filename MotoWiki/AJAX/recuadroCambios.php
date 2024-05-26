@@ -23,8 +23,12 @@ if( isset($tipoCambio) ){
 
         $contenedorCambios = '
         <form id="formularioDatos" >
+            <input type="hidden" name="modoCambios" value="moto">
+            <input type="hidden" name="idCambio" value="'.$objMoto->__get("idMoto").'">
+
             <div class="contenedorImagenCambio">
                 <img src="'.$objMoto->__get("imagenMoto").'" alt="imagenMoto">
+                <input type="file" name="" id="" hidden>
             </div>
 
             <div class="contenedorCambioDatos">
@@ -142,8 +146,12 @@ if( isset($tipoCambio) ){
 
         $contenedorCambios = '
         <form id="formularioDatos" >
+            <input type="hidden" name="modoCambios" value="fabricante">
+            <input type="hidden" name="idCambio" value="'.$objFabricante->__get("idFabricante").'">
+
             <div class="contenedorImagenCambio">
             <img src="'.$objFabricante->__get("imagenFabricante").'" alt="">
+            <input type="file" name="" id="" hidden>
             </div>
 
             <div class="contenedorCambioDatos">
@@ -178,10 +186,10 @@ if( isset($tipoCambio) ){
         <button class="botonBorrar botonesCambios botonRojo" id="botonBorrarFabricante">Borrar Fabricante</button>';
 
         $contenedorCambios .= ($objFabricante->__get("suspendido")) 
-        ? '<button class="botonSuspender botonesCambios botonAzul" id="botonActivar" onclick=toggleSuspendido(`'.$objMoto->__get("idMoto").'`,`activar`,`fabricante`) >Activar Fabricante</button> <button class="botonSuspender botonesCambios botonNaranja" id="botonSuspender" onclick=toggleSuspendido(`'.$objMoto->__get("idMoto").'`,`suspender`,`fabricante`) hidden >Suspender Fabricante</button>' 
-        : '<button class="botonSuspender botonesCambios botonAzul" id="botonActivar" onclick=toggleSuspendido(`'.$objMoto->__get("idMoto").'`,`activar`,`fabricante`) hidden>Activar Fabricante</button> <button class="botonSuspender botonesCambios botonNaranja" id="botonSuspender" onclick=toggleSuspendido(`'.$objMoto->__get("idMoto").'`,`suspender`,`fabricante`)  >Suspender Fabricante</button>';
+        ? '<button class="botonSuspender botonesCambios botonAzul" id="botonActivar" onclick=toggleSuspendido(`'.$objFabricante->__get("idFabricante").'`,`activar`,`fabricante`) >Activar Fabricante</button> <button class="botonSuspender botonesCambios botonNaranja" id="botonSuspender" onclick=toggleSuspendido(`'.$objMoto->__get("idMoto").'`,`suspender`,`fabricante`) hidden >Suspender Fabricante</button>' 
+        : '<button class="botonSuspender botonesCambios botonAzul" id="botonActivar" onclick=toggleSuspendido(`'.$objFabricante->__get("idFabricante").'`,`activar`,`fabricante`) hidden>Activar Fabricante</button> <button class="botonSuspender botonesCambios botonNaranja" id="botonSuspender" onclick=toggleSuspendido(`'.$objMoto->__get("idMoto").'`,`suspender`,`fabricante`)  >Suspender Fabricante</button>';
         
-        $contenedorCambios .= '<button class="botonConfirmar botonesCambios botonAzul" id="botonConfirmarCambiosFabricante">Confirmar Cambios</button>';
+        $contenedorCambios .= '<button class="botonConfirmar botonesCambios botonAzul"  id="botonConfirmarCambiosFabricante">Confirmar Cambios</button>';
 
     }else if($tipoCambio == "nuevaMoto"){
 

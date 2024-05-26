@@ -107,5 +107,24 @@ function crearRecuadrosGestionDatos(modo,idCambio){
         document.getElementById("contenedorCambios").hidden = false;
         document.getElementById("contenedorCambios").innerHTML =responseData
 
+        
+        document.getElementById("botonConfirmarCambios").addEventListener("click",(ev)=>{
+            formulario=document.getElementById("formularioDatos");
+    
+            formData = new FormData(formulario);
+    
+            fetch("../AJAX/confirmarCambios.php",{
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log('Éxito:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        })
+
     })
 }
