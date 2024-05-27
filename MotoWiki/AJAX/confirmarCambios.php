@@ -26,6 +26,18 @@ if($modo == "fabricante"){
 
 }else if($modo == "moto"){
 
+    if(isset($_FILES['cambioImagen']) && $_FILES['cambioImagen']['error'] == 0){
+       
+        $directorioDestino = '../view/assets/images/motocicleta/';
+        $nombreArchivo = basename($_FILES['cambioImagen']['name']);
+        $rutaArchivo = $directorioDestino . $nombreArchivo;
+
+        if(move_uploaded_file($_FILES['cambioImagen']['tmp_name'], $rutaArchivo)){
+            $sql = "UPDATE motocicleta SET imagenMoto = '$rutaArchivo' WHERE idMoto = $idCambiar";
+            $conexion->query($sql);
+        }
+    }
+
     $nombreModelo = (!isset($_POST['nombreMoto']) || $_POST['nombreMoto'] == "") ? "NULL" : "'" . $conexion->real_escape_string($_POST['nombreMoto']) . "'";
     $fechaFabricacion = (!isset($_POST['fechaFabricacion']) || $_POST['fechaFabricacion'] == "") ? "NULL" : $conexion->real_escape_string($_POST['fechaFabricacion']);
     $tipoMoto = (!isset($_POST['tipoMoto']) || $_POST['tipoMoto'] == "") ? "NULL" : "'" . $conexion->real_escape_string($_POST['tipoMoto']) . "'";
