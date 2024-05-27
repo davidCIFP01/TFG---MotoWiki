@@ -19,188 +19,23 @@
                     <td>NOMBRE</td>
                     <td>CAMBIO</td>
                     <td>TIPO CAMBIO</td>
-                    <td>OBJETIVO</td>
                     <td>FECHA CAMBIO</td>
                 </tr>
 
-                <tr>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                </tr>
-                
-                <tr>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATOajcbsibuacbasouicbioasbciosabiocbaiosbiobaiocbisbcioabsiocaiu scbauis bcuasbcu abscbais b cbsauc b coanscbaijsbcjba subcuas bucbausbcoabscba sobihu husiacui asuciashuchaischioashcio ashichiashciash hcioa hciah hsiohcasi hci ashiochasiohcioashicihas</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                </tr>
+                <?php 
 
-                <tr>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                </tr>
-
-                <tr>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                </tr>
-
-                <tr>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                </tr>
-
-                <tr>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                </tr>
-
-                <tr>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                </tr>
-
-                <tr>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                </tr>
-
-                <tr>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                </tr>
-
-                <tr>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                </tr>
-
-                <tr>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                </tr>
-
-                <tr>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                </tr>
-
-                <tr>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                </tr>
-
-                <tr>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                </tr>
-
-                <tr>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                </tr>
-
-                <tr>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                </tr>
-
-                <tr>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                </tr>
-                <tr>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                </tr>
-
-                <tr>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                </tr>
-
-                <tr>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                    <td>DATO</td>
-                </tr>
+                foreach ( ( $todosRegistros ? Registro::recogerTodosRegistros() : Registro::recogerUltimosRegistros() ) as $key => $objRegistro) {
+                    echo 
+                    '<tr>
+                        <td>'.$objRegistro->__get("idUsuario").'</td>
+                        <td>'.Usuario::obtenerNombreUsuarioPorId($objRegistro->__get("idUsuario")).'</td>
+                        <td>'.$objRegistro->__get("descripcionCambios").'</td>
+                        <td>'.$objRegistro->__get("tipoCambio").'</td>
+                        <td>'.$objRegistro->__get("fechaCambio").'</td>
+                    </tr>';
+                }
+            
+                ?>
             </table>
         </div>
     </div>

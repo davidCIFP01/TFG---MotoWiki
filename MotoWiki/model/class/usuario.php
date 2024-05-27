@@ -56,6 +56,17 @@ class Usuario {
         
         $conexion->query($sql);
     }
+ 
+
+    public static function obtenerNombreUsuarioPorId($id){
+        $conexion = MotowikiDB::conexionDB();
+
+        $sql = "SELECT username FROM usuario WHERE idUsuario = $id ";
+
+        $result = $conexion->query($sql)->fetch_assoc();
+
+        return $result['username'];
+    }
 
     public static function iniciarSesion(){
         $conexion = motowikiDB::conexionDB();
