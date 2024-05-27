@@ -59,6 +59,7 @@ h1{
 .contenedorImagenCambio>img{
     width: 30%;
 
+    cursor: pointer;
     box-shadow: 0 7px 12px 0 var(--naranjaPrimario);
     border-radius: 20px;
 

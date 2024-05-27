@@ -85,23 +85,23 @@
                 </tr>
 
                 <tr>
-                    <td><?= $Motocicleta->__get("idMoto");?></td>
-                    <td><?= $Motocicleta->__get("nombreModelo");?></td>
-                    <td><?= $Motocicleta->__get("fechaFabricacion");?></td>
-                    <td><?= $Motocicleta->__get("tipoMoto");?></td>
-                    <td><?= $Motocicleta->__get("cilindrada");?></td>
-                    <td><?= $Motocicleta->__get("potencia1");?></td>
-                    <td><?= $Motocicleta->__get("potencia2");?></td>
-                    <td><?= $Motocicleta->__get("refrigeracion")?></td>
-                    <td><?= $Motocicleta->__get("tipoMotor")?></td>
-                    <td><?= $Motocicleta->__get("marchas");?></td>
-                    <td><?= $Motocicleta->__get("transmision");?></td>
-                    <td><?= $Motocicleta->__get("capacidad");?></td>
-                    <td><?= $Motocicleta->__get("arranque");?></td>
-                    <td><?= $Motocicleta->__get("tipoCarnet");?></td>
+                    <td><?=  ( $Motocicleta->__get("idMoto") == null) ? "-" : $Motocicleta->__get("idMoto"); ?></td>
+                    <td><?=  ( $Motocicleta->__get("nombreModelo") == null) ? "-" : $Motocicleta->__get("nombreModelo"); ?></td>
+                    <td><?=  ( $Motocicleta->__get("fechaFabricacion") == null) ? "-" : $Motocicleta->__get("fechaFabricacion"); ?></td>
+                    <td><?=  ( $Motocicleta->__get("tipoMoto") == null) ? "-" : $Motocicleta->__get("tipoMoto"); ?></td>
+                    <td><?=  ( $Motocicleta->__get("cilindrada") == null) ? "-" : $Motocicleta->__get("cilindrada"); ?></td>
+                    <td><?=  ( $Motocicleta->__get("potencia1") == null) ? "-" : $Motocicleta->__get("potencia1"); ?></td>
+                    <td><?=  ( $Motocicleta->__get("potencia2") == null) ? "-" : $Motocicleta->__get("potencia2"); ?></td>
+                    <td><?=  ( $Motocicleta->__get("refrigeracion") == null) ? "-" : $Motocicleta->__get("refrigeracion"); ?></td>
+                    <td><?=  ( $Motocicleta->__get("tipoMotor") == null) ? "-" : $Motocicleta->__get("tipoMotor"); ?></td>
+                    <td><?=  ( $Motocicleta->__get("marchas") == null) ? "-" : (($Motocicleta->__get("marchas") == 0) ? "Automatic" : $Motocicleta->__get("marchas")); ?></td>
+                    <td><?=  ( $Motocicleta->__get("transmision") == null) ? "-" : $Motocicleta->__get("transmision"); ?></td>
+                    <td><?=  ( $Motocicleta->__get("capacidad") == null) ? "-" : $Motocicleta->__get("capacidad"); ?></td>
+                    <td><?=  ( $Motocicleta->__get("arranque") == null) ? "-" : $Motocicleta->__get("arranque"); ?></td>
+                    <td><?=  ( $Motocicleta->__get("tipoCarnet") == null) ? "-" : $Motocicleta->__get("tipoCarnet"); ?></td>
                     <td> - </td>
-                    <td><?= $Motocicleta->__get("altura");?> mm</td>
-                    <td><?= $Motocicleta->__get("peso");?> KG</td>
+                    <td><?=  ( $Motocicleta->__get("altura") == null) ? "-" : $Motocicleta->__get("altura"); ?> mm</td>
+                    <td><?=  ( $Motocicleta->__get("peso") == null) ? "-" : $Motocicleta->__get("peso"); ?> KG</td>
                 </tr>
             </table>
         </div>

@@ -27,8 +27,8 @@ if( isset($tipoCambio) ){
             <input type="hidden" name="idCambio" value="'.$objMoto->__get("idMoto").'">
 
             <div class="contenedorImagenCambio">
-                <img src="'.$objMoto->__get("imagenMoto").'" alt="imagenMoto">
-                <input type="file" name="" id="" hidden>
+                <img src="'.$objMoto->__get("imagenMoto").'" alt="imagenMoto" id="ImagenActual">
+                <input type="file" name="cambioImagen" id="cambioImagen" hidden>
             </div>
 
             <div class="contenedorCambioDatos">
@@ -105,8 +105,8 @@ if( isset($tipoCambio) ){
             
             <div class="contenedorCambioDatos">
                 <label for="">Fabricante: </label> 
-                <select name="fabricante" class="" id="peso" placeholder="Fabricante">
-                    <option disabled selected hidden value="'.$objMoto->__get("idFabricante").'">'.Fabricante::obtenerFabricantePorId($objMoto->__get("idFabricante"))->__get("nombreFabricante").'</option>
+                <select name="idFabricante" class="" id="idFabricante" placeholder="Fabricante">
+                    <option selected hidden value="'.$objMoto->__get("idFabricante").'">'.Fabricante::obtenerFabricantePorId($objMoto->__get("idFabricante"))->__get("nombreFabricante").'</option>
             ';
 
             foreach(Fabricante::obtenerTodosFabricantes() as $clave=>$Fabricante){

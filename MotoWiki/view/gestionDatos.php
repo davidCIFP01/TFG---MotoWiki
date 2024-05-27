@@ -3,7 +3,7 @@
 
     <div class="search-box">
         <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="search" id="inputBuscador" placeholder="Busqueda por Fabricante">
+        <input type="search" id="inputBuscador" placeholder="Busqueda por Fabricante / Motocicleta">
 
         <div class="contenedorResultados" id="contenedorResultados" hidden>
             
@@ -23,6 +23,7 @@
 <script src="../view/assets/js/toggleSuspendido.js"></script>
 <script src="../view/assets/js/funcionesRedireccion.js"></script>
 <script src="../view/assets/js/llamadaBuscador.js"></script>
+<script src="../view/assets/js/cambioImagen.js"></script>
 <script>
 
     document.getElementById("inputBuscador").addEventListener("input",(ev)=>{

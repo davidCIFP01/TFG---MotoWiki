@@ -107,6 +107,8 @@ function crearRecuadrosGestionDatos(modo,idCambio){
         document.getElementById("contenedorCambios").hidden = false;
         document.getElementById("contenedorCambios").innerHTML =responseData
 
+        crearListenerCambioImagen()
+
         
         document.getElementById("botonConfirmarCambios").addEventListener("click",(ev)=>{
             formulario=document.getElementById("formularioDatos");
@@ -119,7 +121,9 @@ function crearRecuadrosGestionDatos(modo,idCambio){
             })
             .then(response => response.text())
             .then(data => {
-                console.log('Éxito:', data);
+                console.log(data);
+
+                
             })
             .catch((error) => {
                 console.error('Error:', error);
