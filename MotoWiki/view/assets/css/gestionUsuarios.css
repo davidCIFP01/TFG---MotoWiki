@@ -1,0 +1,209 @@
+
+
+.mainGestion{
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    font-size: 2.5rem;
+}
+
+.search-box{
+    margin-top: 20px;
+}
+
+
+/* PARTE GESTION FABRICANTES / MOTOCICLETAS */
+
+
+
+
+.contenedorCambios{
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    padding: 30px;
+    width: 900px;
+    min-height: 300px;
+    background-color: white;
+
+    box-shadow: 0 7px 12px 0 #17acbd;
+    border-radius: 20px;
+    
+    
+    font-family: "Inter",sans-serif;
+    font-weight: 700;
+    font-style: italic;
+
+/*     display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+
+.contenedorCambios>form{
+    width: 100%;
+    /* height: 100%; */
+}
+
+.contenedorImagenCambio{
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.contenedorImagenCambio>img{
+    width: 30%;
+
+    box-shadow: 0 7px 12px 0 var(--naranjaPrimario);
+    border-radius: 20px;
+
+}
+
+.contenedorCambioDatos{
+    margin: 40px auto;
+    width: 70%;
+
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.contenedorCambioDatos>label{}
+
+.contenedorCambioDatos>input{
+    border: 2px solid #a9b1cb;
+    width: 300px;
+    position: absolute;
+    right: 50px;
+    margin-top: 0px;
+    /* margin-left: 20px; */
+
+
+    padding: 10px 10px;
+    border-radius: 5px;
+
+    color: var(--colorTexto);
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+.contenedorDescripciones{
+    margin: 30px auto;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.textareaContainer{
+
+}
+
+.textareaContainer>p{
+    font-size: 0.8rem;
+}
+
+.textareaContainer>textarea{
+    width: 275px;
+    height: 75px;
+    padding: 10px;
+    resize: none;
+    
+    font-family: "Inter",sans-serif;
+    font-weight: 500;
+    
+}
+
+.botonesCambios{
+    font-family: "Inter",sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0px;
+}
+
+.botonConfirmar{
+    position: absolute;
+    right: 30px;
+}
+
+
+
+
+
+/* PARTE GESTION USUARIO */
+
+.contenedorUsuarios{
+    /* margin-top: 40px; */
+}
+
+.tarjetaCambiosUsuario{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    min-width: 800px;
+    background-color: white;
+    padding: 10px 20px;
+    /* border: 2px solid var(--naranjaPrimario); */
+    box-shadow: 0 7px 12px 0 var(--naranjaPrimario);
+    border-radius: 10px;
+
+    position: relative;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.spanID{
+    font-family: "Inter",sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+
+    color: var(--colorTexto);
+    font-style: italic;
+}
+
+.spanUsername{
+    font-size: 1.5rem;
+    margin-left: 15px;
+}
+
+select{
+    /* font-family: "Racing Sans One", sans-serif; */
+    color: var(--colorTexto);
+    font-weight: 700;
+    padding: 5px;
+    font-size: 1.2rem;
+    min-width: 200px;
+
+    border: 2px solid #a9b1cb;
+    /* width: 300px; */
+/*     position: absolute;
+    right: 50px; */
+    margin-top: 0px;
+    margin-left: 20px;
+    border-radius: 5px;
+
+    color: var(--colorTexto);
+    font-weight: 700;
+    font-style: italic; 
+}
+
+
+
+
+.contenedorBotonesUsuario{
+/*     display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right:20px;
+    top: 10px; */
+
+}

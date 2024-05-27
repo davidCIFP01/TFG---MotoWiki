@@ -9,7 +9,7 @@ session_start();
 
 
 $titulo = "Inicio - MotoWiki";
-$css = "gestion.css";
+$css = "gestionDatos.css";
 
 
 
