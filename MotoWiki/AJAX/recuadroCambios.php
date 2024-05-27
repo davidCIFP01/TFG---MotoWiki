@@ -150,8 +150,8 @@ if( isset($tipoCambio) ){
             <input type="hidden" name="idCambio" value="'.$objFabricante->__get("idFabricante").'">
 
             <div class="contenedorImagenCambio">
-            <img src="'.$objFabricante->__get("imagenFabricante").'" alt="">
-            <input type="file" name="" id="" hidden>
+                <img src="'.$objFabricante->__get("imagenFabricante").'"  alt="imagenMoto" id="ImagenActual">
+                <input type="file" name="cambioImagen" id="cambioImagen" hidden>
             </div>
 
             <div class="contenedorCambioDatos">
@@ -189,7 +189,7 @@ if( isset($tipoCambio) ){
         ? '<button class="botonSuspender botonesCambios botonAzul" id="botonActivar" onclick=toggleSuspendido(`'.$objFabricante->__get("idFabricante").'`,`activar`,`fabricante`) >Activar Fabricante</button> <button class="botonSuspender botonesCambios botonNaranja" id="botonSuspender" onclick=toggleSuspendido(`'.$objFabricante->__get("idFabricante").'`,`suspender`,`fabricante`) hidden >Suspender Fabricante</button>' 
         : '<button class="botonSuspender botonesCambios botonAzul" id="botonActivar" onclick=toggleSuspendido(`'.$objFabricante->__get("idFabricante").'`,`activar`,`fabricante`) hidden>Activar Fabricante</button> <button class="botonSuspender botonesCambios botonNaranja" id="botonSuspender" onclick=toggleSuspendido(`'.$objFabricante->__get("idFabricante").'`,`suspender`,`fabricante`)  >Suspender Fabricante</button>';
         
-        $contenedorCambios .= '<button class="botonConfirmar botonesCambios botonAzul"  id="botonConfirmarCambiosFabricante">Confirmar Cambios</button>';
+        $contenedorCambios .= '<button class="botonConfirmar botonesCambios botonAzul"  id="botonConfirmarCambios">Confirmar Cambios</button>';
 
     }else if($tipoCambio == "nuevaMoto"){
 

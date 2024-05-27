@@ -17,12 +17,36 @@ $conexion = MotowikiDB::conexionDB();
 
 if($modo == "fabricante"){
 
+    if(isset($_FILES['cambioImagen']) && $_FILES['cambioImagen']['error'] == 0){
+       
+        $directorioDestino = '../view/assets/images/fabricante/';
+        $nombreArchivo = basename($_FILES['cambioImagen']['name']);
+        $rutaArchivo = $directorioDestino . $nombreArchivo;
+
+        if(move_uploaded_file($_FILES['cambioImagen']['tmp_name'], $rutaArchivo)){
+            $sql = "UPDATE fabricante SET imagenFabricante = '$rutaArchivo' WHERE idFabricante = $idCambiar";
+            $conexion->query($sql);
+        }
+    }
+
+    $nombreFabricante = (!isset($_POST['nombreFabricante']) || $_POST['nombreFabricante'] == "") ? "NULL" : "'" . $conexion->real_escape_string($_POST['nombreFabricante']) . "'";
+    $paisOrigen = (!isset($_POST['paisOrigen']) || $_POST['paisOrigen'] == "") ? "NULL" : "'" . $conexion->real_escape_string($_POST['paisOrigen']) . "'";
+    $fechaFundada = (!isset($_POST['fechaFundada']) || $_POST['fechaFundada'] == "") ? "NULL" : "'" . $conexion->real_escape_string($_POST['fechaFundada']) . "'";
+    $sitioWeb = (!isset($_POST['sitioWeb']) || $_POST['sitioWeb'] == "") ? "NULL" : "'" . $conexion->real_escape_string($_POST['sitioWeb']) . "'";
+    $descripcion1 = (!isset($_POST['descripcionFabricante1']) || $_POST['descripcionFabricante1'] == "") ? "NULL" : "'" . $conexion->real_escape_string($_POST['descripcionFabricante1']) . "'";
+    $descripcion2 = (!isset($_POST['descripcionFabricante2']) || $_POST['descripcionFabricante2'] == "") ? "NULL" : "'" . $conexion->real_escape_string($_POST['descripcionFabricante2']) . "'";
+
     $sql = "UPDATE fabricante SET
+            nombreFabricante = $nombreFabricante,
+            paisOrigen = $paisOrigen,
+            fechaFundada = $fechaFundada,
+            sitioWeb = $sitioWeb,
+            descripcion1 = $descripcion1,
+            descripcion2 = $descripcion2
+            WHERE idFabricante = $idCambiar";
 
-    
-    
-    WHERE idFabricante = $idCambiar";
-
+    print_r($sql);
+    $result = $conexion->query($sql);
 
 }else if($modo == "moto"){
 
@@ -84,11 +108,11 @@ if($modo == "fabricante"){
 
     $result = $conexion->query($sql);
 
-    if($result->num_rows > 0){
+/*     if($result->num_rows > 0){
         echo true;
     }else{
         echo false;
-    }
+    } */
 }
 
 
