@@ -45,8 +45,12 @@ if($modo == "fabricante"){
             descripcion2 = $descripcion2
             WHERE idFabricante = $idCambiar";
 
+    $sqlRegistro = "INSERT INTO cambiosRegistro (fechaCambio, tipoCambio, descripcionCambios, idUsuario)
+    VALUES ('".date('Y-m-d H:i:s')."', 'DATOS - FABRICANTE', 'Se han modificado los datos del Fabricante: ".$idCambiar."', ".$_SESSION['idUser'].");";
+
     print_r($sql);
     $result = $conexion->query($sql);
+    $conexion->query($sqlRegistro);
 
 }else if($modo == "moto"){
 
@@ -104,6 +108,9 @@ if($modo == "fabricante"){
     idFabricante = $idFabricante
     WHERE idMoto = $idCambiar";
     
+    $sqlRegistro = "INSERT INTO cambiosRegistro (fechaCambio, tipoCambio, descripcionCambios, idUsuario)
+    VALUES ('".date('Y-m-d H:i:s')."', 'DATOS - MOTO', 'Se han modificado los datos de la Motocicleta: ".$idCambiar."', ".$_SESSION['idUser'].");";
+
     print_r($sql);
 
     $result = $conexion->query($sql);

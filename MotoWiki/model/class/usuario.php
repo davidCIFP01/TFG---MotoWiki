@@ -54,7 +54,12 @@ class Usuario {
             false,
             'user')";
         
-        $conexion->query($sql);
+            $conexion->query($sql);
+
+            /* $sqlRegistro = "INSERT INTO cambiosRegistro (fechaCambio, tipoCambio, descripcionCambios, idUsuario)
+            VALUES ('".date('Y-m-d H:i:s')."', 'REGISTRO USUARIO', 'Se ha registrado un nuevo usuario: ".."','-');"; */
+
+
     }
  
 

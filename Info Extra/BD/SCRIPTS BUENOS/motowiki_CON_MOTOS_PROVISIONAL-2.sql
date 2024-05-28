@@ -353,7 +353,7 @@ CREATE TABLE `ofertas` (
 
 CREATE TABLE `registros` (
   `idRegistro` int(11) NOT NULL,
-  `fechaCambio` date NOT NULL,
+  `fechaCambio` datetime NOT NULL,
   `tipoCambio` enum('usuario','moto','fabricante') COLLATE utf8mb4_spanish2_ci NOT NULL,
   `descripcionCambios` varchar(150) COLLATE utf8mb4_spanish2_ci NOT NULL,
   `idUsuario` int(11) NOT NULL

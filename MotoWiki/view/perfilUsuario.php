@@ -17,18 +17,19 @@
         </div>
 
         <div class="contInfoTusDatos">
+            <span>Tipo de Usuario</span>
+            <p><?= $_SESSION['tipoUsuario']; ?></p>
+        </div>
+
+        <div class="contInfoTusDatos">
             <span>Nombre</span>
             <p><?= $_SESSION['nombre'];?></p>
+
         </div>
 
         <div class="contInfoTusDatos">
             <span>Apellidos</span>
             <p><?= $_SESSION['ap1']." ".$_SESSION['ap2'];?></p>
-        </div>
-
-        <div class="contInfoTusDatos">
-            <span>Tipo de Usuario</span>
-            <p><?= $_SESSION['tipoUsuario']; ?></p>
         </div>
 
         <div class="contInfoTusDatos">

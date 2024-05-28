@@ -73,7 +73,7 @@
         <div class="contenedorIconosNavMobile enlazado" data-src="./motocicleta.php" onclick="redirigirEnlace(this)"><i class="fa-solid fa-motorcycle" data-src="./motocicleta.php" onclick="redirigirEnlace(this)"></i></div>
         
         <?php if(!empty($_SESSION) && ($_SESSION['tipoUsuario'] == "admin" || $_SESSION['tipoUsuario'] == "colab")){ ?>
-            <div class="contenedorIconosNavMobile enlazado" data-src="./gestionMobile.php" onclick="redirigirEnlace(this)"><i class="fa-solid fa-gears" data-src="./gestionMobile.php" onclick="redirigirEnlace(this)"></i></div>
+            <!-- <div class="contenedorIconosNavMobile enlazado" data-src="./gestionMobile.php" onclick="redirigirEnlace(this)"><i class="fa-solid fa-gears" data-src="./gestionMobile.php" onclick="redirigirEnlace(this)"></i></div> -->
         <?php }?>
             
 </nav>
