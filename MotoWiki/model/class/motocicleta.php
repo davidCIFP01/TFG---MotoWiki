@@ -280,7 +280,8 @@ class Motocicleta {
     /* Esta función está pensada para paginar todos los resultados que vayan saliendo en TODAS MOTOCICLETAS (No incluye filtros) */
     public static function obtenerMotosPaginadas($cantidadMotos,$paginacion) : array {
         $conexion = motowikiDB::conexionDB();
-        $sql = "SELECT * FROM motocicleta ORDER BY popularidad DESC LIMIT $paginacion*$cantidadMotos,$cantidadMotos";
+        $offset = $paginacion*$cantidadMotos;
+        $sql = "SELECT * FROM motocicleta ORDER BY popularidad DESC,idMoto DESC LIMIT $offset,$cantidadMotos";
         $result = $conexion->query($sql);
         
         $motocicletas = [];
@@ -366,43 +367,6 @@ class Motocicleta {
         
     }
     
-
-        // Insertar nueva motocicleta en la base de datos
-/*     public function insertar() {
-        $db = motowikiDB::conexionDB();
-        $query = "INSERT INTO motocicleta (nombreModelo, fechaFabricacion, tipoMoto, cilindrada, potencia1, potencia2, refrigeracion, tipoMotor, marchas, transmision, capacidad, arranque, tag, tipoCarnet, popularidad, precioMin, precioMax, descripcion, imagenMoto, suspendida, idFabricante, altura, peso)
-                  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        $stmt = $db->prepare($query);
-        $stmt->bind_param("ssiisiisssssssisddssiiii", $this->nombreModelo, $this->fechaFabricacion, $this->tipoMoto, $this->cilindrada, $this->potencia1, $this->potencia2, $this->refrigeracion, $this->tipoMotor, $this->marchas, $this->transmision, $this->capacidad, $this->arranque, $this->tag, $this->tipoCarnet, $this->popularidad, $this->precioMin, $this->precioMax, $this->descripcion, $this->imagenMoto, $this->suspendida, $this->idFabricante, $this->altura, $this->peso);
-        $stmt->execute();
-        $this->idMoto = $db->insert_id;
-        $stmt->close();
-        $db->close();
-    } */
-
-
-    // Actualizar una motocicleta existente
-/*     public function actualizar() {
-        $db = motowikiDB::conexionDB();
-        $query = "UPDATE motocicleta SET nombreModelo = ?, fechaFabricacion = ?, tipoMoto = ?, cilindrada = ?, potencia1 = ?, potencia2 = ?, refrigeracion = ?, tipoMotor = ?, marchas = ?, transmision = ?, capacidad = ?, arranque = ?, tag = ?, tipoCarnet = ?, popularidad = ?, precioMin = ?, precioMax = ?, descripcion = ?, imagenMoto = ?, suspendida = ?, idFabricante = ?, altura = ?, peso = ? WHERE idMoto = ?";
-        $stmt = $db->prepare($query);
-        $stmt->bind_param("ssiisiisssssssisddssiiii", $this->nombreModelo, $this->fechaFabricacion, $this->tipoMoto, $this->cilindrada, $this->potencia1, $this->potencia2, $this->refrigeracion, $this->tipoMotor, $this->marchas, $this->transmision, $this->capacidad, $this->arranque, $this->tag, $this->tipoCarnet, $this->popularidad, $this->precioMin, $this->precioMax, $this->descripcion, $this->imagenMoto, $this->suspendida, $this->idFabricante, $this->altura, $this->peso, $this->idMoto);
-        $stmt->execute();
-        $stmt->close();
-        $db->close();
-    } */
-
-    // Eliminar una motocicleta por su ID
-/*     public static function eliminar($idMoto) {
-        $db = motowikiDB::conexionDB();
-        $query = "DELETE FROM motocicleta WHERE idMoto = ?";
-        $stmt = $db->prepare($query);
-        $stmt->bind_param("i", $idMoto);
-        $stmt->execute();
-        $stmt->close();
-        $db->close();
-    }
- */
 }
 
 

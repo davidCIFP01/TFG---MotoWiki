@@ -69,6 +69,16 @@ hr{ /* Estilos base en estilos.css */
 }
 
 
+.contenedorBotonesPaginacion{
+    width: 250px;
+    margin: 50px auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
 @media screen and (max-width:1200px) {
 
     .sectionBuscador>span{

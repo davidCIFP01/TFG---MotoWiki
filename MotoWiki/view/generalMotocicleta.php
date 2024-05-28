@@ -25,15 +25,16 @@
 
     <section class="contenidoGeneral" id="contenedorGeneral">
             
-        <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <a href="#"><h2>YBR125</h2></a>
-            </div>
+
 
 
     </section>
+    
+    <div class="contenedorBotonesPaginacion">
+        <button class="botonAzul" id="botonAntes"> < </button>
+        <p id="parrafoPaginacion"> 0 </p>
+        <button class="botonAzul" id="botonDespues"> > </button>
+    </div>
 </main>
 
 <script src="../view/assets/js/toggleFavorito.js"></script>
@@ -56,7 +57,64 @@
 </script>
 
 <script>
-    function generarModulosPaginados(cantidadMotos,paginacion){
-        
-    }
+    paginacion = 0;   
+    cantidadMotos = 10;
+
+    document.getElementById("botonAntes").addEventListener("click",(ev)=>{
+        paginacion--;
+        if(paginacion<1){
+            paginacion = 1;
+        }
+
+        const data = {
+            paginacion: paginacion,
+            cantidad: cantidadMotos
+        };
+
+        fetch('../AJAX/generarTarjetasPaginadas.php', {
+            method: 'POST', // o 'GET' si prefieres enviar los datos como parámetros de URL
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data) // Convertir los datos a formato JSON
+        })
+        .then(response => response.text()) // Asumimos que el servidor devuelve JSON
+        .then(data => {
+            console.log(data);
+            document.getElementById("contenedorGeneral").innerHTML = data;
+            document.getElementById("parrafoPaginacion").innerHTML = paginacion;
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    })
+
+    document.getElementById("botonDespues").addEventListener("click",(ev)=>{
+        paginacion++;
+
+        const data = {
+            paginacion: paginacion,
+            cantidad: cantidadMotos
+        };
+        fetch('../AJAX/generarTarjetasPaginadas.php', {
+            method: 'POST', // o 'GET' si prefieres enviar los datos como parámetros de URL
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data) // Convertir los datos a formato JSON
+        })
+        .then(response => response.text()) // Asumimos que el servidor devuelve JSON
+        .then(data => {
+            console.log(data);
+            document.getElementById("contenedorGeneral").innerHTML = data;
+
+            document.getElementById("parrafoPaginacion").innerHTML = paginacion;
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+
+    })
+
+    document.getElementById("botonDespues").click();
 </script>
