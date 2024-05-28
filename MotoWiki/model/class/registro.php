@@ -44,9 +44,13 @@ class Registro {
     }
 
 
-    public static function recogerTodosRegistros(){
+    public static function recogerTodosRegistros($idUsuario = null){
         $conexion = MotowikiDB::conexionDB();
         $sql = "SELECT * FROM registros ORDER BY idRegistro DESC";
+
+        if(isset($idUsuario)){
+            $sql = "SELECT * FROM registros WHERE idUsuario = $idUsuario ORDER BY idRegistro DESC";
+        }
 
         
         $objetosRegistros = [];
