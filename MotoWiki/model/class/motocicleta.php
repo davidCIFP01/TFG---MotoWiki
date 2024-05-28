@@ -89,14 +89,13 @@ class Motocicleta {
                     "Cross / motocross" => "../view/assets/images/motocicleta/default_super_motard.jpg",
                     "Sport" => "../view/assets/images/motocicleta/default_motocicleta.jpg",
                     "Scooter" => "../view/assets/images/motocicleta/default_scooter.png",
-                    "Allround" => "",
+                    "Allround" => "../view/assets/images/motocicleta/default_motocicleta.jpg",
                     "Naked bike" => "../view/assets/images/motocicleta/default_naked.avif",
                     "Custom / cruiser" => "../view/assets/images/motocicleta/default_custom.jpg",
                     "Touring" => "../view/assets/images/motocicleta/default_sport_touring.webp",
                     "Trial" => "../view/assets/images/motocicleta/default_trial.jpg",
                     "Classic" => "../view/assets/images/motocicleta/default_classic.avif",
-                    "Minibike" => "../view/assets/images/motocicleta/default_super_motard.jpg",
-                    "cross" => "../view/assets/images/motocicleta/default_super_motard.jpg",
+                    "Minibike, cross" => "../view/assets/images/motocicleta/default_super_motard.jpg",
                     default => "../view/assets/images/motocicleta/default_motocicleta.jpg"
                 };
             }
@@ -151,7 +150,7 @@ class Motocicleta {
         $conexion = motowikiDB::conexionDB();
 
         if($tag != null ){
-            $sql = "SELECT idMoto FROM motocicleta WHERE tag = $tag";
+            $sql = "SELECT idMoto FROM motocicleta WHERE tag = '$tag'";
             $result = $conexion->query($sql);
 
             if($result->num_rows>0){
@@ -236,7 +235,7 @@ class Motocicleta {
 
     public function modelosSimilares() : array {
         $conexion = motowikiDB::conexionDB();
-        $sql = "SELECT * FROM motocicleta WHERE tipoMoto = $this->tipoMoto AND cilindrada BETWEEN $this->cilindrada-30 AND $this->cilindrada+30 ORDER BY idMoto DESC LIMIT 10";
+        $sql = "SELECT * FROM motocicleta WHERE tipoMoto = '$this->tipoMoto' AND cilindrada BETWEEN ($this->cilindrada-30) AND ($this->cilindrada+30) ORDER BY idMoto DESC LIMIT 10";
         $result = $conexion->query($sql);
         
         $motocicletas = [];
@@ -333,10 +332,11 @@ class Motocicleta {
         $idUsuario = $_SESSION['idUser'];
 
         // print_r($modo);
+        // print_r($objetoMoto);
 
         $motosModulo = match ($modo) {
-            "populares" => Motocicleta::obtenerPopulares($idFabricante = $Fabricante),
-            "nuevas" => Motocicleta::obtenerNuevas($idFabricante = $Fabricante),
+            "populares" => Motocicleta::obtenerPopulares(isset($Fabricante) ? $idFabricante = $Fabricante : $idFabricante = null),
+            "nuevas" => Motocicleta::obtenerNuevas(isset($Fabricante) ? $idFabricante = $Fabricante : $idFabricante = null),
             "baratas" => Motocicleta::obtenerPorPrecio("DESC",$Fabricante),
             "favoritas" => ($idUsuario == null) ? "" : Usuario::obtenerTusFavoritas($idUsuario),
             "similares" => ($objetoMoto == null) ? "" : $objetoMoto->modelosSimilares(),

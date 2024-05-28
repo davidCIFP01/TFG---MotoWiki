@@ -79,14 +79,21 @@
     <?php } ?>
 </main>
 
-
+<script src="../view/assets/js/toggleFavorito.js"></script>
+<script src="../view/assets/js/funcionesRedireccion.js"></script>
+<script src="../view/assets/js/llamadaBuscador.js"></script>
 <script>
-/*     document.getElementById("enlaceFabricante").addEventListener("click",(ev)=>{
-        enlaceFabricante = ev.target.getAttribute("data-src");
 
-        window.location.href=enlaceFabricante;
+    document.getElementById("inputBuscador").addEventListener("input",(ev)=>{
+        string = ev.target.value;
+        llamadaConsultaBusqueda("fabricante",string)
+
+        if(string == ""){
+            document.getElementById("contenedorResultados").hidden = true;
+        }else{
+            document.getElementById("contenedorResultados").hidden = false;
+        }
+
     })
- */
-
-
+    
 </script>

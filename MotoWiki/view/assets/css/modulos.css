@@ -193,6 +193,7 @@
         color: var(--colorTexto);
         /* line-height: 100%; */
         text-wrap: nowrap;
+        padding: 10px;
         max-width: 250px;
         overflow: auto;
     }

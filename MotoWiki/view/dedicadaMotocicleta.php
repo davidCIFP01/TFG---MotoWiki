@@ -35,7 +35,7 @@
                     ?>
                         
                     <div class="variantesMoto">
-                        <select>
+                        <select id="selectVariantes" >
                             <?php
                             echo '<option value="" selected hidden >VARIANTES DEL MODELO</option>';
                             foreach($variantes as $key=>$moto){
@@ -115,40 +115,7 @@
 
         <div class="contenedorTarjetas">
 
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <a href="#"><h2>YBR125</h2></a>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
+        <?= Motocicleta::generarModulo("nuevas")?>
 
         </div>
 
@@ -160,86 +127,54 @@
 
         <div class="contenedorTarjetas">
 
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <a href="#"><h2>YBR125</h2></a>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
+        <?= Motocicleta::generarModulo("populares")?>
 
         </div>
     </section>
 
     <section class="moduloHorizontal">
-        <h2>Más Baratas</h2>
+        <h2>Modelos Similares</h2>
         <hr>
 
         <div class="contenedorTarjetas">
 
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <a href="#"><h2>YBR125</h2></a>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
+        <?= 
+        Motocicleta::generarModulo("similares",null,null,$Motocicleta) ?>             
 
         </div>
     </section>
     <?php } ?>
 </main>
+
+
+
+<script src="../view/assets/js/toggleFavorito.js"></script>
+<script src="../view/assets/js/funcionesRedireccion.js"></script>
+<script src="../view/assets/js/llamadaBuscador.js"></script>
+<script>
+
+/*     document.getElementById("inputBuscador").addEventListener("input",(ev)=>{
+        string = ev.target.value;
+        llamadaConsultaBusqueda("fabricante",string)
+
+        if(string == ""){
+            document.getElementById("contenedorResultados").hidden = true;
+        }else{
+            document.getElementById("contenedorResultados").hidden = false;
+        }
+
+    }) */
+    
+
+    document.getElementById("selectVariantes").addEventListener("change",(ev)=>{
+        let idMoto=ev.target.value;
+
+        console.log(idMoto)
+
+        if(idMoto != ""){
+            window.location.href = "./motocicleta.php?idMoto="+idMoto;
+        }
+    })
+
+
+</script>
