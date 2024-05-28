@@ -146,6 +146,19 @@
         </div>
     </section>
     <?php } ?>
+
+
+    <div class="popUpOfertas" id="popUpOfertas" >
+        <div class="contenedorOfertas">
+            <div class="botonCerrarPopUpOfertas" id="botonCerrarPopUpOfertas">X</div>
+            <h2>Ofertas de la Moto</h2>
+            <div class="divInternoOferta">
+
+            </div>
+        </div>
+    </div>
+
+
 </main>
 
 
@@ -153,29 +166,27 @@
 <script src="../view/assets/js/toggleFavorito.js"></script>
 <script src="../view/assets/js/funcionesRedireccion.js"></script>
 <script src="../view/assets/js/llamadaBuscador.js"></script>
-<script>
+<script async>
 
-/*     document.getElementById("inputBuscador").addEventListener("input",(ev)=>{
-        string = ev.target.value;
-        llamadaConsultaBusqueda("fabricante",string)
+    if(document.getElementById("selectVariantes")){
 
-        if(string == ""){
-            document.getElementById("contenedorResultados").hidden = true;
-        }else{
-            document.getElementById("contenedorResultados").hidden = false;
-        }
+        document.getElementById("selectVariantes").addEventListener("change",(ev)=>{
+            let idMoto=ev.target.value;
 
-    }) */
-    
+            console.log(idMoto)
 
-    document.getElementById("selectVariantes").addEventListener("change",(ev)=>{
-        let idMoto=ev.target.value;
+            if(idMoto != ""){
+                window.location.href = "./motocicleta.php?idMoto="+idMoto;
+            }
+        })
+    }
 
-        console.log(idMoto)
+    document.getElementById("verOfertas").addEventListener("click",(ev)=>{
+        document.getElementById("popUpOfertas").style.display = "flex";
+    })
 
-        if(idMoto != ""){
-            window.location.href = "./motocicleta.php?idMoto="+idMoto;
-        }
+    document.getElementById("botonCerrarPopUpOfertas").addEventListener("click",()=>{
+        document.getElementById("popUpOfertas").style.display = "none";
     })
 
 

@@ -172,3 +172,60 @@ table, th, td {
     max-height: 50px;
     text-wrap: nowrap;
 }
+
+.popUpOfertas{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.164);
+}
+
+.contenedorOfertas{
+    width: 350px;
+    height: 500px;
+    position: relative;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    background-color: white;
+    box-shadow: 0 7px 12px 0 var(--azulSecundario);
+}
+
+.contenedorOfertas h2{
+    text-align: center;
+}
+
+
+.divInternoOferta{
+    
+}
+
+
+
+.botonCerrarPopUpOfertas{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    font-size: 1.3rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    padding: 5px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}

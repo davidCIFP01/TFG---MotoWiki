@@ -4,11 +4,11 @@
 require_once("motowikiDB.php");
 
 class Registro {
-    public $idRegistro;
-    public $fechaCambio;
-    public $tipoCambio;
-    public $descripcionCambios;
-    public $idUsuario;
+    private $idRegistro;
+    private $fechaCambio;
+    private $tipoCambio;
+    private $descripcionCambios;
+    private $idUsuario;
 
     public function __construct($idRegistro, $fechaCambio, $tipoCambio, $descripcionCambios, $idUsuario) {
         $this->idRegistro = $idRegistro;
