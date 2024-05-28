@@ -8,20 +8,20 @@
 
 <nav class="barraNavegadora">
 
-    <?php if($_SESSION['tipoUsuario'] == "user"){ ?>
+    <?php if(isset($_SESSION) && $_SESSION['tipoUsuario'] == "user"){ ?>
         <div class="logoTítuloNav" onclick="enviarInicio()">
             <img src="../view/assets/images/logos/logo-motoWiki-no-bg.png" alt="Logo Motowiki">
             <span>MOTO-WIKI</span>
         </div>
         <div class="formaNav" onclick="enviarInicio()"></div>
 
-    <?php }else if($_SESSION['tipoUsuario'] == "colab"){?>
+    <?php }else if(isset($_SESSION) && $_SESSION['tipoUsuario'] == "colab"){?>
         <div class="logoTítuloNav" onclick="enviarInicio()">
             <img src="../view/assets/images/logos/logo-motoWiki-no-bg.png" alt="Logo Motowiki">
             <span>Colaborador</span>
         </div>
         <div class="formaNav" onclick="enviarInicio()"></div>
-    <?php }else if($_SESSION['tipoUsuario'] == "admin"){?>
+    <?php }else if(isset($_SESSION) && $_SESSION['tipoUsuario'] == "admin"){?>
         <div class="logoTítuloNav" onclick="enviarInicio()">
             <img src="../view/assets/images/logos/logo-motoWiki-no-bg.png" alt="Logo Motowiki">
             <span>Administrador</span>
