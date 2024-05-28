@@ -280,8 +280,10 @@ class Motocicleta {
     /* Esta función está pensada para paginar todos los resultados que vayan saliendo en TODAS MOTOCICLETAS (No incluye filtros) */
     public static function obtenerMotosPaginadas($cantidadMotos,$paginacion) : array {
         $conexion = motowikiDB::conexionDB();
-        $offset = $paginacion*$cantidadMotos;
+        $offset = $paginacion * $cantidadMotos;
+
         $sql = "SELECT * FROM motocicleta ORDER BY popularidad DESC,idMoto DESC LIMIT $offset,$cantidadMotos";
+        // print_r($sql);
         $result = $conexion->query($sql);
         
         $motocicletas = [];

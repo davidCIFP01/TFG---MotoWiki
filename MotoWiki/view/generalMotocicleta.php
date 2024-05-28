@@ -66,6 +66,8 @@
             paginacion = 1;
         }
 
+        document.getElementById("contenedorGeneral").innerHTML = "";
+
         const data = {
             paginacion: paginacion,
             cantidad: cantidadMotos
@@ -91,7 +93,8 @@
 
     document.getElementById("botonDespues").addEventListener("click",(ev)=>{
         paginacion++;
-
+        document.getElementById("contenedorGeneral").innerHTML = "";
+        
         const data = {
             paginacion: paginacion,
             cantidad: cantidadMotos
