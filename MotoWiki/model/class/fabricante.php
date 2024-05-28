@@ -87,7 +87,7 @@ class Fabricante{
                     $row['sitioWeb'],
                     $row['descripcion1'],
                     $row['descripcion2'],
-                    $row['imagenFabricante'],
+                    ($row['imagenFabricante'] == null ) ? "../view/assets/images/motocicleta/default_motocicleta.jpg" : $row['imagenFabricante'],
                     $row['suspendido']
                 );
                 $objetosFabricantes[] = $fabricante;

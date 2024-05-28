@@ -195,6 +195,8 @@ class Motocicleta {
             $sql = "SELECT * FROM motocicleta WHERE idFabricante = $idFabricante ORDER BY popularidad DESC LIMIT 10";
         }
 
+        // print_r($sql);
+
         $result = $conexion->query($sql);
         
         $motocicletas = [];
@@ -210,9 +212,15 @@ class Motocicleta {
 
     
 
-    public static function obtenerNuevas() : array {
+    public static function obtenerNuevas($idFabricante = null) : array {
         $conexion = motowikiDB::conexionDB();
-        $sql = "SELECT * FROM motocicleta ORDER BY fechaFabricacion DESC, idMoto DESC LIMIT 10";
+        
+        if($idFabricante != null){
+            $sql = "SELECT * FROM motocicleta WHERE idFabricante = $idFabricante ORDER BY fechaFabricacion DESC, idMoto DESC LIMIT 10";
+        }else{
+            $sql = "SELECT * FROM motocicleta ORDER BY fechaFabricacion DESC, idMoto DESC LIMIT 10";
+        }
+
         $result = $conexion->query($sql);
         
         $motocicletas = [];
@@ -243,14 +251,18 @@ class Motocicleta {
     }
 
     /* Modo tiene que ser ASC / DESC */
-    public static function obtenerPorPrecio($modo) : array {
+    public static function obtenerPorPrecio($modo,$Fabricante=null) : array {
         // Validar el modo para asegurarnos de que solo sea 'ASC' o 'DESC'
         if (!in_array(strtoupper($modo), ['ASC', 'DESC'])) {
             throw new InvalidArgumentException('El modo debe ser "ASC" o "DESC".');
         }
 
         $conexion = motowikiDB::conexionDB();
-        $sql = "SELECT * FROM motocicleta ORDER BY fechaFabricacion $modo, idMoto DESC LIMIT 10";
+        if(isset($Fabricante)){
+            $sql = "SELECT * FROM motocicleta WHERE idFabricante = $Fabricante ORDER BY fechaFabricacion $modo, idMoto DESC LIMIT 10";
+        }else{
+            $sql = "SELECT * FROM motocicleta ORDER BY fechaFabricacion $modo, idMoto DESC LIMIT 10";
+        }
         // print_r($sql);
         $result = $conexion->query($sql);
         
@@ -323,9 +335,9 @@ class Motocicleta {
         // print_r($modo);
 
         $motosModulo = match ($modo) {
-            "populares" => Motocicleta::obtenerPopulares($Fabricante),
-            "nuevas" => Motocicleta::obtenerNuevas(),
-            "baratas" => Motocicleta::obtenerPorPrecio("DESC"),
+            "populares" => Motocicleta::obtenerPopulares($idFabricante = $Fabricante),
+            "nuevas" => Motocicleta::obtenerNuevas($idFabricante = $Fabricante),
+            "baratas" => Motocicleta::obtenerPorPrecio("DESC",$Fabricante),
             "favoritas" => ($idUsuario == null) ? "" : Usuario::obtenerTusFavoritas($idUsuario),
             "similares" => ($objetoMoto == null) ? "" : $objetoMoto->modelosSimilares(),
         };

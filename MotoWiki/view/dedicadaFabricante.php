@@ -49,7 +49,7 @@
 
         <div class="contenedorTarjetas">
 
-            <?= Motocicleta::generarModulo($modo="baratas"); ?>
+            <?= Motocicleta::generarModulo($modo="baratas", $idFabricante = $_GET['idFabricante']); ?>
 
         </div>
 
@@ -61,40 +61,7 @@
 
         <div class="contenedorTarjetas">
 
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <a href="#"><h2>YBR125</h2></a>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
+           <?= Motocicleta::generarModulo($modo="populares",$Fabricante = $_GET['idFabricante'])?>
 
         </div>
     </section>
@@ -105,40 +72,7 @@
 
         <div class="contenedorTarjetas">
 
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <a href="#"><h2>YBR125</h2></a>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <h2>YBR125</h2>
-            </div>
+        <?= Motocicleta::generarModulo($modo="baratas",$Fabricante = $_GET['idFabricante'])?>
 
         </div>
     </section>
