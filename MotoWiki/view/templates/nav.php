@@ -8,23 +8,24 @@
 
 <nav class="barraNavegadora">
 
-    <?php if(isset($_SESSION) && $_SESSION['tipoUsuario'] == "user"){ ?>
+    <?php if(!empty($_SESSION) && $_SESSION['tipoUsuario'] == "admin"){ ?>
+
         <div class="logoTítuloNav" onclick="enviarInicio()">
             <img src="../view/assets/images/logos/logo-motoWiki-no-bg.png" alt="Logo Motowiki">
-            <span>MOTO-WIKI</span>
+            <span>Administrador</span>
         </div>
         <div class="formaNav" onclick="enviarInicio()"></div>
 
-    <?php }else if(isset($_SESSION) && $_SESSION['tipoUsuario'] == "colab"){?>
+    <?php }else if(!empty($_SESSION) && $_SESSION['tipoUsuario'] == "colab"){?>
         <div class="logoTítuloNav" onclick="enviarInicio()">
             <img src="../view/assets/images/logos/logo-motoWiki-no-bg.png" alt="Logo Motowiki">
             <span>Colaborador</span>
         </div>
         <div class="formaNav" onclick="enviarInicio()"></div>
-    <?php }else if(isset($_SESSION) && $_SESSION['tipoUsuario'] == "admin"){?>
+    <?php }else{?>
         <div class="logoTítuloNav" onclick="enviarInicio()">
             <img src="../view/assets/images/logos/logo-motoWiki-no-bg.png" alt="Logo Motowiki">
-            <span>Administrador</span>
+            <span>MOTO-WIKI</span>
         </div>
         <div class="formaNav" onclick="enviarInicio()"></div>
     <?php } ?>
@@ -45,6 +46,7 @@
                 </ul>
             </li>
             <li class="Principales"><a href="./motocicleta.php">MOTOS</a></li>
+            <?php if(!empty($_SESSION) && ( $_SESSION['tipoUsuario'] == "admin" || $_SESSION['tipoUsuario'] == "colab" )){?>
             <li class="Principales"><a>GESTIÓN</a>
                 <ul>
                 <?php if(!empty($_SESSION) && ($_SESSION['tipoUsuario'] == "admin" )){?>
@@ -54,6 +56,8 @@
                     <li><a href="./gestionLogs.php">LOGS</a></li>
                 </ul>
             </li>
+            <?php } ?>
+
             <?php if(empty($_SESSION)){ ?>
             <li class="Principales registro"><a href="./registro-inicioSesion.php">REGISTRO</a></li>
             <?php }?>
