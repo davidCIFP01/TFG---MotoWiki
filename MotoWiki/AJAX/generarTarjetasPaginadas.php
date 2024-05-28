@@ -17,7 +17,7 @@ $motos = "";
 foreach($motosPaginadas as $key=>$objMoto){
     $motos .= '<div class="tarjetaMotoMarca">
                 <div class="contenedorImagenMotoMarca">
-                    <img src="'.$objMoto->__get("imagenMoto").'" data-src="./motocicleta.php?idMoto='.$objMoto->__get("idMoto").'" onclick="redirigirEnlace(this) alt="fotoMotocicleta">
+                    <img src="'.$objMoto->__get("imagenMoto").'" data-src="./motocicleta.php?idMoto='.$objMoto->__get("idMoto").'" onclick="redirigirEnlace(this)" alt="fotoMotocicleta">
                 </div>
                 <a href="./motocicleta.php?idMoto='.$objMoto->__get("idMoto").'"><h2>'.$objMoto->__get("nombreModelo").'</h2></a>
             </div>';

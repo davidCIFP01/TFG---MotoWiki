@@ -64,37 +64,39 @@
         paginacion--;
         if(paginacion<1){
             paginacion = 1;
+        }else{
+            document.getElementById("contenedorGeneral").innerHTML = "";
+
+            const data = {
+                paginacion: paginacion,
+                cantidad: cantidadMotos
+            };
+
+            fetch('../AJAX/generarTarjetasPaginadas.php', {
+                method: 'POST', // o 'GET' si prefieres enviar los datos como parámetros de URL
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data) // Convertir los datos a formato JSON
+            })
+            .then(response => response.text()) // Asumimos que el servidor devuelve JSON
+            .then(data => {
+                console.log(data);
+                document.getElementById("contenedorGeneral").innerHTML = data;
+                document.getElementById("parrafoPaginacion").innerHTML = paginacion;
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
         }
 
-        document.getElementById("contenedorGeneral").innerHTML = "";
-
-        const data = {
-            paginacion: paginacion,
-            cantidad: cantidadMotos
-        };
-
-        fetch('../AJAX/generarTarjetasPaginadas.php', {
-            method: 'POST', // o 'GET' si prefieres enviar los datos como parámetros de URL
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data) // Convertir los datos a formato JSON
-        })
-        .then(response => response.text()) // Asumimos que el servidor devuelve JSON
-        .then(data => {
-            console.log(data);
-            document.getElementById("contenedorGeneral").innerHTML = data;
-            document.getElementById("parrafoPaginacion").innerHTML = paginacion;
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
+        
     })
 
     document.getElementById("botonDespues").addEventListener("click",(ev)=>{
         paginacion++;
         document.getElementById("contenedorGeneral").innerHTML = "";
-        
+
         const data = {
             paginacion: paginacion,
             cantidad: cantidadMotos
