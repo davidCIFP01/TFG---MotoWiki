@@ -29,7 +29,7 @@ class Registro {
 
     public static function recogerUltimosRegistros(){
         $conexion = MotowikiDB::conexionDB();
-        $sql = "SELECT * FROM registros LIMIT 30";
+        $sql = "SELECT * FROM registros ORDER BY idRegistro DESC LIMIT 30";
 
         
         $objetosRegistros = [];
@@ -46,7 +46,7 @@ class Registro {
 
     public static function recogerTodosRegistros(){
         $conexion = MotowikiDB::conexionDB();
-        $sql = "SELECT * FROM registros";
+        $sql = "SELECT * FROM registros ORDER BY idRegistro DESC";
 
         
         $objetosRegistros = [];

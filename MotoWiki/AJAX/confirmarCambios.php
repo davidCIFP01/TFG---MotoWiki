@@ -4,7 +4,7 @@ require_once("../model/class/motowikiDB.php");
 require_once("../model/class/usuario.php");
 require_once("../model/class/motocicleta.php");
 require_once("../model/class/fabricante.php");
-
+session_start();
 // $datosEnviados = json_decode(file_get_contents('php://input'),true);
 
 $idCambiar = $_POST['idCambio'];
@@ -45,8 +45,8 @@ if($modo == "fabricante"){
             descripcion2 = $descripcion2
             WHERE idFabricante = $idCambiar";
 
-    $sqlRegistro = "INSERT INTO cambiosRegistro (fechaCambio, tipoCambio, descripcionCambios, idUsuario)
-    VALUES ('".date('Y-m-d H:i:s')."', 'DATOS - FABRICANTE', 'Se han modificado los datos del Fabricante: ".$idCambiar."', ".$_SESSION['idUser'].");";
+    $sqlRegistro = "INSERT INTO registros (fechaCambio, tipoCambio, descripcionCambios, idUsuario)
+    VALUES ('".date('Y-m-d H:i:s')."', 'fabricante', 'Se han modificado los datos del Fabricante: ".$idCambiar."', ".$_SESSION['idUser'].");";
 
     print_r($sql);
     $result = $conexion->query($sql);
@@ -108,8 +108,8 @@ if($modo == "fabricante"){
     idFabricante = $idFabricante
     WHERE idMoto = $idCambiar";
     
-    $sqlRegistro = "INSERT INTO cambiosRegistro (fechaCambio, tipoCambio, descripcionCambios, idUsuario)
-    VALUES ('".date('Y-m-d H:i:s')."', 'DATOS - MOTO', 'Se han modificado los datos de la Motocicleta: ".$idCambiar."', ".$_SESSION['idUser'].");";
+    $sqlRegistro = "INSERT INTO registros (fechaCambio, tipoCambio, descripcionCambios, idUsuario)
+    VALUES ('".date('Y-m-d H:i:s')."', 'moto', 'Se han modificado los datos de la Motocicleta: ".$idCambiar."', ".$_SESSION['idUser'].");";
 
     print_r($sql);
 

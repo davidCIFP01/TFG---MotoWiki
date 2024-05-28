@@ -4,7 +4,7 @@ require_once("../model/class/motowikiDB.php");
 require_once("../model/class/usuario.php");
 require_once("../model/class/fabricante.php");
 require_once("../model/class/motocicleta.php");
-
+session_start();
 // $_POST['textoBusqueda'] = "CBR";
 // $_POST['modo'] = "moto"; /* fabricante / ambas */
 

@@ -8,7 +8,7 @@
     </div>
 
     <div class="contenedorVerTodosRegistros">
-        <button class="botonAzul">VER TODOS LOS REGISTROS</button>
+        <button class="botonAzul" id="verTodosRegistros">VER TODOS LOS REGISTROS</button>
     </div>
 
     <div class="contenedorTablaRegistros">
@@ -24,7 +24,7 @@
 
                 <?php 
 
-                foreach ( ( $todosRegistros ? Registro::recogerTodosRegistros() : Registro::recogerUltimosRegistros() ) as $key => $objRegistro) {
+                foreach ( ( isset($todosRegistros) ? Registro::recogerTodosRegistros() : Registro::recogerUltimosRegistros() ) as $key => $objRegistro) {
                     echo 
                     '<tr>
                         <td>'.$objRegistro->__get("idUsuario").'</td>
@@ -40,3 +40,9 @@
         </div>
     </div>
 </main>
+
+<script>
+    document.getElementById("verTodosRegistros").addEventListener("click",(ev)=>{
+        window.location.href = "./gestionLogs.php?verTodosRegistros=true";
+    })
+</script>

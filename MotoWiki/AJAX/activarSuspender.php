@@ -2,7 +2,7 @@
 
 require_once("../model/class/motowikiDB.php");
 require_once("../model/class/usuario.php");
-
+session_start();
 $datosEnviados = json_decode(file_get_contents('php://input'),true);
 
 $idCambiar = $datosEnviados['idCambio']; /* idMoto / idFabricante */
@@ -21,8 +21,8 @@ if(isset($idCambiar) && isset($modo)){
         if($tipo == "moto" ){
             $sql = "UPDATE motocicleta SET suspendida = 0 WHERE idMoto = $idCambiar";     
             
-            $sqlRegistro = "INSERT INTO cambiosRegistro (fechaCambio, tipoCambio, descripcionCambios, idUsuario)
-            VALUES ('".date('Y-m-d H:i:s')."', 'UPDATE - MOTO', 'Se ha Activado la motocicleta con id: ".$idCambiar."', ".$_SESSION['idUser'].");";
+            $sqlRegistro = "INSERT INTO registros (fechaCambio, tipoCambio, descripcionCambios, idUsuario)
+            VALUES ('".date('Y-m-d H:i:s')."', 'moto', 'Se ha Activado la motocicleta con id: ".$idCambiar."', ".$_SESSION['idUser'].");";
 
             $result = $conexion->query($sql);
             $conexion->query($sqlRegistro);
@@ -30,8 +30,8 @@ if(isset($idCambiar) && isset($modo)){
         }else if($tipo == "fabricante" ){
             $sql = "UPDATE fabricante SET suspendido = 0 WHERE idFabricante = $idCambiar";     
             
-            $sqlRegistro = "INSERT INTO cambiosRegistro (fechaCambio, tipoCambio, descripcionCambios, idUsuario)
-            VALUES ('".date('Y-m-d H:i:s')."', 'UPDATE - FABRICANTE', 'Se ha Activado el Fabricante con id: ".$idCambiar."', ".$_SESSION['idUser'].");";
+            $sqlRegistro = "INSERT INTO registros (fechaCambio, tipoCambio, descripcionCambios, idUsuario)
+            VALUES ('".date('Y-m-d H:i:s')."', 'fabricante', 'Se ha Activado el Fabricante con id: ".$idCambiar."', ".$_SESSION['idUser'].");";
             
             
             $result = $conexion->query($sql);
@@ -45,8 +45,8 @@ if(isset($idCambiar) && isset($modo)){
             $sql = "UPDATE motocicleta SET suspendida = 1 WHERE idMoto = $idCambiar";     
             $result = $conexion->query($sql);
 
-            $sqlRegistro = "INSERT INTO cambiosRegistro (fechaCambio, tipoCambio, descripcionCambios, idUsuario)
-            VALUES ('".date('Y-m-d H:i:s')."', 'UPDATE - MOTO', 'Se ha Suspendido la motocicleta con id: ".$idCambiar."', ".$_SESSION['idUser'].");";
+            $sqlRegistro = "INSERT INTO registros (fechaCambio, tipoCambio, descripcionCambios, idUsuario)
+            VALUES ('".date('Y-m-d H:i:s')."', 'moto', 'Se ha Suspendido la motocicleta con id: ".$idCambiar."', ".$_SESSION['idUser'].");";
             $conexion->query($sqlRegistro);
 
 
@@ -54,8 +54,8 @@ if(isset($idCambiar) && isset($modo)){
             $sql = "UPDATE fabricante SET suspendido = 1 WHERE idFabricante = $idCambiar";     
             $result = $conexion->query($sql);
 
-            $sqlRegistro = "INSERT INTO cambiosRegistro (fechaCambio, tipoCambio, descripcionCambios, idUsuario)
-            VALUES ('".date('Y-m-d H:i:s')."', 'UPDATE - FABRICANTE', 'Se ha Suspendido el fabricante con id: ".$idCambiar."', ".$_SESSION['idUser'].");";
+            $sqlRegistro = "INSERT INTO registros (fechaCambio, tipoCambio, descripcionCambios, idUsuario)
+            VALUES ('".date('Y-m-d H:i:s')."', 'fabricante', 'Se ha Suspendido el fabricante con id: ".$idCambiar."', ".$_SESSION['idUser'].");";
             $conexion->query($sqlRegistro);
             
         }

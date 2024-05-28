@@ -13,7 +13,7 @@ $titulo = "Gestion Logs - MotoWiki";
 $css = "gestionLogs.css";
 
 
-if(isset($_POST['todosRegistros'])){
+if(isset($_GET['verTodosRegistros'])){
     $todosRegistros = true;
 }
 
