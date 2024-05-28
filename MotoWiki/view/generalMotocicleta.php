@@ -23,83 +23,16 @@
     </div>
 
 
-    <section class="contenidoGeneral">
-            <div class="tarjetaMotoMarca">
+    <section class="contenidoGeneral" id="contenedorGeneral">
+            
+        <div class="tarjetaMotoMarca">
                 <div class="contenedorImagenMotoMarca">
                     <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
                 </div>
                 <a href="#"><h2>YBR125</h2></a>
             </div>
 
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <a href="#"><h2>YBR125</h2></a>
-            </div>
 
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <a href="#"><h2>YBR125</h2></a>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <a href="#"><h2>YBR125</h2></a>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <a href="#"><h2>YBR125</h2></a>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <a href="#"><h2>YBR125</h2></a>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <a href="#"><h2>YBR125</h2></a>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <a href="#"><h2>YBR125</h2></a>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <a href="#"><h2>YBR125</h2></a>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <a href="#"><h2>YBR125</h2></a>
-            </div>
-
-            <div class="tarjetaMotoMarca">
-                <div class="contenedorImagenMotoMarca">
-                    <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta">
-                </div>
-                <a href="#"><h2>YBR125</h2></a>
-            </div>
     </section>
 </main>
 
@@ -120,4 +53,10 @@
 
     })
     
+</script>
+
+<script>
+    function generarModulosPaginados(cantidadMotos,paginacion){
+        
+    }
 </script>
