@@ -59,7 +59,7 @@
 
 
     <div class="popUpCambioPerfil" id="popUpCambioPerfil">
-    <form action="../AJAX/cambiarDatosUsuario.php" method="post">
+    <form action="../AJAX/cambiarDatosPerfil.php" method="post">
         <div class="contenedorCambiandoPerfil">
             <button class="botonCerrarPopUpOfertas" id="botonCerrarPopUpOfertas">X</button>
 

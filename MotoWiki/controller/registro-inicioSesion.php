@@ -8,6 +8,11 @@ session_start();
 
 
 if(!empty($_SESSION)){
+   Usuario::comprobarTipoUsuario();
+   Usuario::comprobarBetado();
+}
+
+if(!empty($_SESSION)){
    header("Location: ./inicio.php"); 
 }
 

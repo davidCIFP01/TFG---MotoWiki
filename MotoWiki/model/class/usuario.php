@@ -132,5 +132,36 @@ class Usuario {
             return false;
         }
     }
+
+
+    public static function comprobarTipoUsuario(){
+        $idUsuario = $_SESSION['idUser'];
+
+        $conexion = MotowikiDB::conexionDB();
+
+        $sql = "SELECT tipoUsuario FROM usuario WHERE idUsuario = $idUsuario";
+        
+        $result = $conexion->query($sql)->fetch_assoc();
+
+        $_SESSION['tipoUsuario'] == $result['tipoUsuario'];
+    }
+
+    public static function comprobarBetado(){
+        $idUsuario = $_SESSION['idUser'];
+
+        $conexion = MotowikiDB::conexionDB();
+
+        $sql = "SELECT betado FROM usuario WHERE idUsuario = $idUsuario";
+
+        $result = $conexion->query($sql)->fetch_assoc();
+
+        if($result['betado'] == 1){
+            session_unset();
+            session_destroy();
+
+            header("./registro-inicioSesion.php");
+        }
+        
+    }
     
 }

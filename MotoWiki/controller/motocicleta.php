@@ -7,6 +7,11 @@ require_once("../model/class/usuario.php");
 require_once("../model/class/oferta.php");
 session_start();
 
+if(!empty($_SESSION)){
+    Usuario::comprobarTipoUsuario();
+    Usuario::comprobarBetado();
+}
+
 $titulo = "Motocicleta - MotoWiki";
 
 
