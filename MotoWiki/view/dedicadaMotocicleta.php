@@ -155,7 +155,7 @@
             <div class="divInternoOferta">
                 <table id="tablaOfertas">
                     <?php 
-                    if(empty($objOferta)){
+                    if(empty($ofertas)){
                         echo '<h2 id="textoOfertas">No hay ofertas aún.</h2>';
                     }else{
                     ?>
@@ -168,9 +168,9 @@
                         
                             foreach ($ofertas as $key => $objOferta) {
                                 echo '  <tr>
-                                            <td>'.$objOferta->__get("precio").'</td>
-                                            <td><a href="'.$objOferta->__get("enlaceOferta").'">ENLACE '.$key.'</a></td>
-                                            <td><i class="fa-solid fa-trash-can" data-idOferta="'.$objOferta->__get("idOferta").'"></i></td>
+                                            <td>'.$objOferta->__get("precio").' €</td>
+                                            <td><a href="'.$objOferta->__get("enlaceOferta").'">ENLACE '. $key+1 .'</a></td>
+                                            <td><i class="fa-solid fa-trash-can borrarOferta" data-idOferta="'.$objOferta->__get("idOferta").'"></i></td>
                                         </tr>';
                             }
                         }
@@ -188,7 +188,7 @@
                 <div class="creandoOferta" id="creandoOferta" >
                     <div>Precio: <input type="number" step="0.01" name="precioOferta" id="precioOferta"></div>
                     <div>Enlace: <input type="text" name="enlaceOferta" id="enlaceOferta"></div>
-                    <button class="botonAzul" id="confirmacionOferta">Confirmar Oferta</button>
+                    <button class="botonAzul" id="confirmacionOferta" data-idMoto="<?= $_GET['idMoto']?>">Confirmar Oferta</button>
                 </div>
                 <?php } ?>
                 
@@ -234,8 +234,8 @@
     document.getElementById("crearNuevaOferta").addEventListener("click",(ev)=>{
         document.getElementById("creandoOferta").style.display = "flex";
         
-        document.getElementById("textoOfertas").hidden = true;
-        document.getElementById("tablaOfertas").hidden = true;
+        (document.getElementById("textoOfertas")) ? document.getElementById("textoOfertas").hidden = true : "";
+        (document.getElementById("tablaOfertas")) ? document.getElementById("tablaOfertas").hidden = true : "";
         ev.target.hidden = true;
     })
 
@@ -243,13 +243,80 @@
     document.getElementById("confirmacionOferta").addEventListener("click",(ev)=>{
         precioOferta= document.getElementById("precioOferta").value;
         enlaceOferta= document.getElementById("enlaceOferta").value;
+        idMoto = ev.target.getAttribute("data-idMoto");
 
-        document.getElementById("creandoOferta").style.display = "none";
-        
-        document.getElementById("textoOfertas").hidden = false;
-        document.getElementById("tablaOfertas").hidden = false;
-        document.getElementById("crearNuevaOferta").hidden = false;
+        if(precioOferta=="" || enlaceOferta=="" ){
+            document.getElementById("creandoOferta").style.display = "none";
+            (document.getElementById("textoOfertas")) ? document.getElementById("textoOfertas").hidden = false : "";
+            (document.getElementById("tablaOfertas")) ? document.getElementById("tablaOfertas").hidden = false : "";
+            document.getElementById("crearNuevaOferta").hidden = false;
+        }else{
+
+        fetch("../AJAX/nuevaOferta.php",{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                precioOferta: precioOferta,
+                enlaceOferta: enlaceOferta,
+                idMoto:idMoto
+            })
+        })
+        .then(response => {
+            return response.text();
+        })
+        .then(data => {
+            console.log(data);
+
+/*             document.getElementById("creandoOferta").style.display = "none";
+            
+            document.getElementById("textoOfertas").hidden = false;
+            document.getElementById("tablaOfertas").hidden = false;
+            document.getElementById("crearNuevaOferta").hidden = false;
+
+            if(data == "ok")
+            cantidadElementos = document.getElementById("tablaOfertas").childElementCount + 1;
+            nuevaOferta = document.createElement("tr");
+            nuevaOferta.innerHTML = '<td>'+precioOferta+'</td> <td><a href="'+enlaceOferta+'">ENLACE '+cantidadElementos+'</a></td><td></td>'
+
+            document.getElementById("tablaOfertas").appendChild(nuevaOferta); */
+
+            location.reload();
+
+        })
+        .catch(error => {
+            console.error('Hubo un problema con la solicitud:', error);
+        });
+
+
+    }
 
     })
+
+
+    document.querySelectorAll(".borrarOferta").forEach(element => {
+        element.addEventListener("click",(ev)=>{
+            idOferta=ev.target.getAttribute("data-idOferta");
+
+            fetch("../AJAX/borrarOferta.php",{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    idOferta:idOferta,
+                })
+            })
+            .then(response=>response.text())
+            .then(data=>{
+                // Obtener el <tr> padre y eliminarlo
+                const tr = ev.target.closest('tr');
+                if (tr) {
+                    tr.remove();
+                }
+            })
+        })
+    });
 
 </script>

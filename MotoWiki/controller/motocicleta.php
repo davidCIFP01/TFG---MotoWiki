@@ -14,6 +14,7 @@ if(isset($_GET['idMoto'])){
 
     $Motocicleta = Motocicleta::obtenerPorId($_GET['idMoto']);
     $ofertas = Oferta::ofertasPorMoto($_GET['idMoto']);
+    
 
     if($Motocicleta != false){
         $dedicada = true;

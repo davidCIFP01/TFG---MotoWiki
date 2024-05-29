@@ -281,6 +281,15 @@ table, th, td {
 
 }
 
+.divInternoOferta a{
+    color: #58658c;
+    font-weight: bold;
+}
+
+.divInternoOferta i{
+    cursor: pointer;
+}
+
 .crearNuevaOfertaDiv{
     position: absolute;
     bottom: 10px;
