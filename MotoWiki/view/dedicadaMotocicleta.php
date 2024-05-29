@@ -153,8 +153,48 @@
             <div class="botonCerrarPopUpOfertas" id="botonCerrarPopUpOfertas">X</div>
             <h2>Ofertas de la Moto</h2>
             <div class="divInternoOferta">
+                <table id="tablaOfertas">
+                    <?php 
+                    if(empty($objOferta)){
+                        echo '<h2 id="textoOfertas">No hay ofertas aún.</h2>';
+                    }else{
+                    ?>
+                    <tr>
+                        <td>PRECIO</td>
+                        <td>ENLACE</td>
+                        <td></td>
+                    </tr>
+                    <?php 
+                        
+                            foreach ($ofertas as $key => $objOferta) {
+                                echo '  <tr>
+                                            <td>'.$objOferta->__get("precio").'</td>
+                                            <td><a href="'.$objOferta->__get("enlaceOferta").'">ENLACE '.$key.'</a></td>
+                                            <td><i class="fa-solid fa-trash-can" data-idOferta="'.$objOferta->__get("idOferta").'"></i></td>
+                                        </tr>';
+                            }
+                        }
+                    ?>
+                </table>
 
+                <?php 
+                if(!empty($_SESSION) && ( $_SESSION['tipoUsuario'] == "colab" || $_SESSION['tipoUsuario'] == "admin") ){
+                ?>
+
+                <div class="crearNuevaOfertaDiv" id="crearNuevaOfertaDiv" >
+                    <button class="botonAzul crearNuevaOferta" id="crearNuevaOferta">Crear Nueva Oferta</button>
+                </div>
+
+                <div class="creandoOferta" id="creandoOferta" >
+                    <div>Precio: <input type="number" step="0.01" name="precioOferta" id="precioOferta"></div>
+                    <div>Enlace: <input type="text" name="enlaceOferta" id="enlaceOferta"></div>
+                    <button class="botonAzul" id="confirmacionOferta">Confirmar Oferta</button>
+                </div>
+                <?php } ?>
+                
             </div>
+
+
         </div>
     </div>
 
@@ -189,5 +229,27 @@
         document.getElementById("popUpOfertas").style.display = "none";
     })
 
+
+
+    document.getElementById("crearNuevaOferta").addEventListener("click",(ev)=>{
+        document.getElementById("creandoOferta").style.display = "flex";
+        
+        document.getElementById("textoOfertas").hidden = true;
+        document.getElementById("tablaOfertas").hidden = true;
+        ev.target.hidden = true;
+    })
+
+
+    document.getElementById("confirmacionOferta").addEventListener("click",(ev)=>{
+        precioOferta= document.getElementById("precioOferta").value;
+        enlaceOferta= document.getElementById("enlaceOferta").value;
+
+        document.getElementById("creandoOferta").style.display = "none";
+        
+        document.getElementById("textoOfertas").hidden = false;
+        document.getElementById("tablaOfertas").hidden = false;
+        document.getElementById("crearNuevaOferta").hidden = false;
+
+    })
 
 </script>

@@ -19,6 +19,13 @@ class Oferta {
 
     }
 
+    public function __get(string $propiedad) {
+        return $this->$propiedad;
+    }
+
+    public function __set(string $propiedad, $valor) {
+        $this->$propiedad = $valor;
+    }
 
     public static function obtenerOfertaPorId($idOferta){
         $conexion = MotowikiDB::conexionDB();

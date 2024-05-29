@@ -200,6 +200,7 @@ table, th, td {
 
     background-color: white;
     box-shadow: 0 7px 12px 0 var(--azulSecundario);
+    /* overflow: auto; */
 }
 
 .contenedorOfertas h2{
@@ -207,9 +208,7 @@ table, th, td {
 }
 
 
-.divInternoOferta{
-    
-}
+
 
 
 
@@ -230,3 +229,84 @@ table, th, td {
     top: 20px;
     right: 20px;
 }
+
+
+.divInternoOferta {
+    max-height: 400px;
+
+    overflow: auto;
+}
+
+.divInternoOferta>h2{
+    color: #58658c;
+    margin-top: 50px;
+}
+
+.divInternoOferta>table{
+    box-shadow: 0 7px 12px 0 #58658c;
+    border-collapse: collapse;
+
+    margin: 30px auto;
+    
+
+}
+
+table, th, td {
+    border: 1px solid #a9b1cb;
+}
+
+.divInternoOferta>table td{
+    padding: 15px;
+    background-color: white;
+    text-align: center;
+
+    /* min-width: 125px; */
+    height: 50px;
+    /* max-height: 50px; */
+    /* text-wrap: nowrap; */
+
+    font-family: "Inter",sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+.divInternoOferta>table tr:nth-child(1)>td{
+    background-color: #58658c;
+    color: white;
+
+    font-family: "Racing Sans One",sans-serif;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 2px ;
+
+}
+
+.crearNuevaOfertaDiv{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.creandoOferta{
+    margin: 50px auto;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.creandoOferta > button{
+    margin: 30px auto;
+}
+
+
+
+

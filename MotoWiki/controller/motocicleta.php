@@ -4,6 +4,7 @@ require_once("../model/class/motowikiDB.php");
 require_once("../model/class/fabricante.php");
 require_once("../model/class/motocicleta.php");
 require_once("../model/class/usuario.php");
+require_once("../model/class/oferta.php");
 session_start();
 
 $titulo = "Motocicleta - MotoWiki";
@@ -12,6 +13,7 @@ $titulo = "Motocicleta - MotoWiki";
 if(isset($_GET['idMoto'])){
 
     $Motocicleta = Motocicleta::obtenerPorId($_GET['idMoto']);
+    $ofertas = Oferta::ofertasPorMoto($_GET['idMoto']);
 
     if($Motocicleta != false){
         $dedicada = true;
