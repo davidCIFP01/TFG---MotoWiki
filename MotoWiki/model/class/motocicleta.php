@@ -150,7 +150,7 @@ class Motocicleta {
         $conexion = motowikiDB::conexionDB();
 
         if($tag != null ){
-            $sql = "SELECT idMoto FROM motocicleta WHERE tag = '$tag'";
+            $sql = "SELECT idMoto FROM motocicleta WHERE tag = '$tag' AND suspendida = 0";
             $result = $conexion->query($sql);
 
             if($result->num_rows>0){
@@ -172,7 +172,7 @@ class Motocicleta {
     // Obtener todas las motocicletas
     public static function obtenerTodas() : array {
         $conexion = motowikiDB::conexionDB();
-        $sql = "SELECT * FROM motocicleta";
+        $sql = "SELECT * FROM motocicleta WHERE suspendida = 0";
         $result = $conexion->query($sql);
         
         $motocicletas = [];
@@ -189,9 +189,9 @@ class Motocicleta {
         $conexion = motowikiDB::conexionDB();
        
         if($idFabricante == null){
-            $sql = "SELECT * FROM motocicleta ORDER BY popularidad DESC LIMIT 10";
+            $sql = "SELECT * FROM motocicleta WHERE suspendida = 0 ORDER BY popularidad DESC LIMIT 10";
         }else{
-            $sql = "SELECT * FROM motocicleta WHERE idFabricante = $idFabricante ORDER BY popularidad DESC LIMIT 10";
+            $sql = "SELECT * FROM motocicleta WHERE idFabricante = $idFabricante AND suspendida = 0 ORDER BY popularidad DESC LIMIT 10";
         }
 
         // print_r($sql);
@@ -215,9 +215,9 @@ class Motocicleta {
         $conexion = motowikiDB::conexionDB();
         
         if($idFabricante != null){
-            $sql = "SELECT * FROM motocicleta WHERE idFabricante = $idFabricante ORDER BY fechaFabricacion DESC, idMoto DESC LIMIT 10";
+            $sql = "SELECT * FROM motocicleta WHERE idFabricante = $idFabricante AND suspendida = 0 ORDER BY fechaFabricacion DESC, idMoto DESC LIMIT 10";
         }else{
-            $sql = "SELECT * FROM motocicleta ORDER BY fechaFabricacion DESC, idMoto DESC LIMIT 10";
+            $sql = "SELECT * FROM motocicleta WHERE suspendida = 0 ORDER BY fechaFabricacion DESC, idMoto DESC LIMIT 10";
         }
 
         $result = $conexion->query($sql);
@@ -235,7 +235,7 @@ class Motocicleta {
 
     public function modelosSimilares() : array {
         $conexion = motowikiDB::conexionDB();
-        $sql = "SELECT * FROM motocicleta WHERE tipoMoto = '$this->tipoMoto' AND cilindrada BETWEEN ($this->cilindrada-30) AND ($this->cilindrada+30) ORDER BY idMoto DESC LIMIT 10";
+        $sql = "SELECT * FROM motocicleta WHERE tipoMoto = '$this->tipoMoto' AND suspendida = 0 AND cilindrada BETWEEN ($this->cilindrada-30) AND ($this->cilindrada+30) ORDER BY idMoto DESC LIMIT 10";
         $result = $conexion->query($sql);
         
         $motocicletas = [];
@@ -258,9 +258,9 @@ class Motocicleta {
 
         $conexion = motowikiDB::conexionDB();
         if(isset($Fabricante)){
-            $sql = "SELECT * FROM motocicleta WHERE idFabricante = $Fabricante ORDER BY fechaFabricacion $modo, idMoto DESC LIMIT 10";
+            $sql = "SELECT * FROM motocicleta WHERE suspendida = 0 AND idFabricante = $Fabricante ORDER BY fechaFabricacion $modo, idMoto DESC LIMIT 10";
         }else{
-            $sql = "SELECT * FROM motocicleta ORDER BY fechaFabricacion $modo, idMoto DESC LIMIT 10";
+            $sql = "SELECT * FROM motocicleta WHERE suspendida = 0 ORDER BY fechaFabricacion $modo, idMoto DESC LIMIT 10";
         }
         // print_r($sql);
         $result = $conexion->query($sql);
@@ -282,7 +282,7 @@ class Motocicleta {
         $conexion = motowikiDB::conexionDB();
         $offset = $paginacion * $cantidadMotos;
 
-        $sql = "SELECT * FROM motocicleta ORDER BY popularidad DESC,idMoto DESC LIMIT $offset,$cantidadMotos";
+        $sql = "SELECT * FROM motocicleta WHERE suspendida = 0 ORDER BY popularidad DESC,idMoto DESC LIMIT $offset,$cantidadMotos";
         // print_r($sql);
         $result = $conexion->query($sql);
         
@@ -303,7 +303,7 @@ class Motocicleta {
         */
         
         $conexion = motowikiDB::conexionDB();
-        $sql = "SELECT * FROM motocicleta ORDER BY idMotocicleta DESC";
+        $sql = "SELECT * FROM motocicleta WHERE suspendida = 0 ORDER BY idMotocicleta DESC";
         $result = $conexion->query($sql);
         
         $motocicletas = [];
