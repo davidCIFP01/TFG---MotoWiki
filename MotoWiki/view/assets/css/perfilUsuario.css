@@ -78,3 +78,75 @@
     bottom: 15px;
     left: 15px;
 }
+
+.popUpCambioPerfil{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.213);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.botonCerrarPopUpOfertas{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    font-size: 1.3rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    padding: 5px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+
+.contenedorCambiandoPerfil{
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    padding: 30px;
+    width: 400px;
+    min-height: 300px;
+    background-color: white;
+
+    box-shadow: 0 7px 12px 0 #17acbd;
+    border-radius: 20px;
+    
+    
+    font-family: "Inter",sans-serif;
+    font-weight: 700;
+    font-style: italic;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:15px;
+}
+
+
+
+
+input{ 
+    padding: 5px;
+    margin-top: 10px;
+    
+    border: 1px solid var(--colorTexto);
+    border-radius: 5px;
+
+    color: var(--colorTexto);
+    font-weight: 700;
+    font-style: italic;
+}
