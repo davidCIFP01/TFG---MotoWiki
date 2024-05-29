@@ -8,7 +8,11 @@
 
         <div class="search-box">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="search" placeholder="Busqueda por Motocicleta">
+            <input type="search" id="inputBuscador" placeholder="Busqueda por Motocicleta">
+            
+            <div class="contenedorResultados" id="contenedorResultados" hidden>
+            
+            </div>
         </div>
 
 
@@ -111,9 +115,12 @@
         .then(response => response.text()) // Asumimos que el servidor devuelve JSON
         .then(data => {
             console.log(data);
-            document.getElementById("contenedorGeneral").innerHTML = data;
-
-            document.getElementById("parrafoPaginacion").innerHTML = paginacion;
+            if(data == "" || data == null){
+                paginacion--;
+            }else{
+                document.getElementById("contenedorGeneral").innerHTML = data;
+                document.getElementById("parrafoPaginacion").innerHTML = paginacion;
+            }
         })
         .catch((error) => {
             console.error('Error:', error);

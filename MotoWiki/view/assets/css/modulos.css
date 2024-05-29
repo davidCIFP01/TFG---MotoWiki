@@ -176,6 +176,8 @@
     .contenedorImagenMotoMarca>img{
         max-width: 90%;
         max-height: 90%;
+
+        min-width: 250px;
     
         box-shadow: 0 7px 12px 0 var(--azulSecundario);
         border-radius: 20px;

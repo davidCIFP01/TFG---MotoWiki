@@ -7,6 +7,9 @@ require_once("../model/class/motocicleta.php");
 require_once("../model/class/usuario.php");
 session_start();
 
+if($_SESSION['tipoUser'] == "user" || empty($_SESSION)){
+    header("Location: ./inicio.php");
+}
 
 $titulo = "Inicio - MotoWiki";
 $css = "gestionDatos.css";

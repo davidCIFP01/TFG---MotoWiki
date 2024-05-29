@@ -332,8 +332,9 @@ class Motocicleta {
             throw new InvalidArgumentException('El modo no es correcto.');
         }
 
-        $idUsuario = $_SESSION['idUser'];
-
+        if(!empty($_SESSION)){
+            $idUsuario = $_SESSION['idUser'];
+        }
         // print_r($modo);
         // print_r($objetoMoto);
 
@@ -352,13 +353,18 @@ class Motocicleta {
         if($motosModulo != "" && $motosModulo != false){
             foreach ($motosModulo as $key => $objetoMotoBucle) {
 
-                $tarjetas .= '<div class="tarjetaMotoMarca">
-                                <div class="contenedorImagenMotoMarca">
-                                    '.$objetoMotoBucle->comprobarFavoritasUsuario($_SESSION['idUser']).'
-                                    <img src="'.$objetoMotoBucle->__get("imagenMoto").'" loading="lazy" alt="fotoMotocicleta" data-src="./motocicleta.php?idMoto='.$objetoMotoBucle->__get("idMoto").'" onclick="redirigirEnlace(this)">
-                                </div>
-                                <a href="./motocicleta.php?idMoto='.$objetoMotoBucle->__get("idMoto").'"><h2>'.$objetoMotoBucle->__get("nombreModelo").'</h2></a>
-                            </div>';
+                if(isset($_GET['idMoto']) && $_GET['idMoto'] == $objetoMotoBucle->__get("idMoto") ){
+
+                }else{
+                    $tarjetas .= '<div class="tarjetaMotoMarca">
+                                    <div class="contenedorImagenMotoMarca">
+                                        '.(empty($_SESSION) ? '<i class="fa-regular fa-star" data-src="./registro-inicioSesion.php" onclick="redirigirEnlace(this)" > </i>' : $objetoMotoBucle->comprobarFavoritasUsuario($_SESSION['idUser'])).'
+                                        <img src="'.$objetoMotoBucle->__get("imagenMoto").'" loading="lazy" alt="fotoMotocicleta" data-src="./motocicleta.php?idMoto='.$objetoMotoBucle->__get("idMoto").'" onclick="redirigirEnlace(this)">
+                                    </div>
+                                    <a href="./motocicleta.php?idMoto='.$objetoMotoBucle->__get("idMoto").'"><h2>'.$objetoMotoBucle->__get("nombreModelo").'</h2></a>
+                                </div>';
+                }
+
                 
             }
         }else{
