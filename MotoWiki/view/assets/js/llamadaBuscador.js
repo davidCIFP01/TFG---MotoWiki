@@ -130,5 +130,25 @@ function crearRecuadrosGestionDatos(modo,idCambio){
             });
         })
 
+        document.getElementById("botonConfirmarCambios").addEventListener("click",(ev)=>{
+            
+            fetch("../AJAX/borrarDatos.php", {
+                method: 'POST', // Método de la solicitud
+                headers: {
+                    'Content-Type': 'form-data' // Indica que se enviarán datos en formato JSON
+                },
+                body: JSON.stringify(data) // Convertir el objeto de datos a una cadena JSON
+            })
+        
+            .then(response => response.text())
+            .then(data => {
+                console.log(data);
+                
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        })
+
     })
 }
