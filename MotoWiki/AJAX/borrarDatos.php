@@ -9,7 +9,7 @@ session_start();
 $datosEnviados = json_decode(file_get_contents('php://input'),true);
 
 $idBorrar = $datosEnviados['idCambio'];
-// $modo = $datosEnviados['modo'];
+$modo = $datosEnviados['modo'];
 
 if(isset($idBorrar) && !empty($_SESSION) && !$_SESSION['tipoUsuario'] != "user"){
     $conexion = MotowikiDB::conexionDB();

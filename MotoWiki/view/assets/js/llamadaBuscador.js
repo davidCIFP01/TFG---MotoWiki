@@ -124,6 +124,13 @@ function crearRecuadrosGestionDatos(modo,idCambio = null){
                 .then(data => {
                     console.log(data);
 
+                    // Cambiar el texto del botón
+                    document.getElementById("botonConfirmarCambios").innerText = "Datos Cambiados";
+
+                    // Restaurar el texto original después de 3 segundos
+                    setTimeout(function(){
+                        document.getElementById("botonConfirmarCambios").innerText = "Confirmar Cambios";
+                    }, 3000);
                     
                 })
                 .catch((error) => {
@@ -145,7 +152,7 @@ function crearRecuadrosGestionDatos(modo,idCambio = null){
                 .then(response => response.text())
                 .then(data => {
                     console.log(data);
-
+                    location.reload()
                     
                 })
                 .catch((error) => {
@@ -168,7 +175,7 @@ function crearRecuadrosGestionDatos(modo,idCambio = null){
                 .then(response => response.text())
                 .then(data => {
                     console.log(data);
-                    
+                    location.reload()
                 })
                 .catch((error) => {
                     console.error('Error:', error);

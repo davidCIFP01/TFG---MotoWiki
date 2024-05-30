@@ -22,11 +22,11 @@
                     
                     <div class="marcaMoto">
                         <span class="miniTexto">SEDE:</span>
-                        <p><?= $Fabricante->__get("paisOrigen")?></p>
+                        <p><?=$Fabricante->__get("paisOrigen") ?></p>
                     </div>
                     
                     <div class="fechaMoto">
-                        <p>Fundada: <?= $Fabricante->__get("fechaFundada")?></p>
+                        <p>Fundada: <?= ($Fabricante->__get("fechaFundada")) ? $Fabricante->__get("fechaFundada") : "¿?"?></p>
                     </div>
 
                 </div>

@@ -84,8 +84,10 @@ if($modo == "fabricante"){
     $precioMax = (!isset($_POST['precioMax']) || $_POST['precioMax'] == "") ? "NULL" : $conexion->real_escape_string($_POST['precioMax']);
     $altura = (!isset($_POST['altura']) || $_POST['altura'] == "") ? "NULL" : $conexion->real_escape_string($_POST['altura']);
     $peso = (!isset($_POST['peso']) || $_POST['peso'] == "") ? "NULL" : $conexion->real_escape_string($_POST['peso']);
+    $descripcion = (!isset($_POST['descripcion']) || $_POST['descripcion'] == "") ? "NULL" : $conexion->real_escape_string($_POST['descripcion']);
     $idFabricante = (!isset($_POST['idFabricante']) || $_POST['idFabricante'] == "") ? "NULL" : $conexion->real_escape_string($_POST['idFabricante']);
 
+    
     $sql = "UPDATE motocicleta SET
     nombreModelo = $nombreModelo,
     fechaFabricacion = $fechaFabricacion,
@@ -105,6 +107,7 @@ if($modo == "fabricante"){
     precioMax = $precioMax,
     altura = $altura,
     peso = $peso,
+    descripcion = $descripcion,
     idFabricante = $idFabricante
     WHERE idMoto = $idCambiar";
     
