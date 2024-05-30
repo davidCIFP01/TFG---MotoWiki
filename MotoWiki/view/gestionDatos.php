@@ -9,8 +9,9 @@
             
         </div>
     </div>
-    <div class="contenedorBotones">
-
+    <div class="contenedorBotones" id="contenedorBotones">
+        <button class="botonAzul" id="nuevaMoto" onclick="crearRecuadrosGestionDatos('nuevaMoto')">Nueva Moto</button>
+        <button class="botonAzul" id="nuevoFabricante" onclick="crearRecuadrosGestionDatos('nuevoFabricante')">Nuevo Fabricante</button>
     </div>
 
 

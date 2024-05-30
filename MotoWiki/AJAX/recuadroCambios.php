@@ -195,7 +195,7 @@ if( isset($tipoCambio) ){
 
         $contenedorCambios = '
         <form id="formularioDatos" >
-            <input type="hidden" name="modoCambios" value="nuevaMoto">
+            <input type="hidden" name="modoCrear" value="nuevaMoto">
 
             <div class="contenedorImagenCambio">
                 <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="imagenMoto" id="ImagenActual">
@@ -298,19 +298,20 @@ if( isset($tipoCambio) ){
                     <textarea name="descripcionMoto" id="descripcionMoto"></textarea>
                 </div>
             </div>
-        </form>';
-        $contenedorCambios .= '<button class="botonConfirmar botonesCambios botonAzul" id="botonConfirmarCambios" >Confirmar Cambios</button>';
+        </form>
+        <button class="botonBorrar botonesCambios botonRojo" id="botonCancelar" >Cancelar</button>';
+        $contenedorCambios .= '<button class="botonConfirmar botonesCambios botonAzul" id="generarNuevo" >Crear Nueva Moto</button>';
 
 
     }else if($tipoCambio == "nuevoFabricante"){
 
-        $objFabricante = Fabricante::obtenerFabricantePorId($idRecibido);
+        // $objFabricante = Fabricante::obtenerFabricantePorId($idRecibido);
 
         // print_r($objFabricante);
 
         $contenedorCambios = '
         <form id="formularioDatos" >
-            <input type="hidden" name="modoCambios" value="fabricante">
+            <input type="hidden" name="modoCrear" value="fabricante">
 
             <div class="contenedorImagenCambio">
                 <img src="../view/assets/images/motocicleta/default_motocicleta.jpg"  alt="imagenMoto" id="ImagenActual">
@@ -344,9 +345,10 @@ if( isset($tipoCambio) ){
                     <textarea name="descripcionFabricante2" id="descripcionFabricante2"></textarea>
                 </div>
             </div>
-        </form>';
+        </form>
+        <button class="botonBorrar botonesCambios botonRojo" id="botonCancelar" >Cancelar</button>';
 
-        $contenedorCambios .= '<button class="botonConfirmar botonesCambios botonAzul"  id="botonConfirmarCambios">Confirmar Cambios</button>';
+        $contenedorCambios .= '<button class="botonConfirmar botonesCambios botonAzul"  id="generarNuevo" >Crear Nuevo Fabricante</button>';
 
         
     }

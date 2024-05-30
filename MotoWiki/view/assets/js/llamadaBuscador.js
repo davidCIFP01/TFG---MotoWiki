@@ -82,7 +82,7 @@ function buscadorSinEnlacesGestionDatos(string){
     })
 }
 
-function crearRecuadrosGestionDatos(modo,idCambio){
+function crearRecuadrosGestionDatos(modo,idCambio = null){
     data = {
         modo: modo, /* moto / fabricante */
         idCambio: idCambio
@@ -110,45 +110,82 @@ function crearRecuadrosGestionDatos(modo,idCambio){
         crearListenerCambioImagen()
 
         
-        document.getElementById("botonConfirmarCambios").addEventListener("click",(ev)=>{
-            formulario=document.getElementById("formularioDatos");
-    
-            formData = new FormData(formulario);
-    
-            fetch("../AJAX/confirmarCambios.php",{
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.text())
-            .then(data => {
-                console.log(data);
-
-                
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-        })
-
-        document.getElementById("botonConfirmarCambios").addEventListener("click",(ev)=>{
-            
-            fetch("../AJAX/borrarDatos.php", {
-                method: 'POST', // Método de la solicitud
-                headers: {
-                    'Content-Type': 'form-data' // Indica que se enviarán datos en formato JSON
-                },
-                body: JSON.stringify(data) // Convertir el objeto de datos a una cadena JSON
-            })
+        if(document.getElementById("botonConfirmarCambios")){
+            document.getElementById("botonConfirmarCambios").addEventListener("click",(ev)=>{
+                formulario=document.getElementById("formularioDatos");
         
-            .then(response => response.text())
-            .then(data => {
-                console.log(data);
-                
+                formData = new FormData(formulario);
+        
+                fetch("../AJAX/confirmarCambios.php",{
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(data => {
+                    console.log(data);
+
+                    
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
             })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-        })
+        }
+
+        if(document.getElementById("generarNuevo")){
+            document.getElementById("generarNuevo").addEventListener("click",(ev)=>{
+                formulario=document.getElementById("formularioDatos");
+        
+                formData = new FormData(formulario);
+        
+                fetch("../AJAX/crearMotoFabricante.php",{
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(data => {
+                    console.log(data);
+
+                    
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+            })
+        }
+
+        if(document.getElementById("botonBorrar")){
+            document.getElementById("botonBorrar").addEventListener("click",(ev)=>{
+                
+                fetch("../AJAX/borrarDatos.php", {
+                    method: 'POST', // Método de la solicitud
+                    headers: {
+                        'Content-Type': 'form-data' // Indica que se enviarán datos en formato JSON
+                    },
+                    body: JSON.stringify(data) // Convertir el objeto de datos a una cadena JSON
+                })
+            
+                .then(response => response.text())
+                .then(data => {
+                    console.log(data);
+                    
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+            })
+
+
+        }
+
+
+        if(document.getElementById("botonCancelar")){
+            document.getElementById("botonCancelar").addEventListener("click",(ev)=>{
+                document.getElementById("contenedorCambios").innerHTML = "";
+                document.getElementById("contenedorCambios").hidden = true;
+            })
+        }
+
 
     })
 }

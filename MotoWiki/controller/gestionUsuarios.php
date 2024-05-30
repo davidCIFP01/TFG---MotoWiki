@@ -12,7 +12,7 @@ if(!empty($_SESSION)){
     Usuario::comprobarBetado();
 }
 
-if($_SESSION['tipoUser'] != "admin" || empty($_SESSION)){
+if($_SESSION['tipoUsuario'] != "admin" || empty($_SESSION)){
     header("Location: ./inicio.php");
 }
 

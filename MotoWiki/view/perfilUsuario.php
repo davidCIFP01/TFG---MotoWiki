@@ -37,8 +37,8 @@
             <p><?= (isset($_SESSION['fechaNac'])) ? $_SESSION['fechaNac'] : "-"; ?></p>
         </div>
 
-        <button class="botonRojo btn1 enlazado" data-src="../AJAX/cerrarSesion.php" onclick="redirigirEnlace(this)">Cerrar Sesión</button>
-        <button class="botonAzul btn2" id="editarDatosPerfil">EDITAR DATOS</button>
+        <button class="botonRojo btn1 enlazado" data-src="../AJAX/cerrarSesion.php" onclick="redirigirEnlace(this)">Log Out</button>
+        <button class="botonAzul btn2" id="editarDatosPerfil">EDITAR</button>
 
     </div>
 
