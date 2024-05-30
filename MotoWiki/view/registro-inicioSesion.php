@@ -85,7 +85,7 @@
 </main>
 
 
-
+<script src="../view/assets/js/funcionesRedireccion.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", (event) => {
         cambiado = false;

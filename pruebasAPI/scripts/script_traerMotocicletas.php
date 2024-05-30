@@ -4,9 +4,9 @@
 <!-- 
     LISTA TRAIDAS (OFFSET)
 
-    KAWASAKI == 60
-    HONDA == 90
-    YAMAHA == 60 
+    KAWASAKI == 0
+    HONDA == 0
+    YAMAHA == 0 
  -->
 <?php
 
@@ -18,7 +18,7 @@ $key="XkPnmvHTmjVd0veY4ZQEcw==9XPtzIVTabrW67Yd";
 
 // echo "<br>$i<br>";
 
-$url="https://api.api-ninjas.com/v1/motorcycles?make=yamaha&offset=30";
+$url="https://api.api-ninjas.com/v1/motorcycles?make=bmw&offset=30";
 
     // Inicializar cURL
 $curl = curl_init($url);
@@ -81,7 +81,7 @@ $sql = "INSERT INTO motocicleta (nombreModelo, fechaFabricacion, tipoMoto, cilin
             '$detallesMoto[engine]', 
             '".(isset($detallesMoto['gearbox']) ? $detallesMoto['gearbox'] : NULL)."',
             '$detallesMoto[transmission]', 
-            $capacidad,
+            ".(empty($capacidad) ? 'NULL' : $capacidad).",
             '".(($starter == "") ? 'NULL' : $starter)."',
             NULL, 
             NULL, 
@@ -93,7 +93,7 @@ $sql = "INSERT INTO motocicleta (nombreModelo, fechaFabricacion, tipoMoto, cilin
             0, 
             ".(empty($altura) ? 'NULL' : $altura ) .",
             ".(empty($peso) ? 'NULL' : $peso ) .",
-            3
+            10
         )";
         
     print_r($sql);

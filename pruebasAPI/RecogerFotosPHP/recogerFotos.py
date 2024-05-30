@@ -1,23 +1,21 @@
 import requests
-from bs4 import BeautifulSoup
 import os
 
+# Clave de API de Bing Search
+subscription_key = 'YOUR_BING_SEARCH_API_KEY'
+search_url = "https://api.bing.microsoft.com/v7.0/images/search"
+
 # List of search terms
-search_terms = ["example search term 1", "example search term 2"]
+search_terms = ["YBR125", "MT07"]
 
 def get_image_url(search_term):
-    # Construct the URL for Google Image search
-    search_url = f"https://www.google.com/search?hl=en&tbm=isch&q={search_term.replace(' ', '+')}"
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
-    
-    response = requests.get(search_url, headers=headers)
-    soup = BeautifulSoup(response.text, 'html.parser')
-    
-    # Find the first image URL
-    images = soup.find_all('img')
-    if images:
-        first_image_url = images[0].get('src')
-        return first_image_url
+    headers = {"Ocp-Apim-Subscription-Key": subscription_key}
+    params = {"q": search_term, "license": "public", "imageType": "photo"}
+    response = requests.get(search_url, headers=headers, params=params)
+    response.raise_for_status()
+    search_results = response.json()
+    if search_results['value']:
+        return search_results['value'][0]['contentUrl']
     return None
 
 def download_image(image_url, save_path):
@@ -35,7 +33,7 @@ def download_image(image_url, save_path):
 if __name__ == "__main__":
     # Ensure the images directory exists
     os.makedirs('images', exist_ok=True)
-    
+
     # Process each search term
     for term in search_terms:
         print(f"Searching for images of: {term}")
