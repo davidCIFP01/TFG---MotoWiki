@@ -17,7 +17,7 @@
 
 
         <div class="contenedorBotonFiltros">
-            <button class="botonAzul" id="botonFiltros">FILTROS</button>
+<!--             <button class="botonAzul" id="botonFiltros">FILTROS</button> -->
         </div>
 
     </section>

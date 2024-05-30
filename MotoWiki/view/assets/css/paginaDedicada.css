@@ -318,4 +318,39 @@ table, th, td {
 
 
 
+@media screen and (max-width:850px) {
+
+    .presentacionMotocicleta{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .datosPresentacion{
+        width: 100%;
+        padding: 20px;
+    }
+
+    .datosMotoArriba{
+        width: 100%;
+    }
+
+    .datosMotoAbajo{
+        padding-right: 0px;
+    }
+
+}
+
+@media screen and (max-width:500px) {
+    .datosMotoArriba{
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+
+    }
+
+    .marcaMoto{
+        font-size: 2.5rem;
+    }
+}
+
 
