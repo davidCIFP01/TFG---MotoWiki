@@ -106,13 +106,13 @@
             cantidad: cantidadMotos
         };
         fetch('../AJAX/generarTarjetasPaginadas.php', {
-            method: 'POST', // o 'GET' si prefieres enviar los datos como parámetros de URL
+            method: 'POST', 
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data) // Convertir los datos a formato JSON
         })
-        .then(response => response.text()) // Asumimos que el servidor devuelve JSON
+        .then(response => response.text()) 
         .then(data => {
             console.log(data);
             if(data == "" || data == null){
