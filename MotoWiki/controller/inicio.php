@@ -7,7 +7,7 @@ require_once("../model/class/motocicleta.php");
 require_once("../model/class/usuario.php");
 session_start();
 
-print_r($_SESSION);
+// print_r($_SESSION);
 
 if(isset($_SESSION) && !empty($_SESSION)){
     // echo "hola";

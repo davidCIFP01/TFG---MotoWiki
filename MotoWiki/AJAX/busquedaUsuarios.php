@@ -52,7 +52,7 @@ if( isset($datosEnviados['textoBusqueda']) ){
         
         $contenidoMostrado .= ($row['betado']) ? '<button class="botonAzul" data-idUser="'.$row['idUsuario'].'" onclick="toggleVetado(this)"> ACTIVAR </button>' : '<button class="botonNaranja" data-idUser="'.$row['idUsuario'].'" onclick="toggleVetado(this)">VETAR</button>';
             
-        $contenidoMostrado .= ' <button class="botonRojo">BORRAR</button>
+        $contenidoMostrado .= ' 
                                     </div>
                                 </div>';
     }

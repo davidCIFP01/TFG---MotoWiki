@@ -14,14 +14,14 @@
             <img src="../view/assets/images/logos/logo-motoWiki-no-bg.png" alt="Logo Motowiki">
             <span>Administrador</span>
         </div>
-        <div class="formaNav" onclick="enviarInicio()"></div>
+        <!-- <div class="formaNav" onclick="enviarInicio()"></div> -->
 
     <?php }else if(!empty($_SESSION) && $_SESSION['tipoUsuario'] == "colab"){?>
         <div class="logoTítuloNav" onclick="enviarInicio()">
             <img src="../view/assets/images/logos/logo-motoWiki-no-bg.png" alt="Logo Motowiki">
             <span>Colaborador</span>
         </div>
-        <div class="formaNav" onclick="enviarInicio()"></div>
+        <!-- <div class="formaNav" onclick="enviarInicio()"></div> -->
     <?php }else{?>
         <div class="logoTítuloNav" onclick="enviarInicio()">
             <img src="../view/assets/images/logos/logo-motoWiki-no-bg.png" alt="Logo Motowiki">
