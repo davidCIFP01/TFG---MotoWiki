@@ -3,9 +3,12 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-05-2024 a las 02:02:04
+-- Tiempo de generación: 31-05-2024 a las 16:27:41
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
+
+CREATE DATABASE `motowiki`;
+USE `motowiki`;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -22,8 +25,7 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
-CREATE DATABASE `motowiki`;
-USE `motowiki`;
+
 --
 -- Estructura de tabla para la tabla `fabricante`
 --
@@ -45,16 +47,16 @@ CREATE TABLE `fabricante` (
 --
 
 INSERT INTO `fabricante` (`idFabricante`, `nombreFabricante`, `paisOrigen`, `fechaFundada`, `sitioWeb`, `descripcion1`, `descripcion2`, `imagenFabricante`, `suspendido`) VALUES
-(1, 'Kawasaki', 'Japón', 1896, 'https://www.kawasaki.es/', 'Kawasaki es una destacada marca japonesa de motocicletas, conocida por su innovación y tecnología avanzada. Fundada en 1896, Kawasaki inicialmente se especializó en construcción naval y maquinaria pesada. En 1953, se expandió al mercado de motocicletas, ganándose rápidamente una reputación por sus modelos de alto rendimiento y fiabilidad. Sus motos deportivas y de carreras son especialmente populares, destacando en competiciones internacionales. La marca mantiene su compromiso con la calidad y el rendimiento, siendo un referente en el mundo del motociclismo.', NULL, NULL, 0),
-(2, 'Honda', 'Japón', 1948, 'https://www.honda.es/', 'Honda es una influyente marca japonesa de motocicletas y automóviles, fundada en 1948. Es conocida por su fiabilidad, innovación y diseño eficiente. Honda ha sido pionera en la implementación de tecnologías avanzadas y sostenibles, como los motores híbridos y eléctricos. Sus motocicletas abarcan desde modelos deportivos hasta scooters y touring, ganando numerosos campeonatos en competiciones de motociclismo. Honda se distingue por su compromiso con la excelencia y la satisfacción del cliente, siendo una de las marcas más confiables y respetadas del mundo.', 'Honda, una marca japonesa líder en motocicletas y automóviles desde 1948, destaca por su fiabilidad, innovación y diseño eficiente. Reconocida por su compromiso con la excelencia y la satisfacción del cliente, Honda es pionera en tecnologías avanzadas y sostenibles, incluidos los motores híbridos y eléctricos. Su amplia gama de motocicletas, desde deportivas hasta scooters y touring, ha ganado numerosos campeonatos en competiciones de motociclismo, consolidando su posición como una marca respetada y confiable en todo el mundo.', NULL, 0),
-(3, 'Yamaha', 'Japón', 1887, 'https://www.yamaha-motor.eu', 'Yamaha, otra marca japonesa líder en la industria de motocicletas, fue fundada en 1887 como fabricante de instrumentos musicales. En 1955, Yamaha Motor Co., Ltd. se estableció, dedicándose a la producción de motocicletas. Yamaha es reconocida por su diversidad de modelos, desde motos deportivas y de competición hasta scooters y motos de turismo. La marca se destaca por su innovación tecnológica, rendimiento y diseño estético. Yamaha también tiene una fuerte presencia en competiciones de motociclismo, ganando múltiples títulos en MotoGP y otros campeonatos.', NULL, NULL, 0),
-(4, 'Suzuki', 'Japón', 1909, 'https://www.suzukicycles.com', 'Suzuki es una marca japonesa de motocicletas reconocida por su diversidad y calidad. Fundada en 1909, Suzuki comenzó fabricando telares antes de expandirse a motocicletas en 1952. La marca ofrece una amplia gama de modelos, desde motos deportivas y de aventura hasta scooters y motos de cross. Suzuki se destaca por su innovación tecnológica y su éxito en competiciones de motociclismo, especialmente en MotoGP. La compañía mantiene su compromiso con la fiabilidad, el rendimiento y la satisfacción del cliente, siendo una opción popular entre los motociclistas de todo el mundo.', NULL, NULL, 0),
-(5, 'Ducati', 'Italia', 1926, 'https://www.ducati.com', 'Ducati, una marca italiana icónica, se distingue por su diseño elegante y su rendimiento excepcional. Fundada en 1926, Ducati se ha convertido en sinónimo de motocicletas deportivas de alta gama. La marca es conocida por sus motores potentes, su ingeniería avanzada y su distintivo sonido de motor. Ducati ha tenido un gran éxito en competiciones de motociclismo, especialmente en el Campeonato Mundial de Superbikes. Con su enfoque en la innovación y la excelencia, Ducati continúa siendo un referente en el mundo del motociclismo de alto rendimiento.', NULL, NULL, 0),
-(6, 'KTM', 'Austria', 1934, 'https://www.ktm.com', 'KTM, una marca austriaca reconocida por su enfoque en motos de alta performance y off-road, fue fundada en 1934. KTM se ha ganado una reputación por su durabilidad y capacidad en terrenos difíciles, destacándose en competiciones como el Dakar Rally. Sus motocicletas abarcan desde modelos de motocross y enduro hasta motos deportivas y de carretera. KTM es conocida por su innovación tecnológica, ingeniería precisa y diseño audaz. La marca sigue expandiéndose globalmente, ofreciendo productos que combinan rendimiento y versatilidad para todos los entusiastas del motociclismo.', NULL, NULL, 0),
-(7, 'Aprilia', 'Italia', 1945, 'https://www.aprilia.com', 'Aprilia, una marca italiana conocida por su pasión por las motos deportivas y de competición, fue fundada en 1945. Aprilia se destaca por su innovación tecnológica y su éxito en competiciones de motociclismo, incluyendo numerosos títulos en MotoGP y Superbike. La marca ofrece una gama de motocicletas que van desde scooters hasta motos de alto rendimiento, siempre con un enfoque en la agilidad y el diseño. Aprilia es reconocida por su compromiso con la calidad y la ingeniería avanzada, atrayendo a entusiastas del motociclismo que buscan emoción y fiabilidad.', NULL, NULL, 1),
-(8, 'Royal Enfield', 'India', 1901, 'https://www.royalenfield.com', 'Royal Enfield, una marca británica con una rica historia, fue fundada en 1901 y es conocida por sus motocicletas clásicas y atemporales. Originalmente británica, la marca ahora tiene su sede en India, donde ha mantenido su legado de calidad y robustez. Royal Enfield es famosa por sus modelos emblemáticos como la Bullet y la Classic, que combinan un diseño retro con tecnología moderna. Estas motos son populares por su durabilidad y facilidad de mantenimiento, ofreciendo una experiencia de conducción única y nostálgica.', NULL, NULL, 0),
-(9, 'Harley-Davidson', 'Estados Unidos', 1903, 'https://www.harley-davidson.com', 'Harley-Davidson, una de las marcas más emblemáticas de Estados Unidos, fue fundada en 1903. Conocida por sus motocicletas cruiser de gran tamaño y estilo inconfundible, Harley-Davidson representa el espíritu de libertad y aventura en el motociclismo. La marca ha construido una fuerte comunidad de seguidores y una identidad cultural única. Sus motos son apreciadas por su diseño robusto, su sonido característico y su capacidad para largas distancias. Harley-Davidson sigue innovando, mientras mantiene sus raíces en la tradición y la calidad artesanal.', NULL, NULL, 0),
-(10, 'BMW Motorrad', 'Alemania', 1923, 'https://www.bmwmotorcycles.com', 'BMW Motorrad, la división de motocicletas de BMW, fue fundada en 1923 y es conocida por su ingeniería alemana de precisión y su enfoque en el rendimiento y la seguridad. BMW ofrece una amplia gama de motocicletas, desde modelos deportivos y touring hasta motos de aventura y urbanas. La marca es reconocida por su tecnología avanzada, como el sistema de suspensión Telelever y sus innovaciones en seguridad. BMW Motorrad ha tenido éxito en competiciones de motociclismo y continúa siendo un líder en la industria, ofreciendo motos que combinan lujo, tecnología y rendimiento.', NULL, NULL, 0);
+(1, 'Kawasaki', 'Japón', 1896, 'https://www.kawasaki.es/', 'Kawasaki es una destacada marca japonesa de motocicletas, conocida por su innovación y tecnología avanzada. Fundada en 1896, Kawasaki inicialmente se especializó en construcción naval y maquinaria pesada. En 1953, se expandió al mercado de motocicletas, ganándose rápidamente una reputación por sus modelos de alto rendimiento y fiabilidad. Sus motos deportivas y de carreras son especialmente populares, destacando en competiciones internacionales. La marca mantiene su compromiso con la calidad y el rendimiento, siendo un referente en el mundo del motociclismo.', NULL, '../view/assets/images/fabricante/kawasaki.jpeg', 0),
+(2, 'Honda', 'Japón', 1948, 'https://www.honda.es/', 'Honda es una influyente marca japonesa de motocicletas y automóviles, fundada en 1948. Es conocida por su fiabilidad, innovación y diseño eficiente. Honda ha sido pionera en la implementación de tecnologías avanzadas y sostenibles, como los motores híbridos y eléctricos. Sus motocicletas abarcan desde modelos deportivos hasta scooters y touring, ganando numerosos campeonatos en competiciones de motociclismo. Honda se distingue por su compromiso con la excelencia y la satisfacción del cliente, siendo una de las marcas más confiables y respetadas del mundo.', 'Honda, una marca japonesa líder en motocicletas y automóviles desde 1948, destaca por su fiabilidad, innovación y diseño eficiente. Reconocida por su compromiso con la excelencia y la satisfacción del cliente, Honda es pionera en tecnologías avanzadas y sostenibles, incluidos los motores híbridos y eléctricos. Su amplia gama de motocicletas, desde deportivas hasta scooters y touring, ha ganado numerosos campeonatos en competiciones de motociclismo, consolidando su posición como una marca respetada y confiable en todo el mundo.', '../view/assets/images/fabricante/hondaMotor.jpg', 0),
+(3, 'Yamaha', 'Japón', 1887, 'https://www.yamaha-motor.eu', 'Yamaha, otra marca japonesa líder en la industria de motocicletas, fue fundada en 1887 como fabricante de instrumentos musicales. En 1955, Yamaha Motor Co., Ltd. se estableció, dedicándose a la producción de motocicletas. Yamaha es reconocida por su diversidad de modelos, desde motos deportivas y de competición hasta scooters y motos de turismo. La marca se destaca por su innovación tecnológica, rendimiento y diseño estético. Yamaha también tiene una fuerte presencia en competiciones de motociclismo, ganando múltiples títulos en MotoGP y otros campeonatos.', NULL, '../view/assets/images/fabricante/yamaha.jpg', 0),
+(4, 'Suzuki', 'Japón', 1909, 'https://www.suzukicycles.com', 'Suzuki es una marca japonesa de motocicletas reconocida por su diversidad y calidad. Fundada en 1909, Suzuki comenzó fabricando telares antes de expandirse a motocicletas en 1952. La marca ofrece una amplia gama de modelos, desde motos deportivas y de aventura hasta scooters y motos de cross. Suzuki se destaca por su innovación tecnológica y su éxito en competiciones de motociclismo, especialmente en MotoGP. La compañía mantiene su compromiso con la fiabilidad, el rendimiento y la satisfacción del cliente, siendo una opción popular entre los motociclistas de todo el mundo.', NULL, '../view/assets/images/fabricante/suzuki.png', 0),
+(5, 'Ducati', 'Italia', 1926, 'https://www.ducati.com', 'Ducati, una marca italiana icónica, se distingue por su diseño elegante y su rendimiento excepcional. Fundada en 1926, Ducati se ha convertido en sinónimo de motocicletas deportivas de alta gama. La marca es conocida por sus motores potentes, su ingeniería avanzada y su distintivo sonido de motor. Ducati ha tenido un gran éxito en competiciones de motociclismo, especialmente en el Campeonato Mundial de Superbikes. Con su enfoque en la innovación y la excelencia, Ducati continúa siendo un referente en el mundo del motociclismo de alto rendimiento.', NULL, '../view/assets/images/fabricante/Ducati.jpg', 0),
+(6, 'KTM', 'Austria', 1934, 'https://www.ktm.com', 'KTM, una marca austriaca reconocida por su enfoque en motos de alta performance y off-road, fue fundada en 1934. KTM se ha ganado una reputación por su durabilidad y capacidad en terrenos difíciles, destacándose en competiciones como el Dakar Rally. Sus motocicletas abarcan desde modelos de motocross y enduro hasta motos deportivas y de carretera. KTM es conocida por su innovación tecnológica, ingeniería precisa y diseño audaz. La marca sigue expandiéndose globalmente, ofreciendo productos que combinan rendimiento y versatilidad para todos los entusiastas del motociclismo.', NULL, '../view/assets/images/fabricante/ktm.jpg', 0),
+(7, 'Aprilia', 'Italia', 1945, 'https://www.aprilia.com', 'Aprilia, una marca italiana conocida por su pasión por las motos deportivas y de competición, fue fundada en 1945. Aprilia se destaca por su innovación tecnológica y su éxito en competiciones de motociclismo, incluyendo numerosos títulos en MotoGP y Superbike. La marca ofrece una gama de motocicletas que van desde scooters hasta motos de alto rendimiento, siempre con un enfoque en la agilidad y el diseño. Aprilia es reconocida por su compromiso con la calidad y la ingeniería avanzada, atrayendo a entusiastas del motociclismo que buscan emoción y fiabilidad.', NULL, '../view/assets/images/fabricante/aprilia.jpg', 1),
+(8, 'Royal Enfield', 'India', 1901, 'https://www.royalenfield.com', 'Royal Enfield, una marca británica con una rica historia, fue fundada en 1901 y es conocida por sus motocicletas clásicas y atemporales. Originalmente británica, la marca ahora tiene su sede en India, donde ha mantenido su legado de calidad y robustez. Royal Enfield es famosa por sus modelos emblemáticos como la Bullet y la Classic, que combinan un diseño retro con tecnología moderna. Estas motos son populares por su durabilidad y facilidad de mantenimiento, ofreciendo una experiencia de conducción única y nostálgica.', NULL, '../view/assets/images/fabricante/RE.webp', 0),
+(9, 'Harley-Davidson', 'Estados Unidos', 1903, 'https://www.harley-davidson.com', 'Harley-Davidson, una de las marcas más emblemáticas de Estados Unidos, fue fundada en 1903. Conocida por sus motocicletas cruiser de gran tamaño y estilo inconfundible, Harley-Davidson representa el espíritu de libertad y aventura en el motociclismo. La marca ha construido una fuerte comunidad de seguidores y una identidad cultural única. Sus motos son apreciadas por su diseño robusto, su sonido característico y su capacidad para largas distancias. Harley-Davidson sigue innovando, mientras mantiene sus raíces en la tradición y la calidad artesanal.', NULL, '../view/assets/images/fabricante/HD.jpg', 0),
+(10, 'BMW Motorrad', 'Alemania', 1923, 'https://www.bmwmotorcycles.com', 'BMW Motorrad, la división de motocicletas de BMW, fue fundada en 1923 y es conocida por su ingeniería alemana de precisión y su enfoque en el rendimiento y la seguridad. BMW ofrece una amplia gama de motocicletas, desde modelos deportivos y touring hasta motos de aventura y urbanas. La marca es reconocida por su tecnología avanzada, como el sistema de suspensión Telelever y sus innovaciones en seguridad. BMW Motorrad ha tenido éxito en competiciones de motociclismo y continúa siendo un líder en la industria, ofreciendo motos que combinan lujo, tecnología y rendimiento.', NULL, '../view/assets/images/fabricante/bmw.webp', 0);
 
 -- --------------------------------------------------------
 
@@ -66,6 +68,36 @@ CREATE TABLE `favoritas` (
   `idUsuario` int(11) NOT NULL,
   `idMoto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `favoritas`
+--
+
+INSERT INTO `favoritas` (`idUsuario`, `idMoto`) VALUES
+(11, 960),
+(11, 1024),
+(11, 1373),
+(11, 1397),
+(11, 1398),
+(11, 1400),
+(11, 1401),
+(11, 1404),
+(11, 1405),
+(12, 1398),
+(12, 1400),
+(12, 1401),
+(12, 1402),
+(13, 768),
+(13, 1024),
+(13, 1280),
+(13, 1373),
+(13, 1374),
+(13, 1397),
+(13, 1398),
+(13, 1400),
+(13, 1401),
+(13, 1402),
+(13, 1403);
 
 -- --------------------------------------------------------
 
@@ -105,7 +137,7 @@ CREATE TABLE `motocicleta` (
 --
 
 INSERT INTO `motocicleta` (`idMoto`, `nombreModelo`, `fechaFabricacion`, `tipoMoto`, `cilindrada`, `potencia1`, `potencia2`, `refrigeracion`, `tipoMotor`, `marchas`, `transmision`, `capacidad`, `arranque`, `tag`, `tipoCarnet`, `popularidad`, `precioMin`, `precioMax`, `descripcion`, `imagenMoto`, `suspendida`, `idFabricante`, `altura`, `peso`) VALUES
-(755, 'Brute Force 300', 2022, 'ATV', 271, 22, 16, 'Liquid', 'Single cylinder, four-stroke', 0, 'Shaft drive (cardan)   (final drive)', '12.00', 'Electric', NULL, NULL, 0, NULL, NULL, 'Kawasaki ofrece una impresionante gama de motocicletas que abarca una amplia variedad de estilos y usos. Desde modelos ATV como la Brute Force 300 (755) y la Brute Force 750 4x4i (756), diseñados para terrenos difíciles, hasta motocicletas deportivas de alto rendimiento como la Ninja H2 (793) y la Ninja H2R (799), cada una con características únicas para satisfacer diferentes necesidades.', NULL, 0, 1, 1170, 243),
+(755, 'Brute Force 300', 2022, 'ATV', 271, 22, 16, 'Liquid', 'Single cylinder, four-stroke', 0, 'Shaft drive (cardan)   (final drive)', '12.00', 'Electric', NULL, NULL, 0, 2500, 10000, NULL, '../view/assets/images/motocicleta/Brute Force 350.png', 0, 1, 1170, 243),
 (756, 'Brute Force 750 4x4i', 2022, 'ATV', 749, NULL, NULL, 'Liquid', 'V2, four-stroke', 0, 'Shaft drive (cardan)   (final drive)', '18.93', 'Electric', NULL, NULL, 0, NULL, NULL, 'Para los entusiastas del touring, la Concours 14 (757) y la Ninja 1000SX Tourer (783) proporcionan comodidad y potencia en largos viajes. En la categoría dual-sport, la KLR 650 (760), KLR 650 Adventure (761) y KLR 650 Traveller (762) ofrecen versatilidad tanto para carretera como para caminos menos transitados.', NULL, 0, 1, 1219, 317.1),
 (757, 'Concours 14 ', 2022, 'Sport touring', 1352, 155, 113, 'Liquid', 'In-line four, four-stroke', 6, 'Shaft drive (cardan)   (final drive)', '21.95', 'Electric', NULL, NULL, 0, NULL, NULL, 'Concours 14: Motocicleta sport-touring de gran cilindrada, perfecta para viajes largos con comodidad y velocidad.', NULL, 0, 1, 1290, 313),
 (758, 'KFX50', 2022, 'ATV', 49, NULL, NULL, 'Air', 'Single cylinder, four-stroke', 0, 'Chain   (final drive)', '5.68', 'Electric & kick', NULL, NULL, 0, NULL, NULL, 'KFX50: Quad para niños, seguro y fácil de manejar, perfecto para los más jóvenes.', NULL, 0, 1, 910, 111.1),
@@ -118,7 +150,7 @@ INSERT INTO `motocicleta` (`idMoto`, `nombreModelo`, `fechaFabricacion`, `tipoMo
 (765, 'KLX 140R', 2022, 'Enduro / offroad', 144, NULL, NULL, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '5.68', 'Electric', NULL, NULL, 0, NULL, NULL, 'KLX 230 SE: Dual-sport ligera, ideal para aventuras tanto en carretera como fuera de ella.', NULL, 0, 1, 1049, 93),
 (766, 'KLX 230 SE', 2022, 'Enduro / offroad', 233, NULL, NULL, 'Air', 'Single cylinder, four-stroke', 6, 'Chain   (final drive)', '7.57', 'Electric', NULL, NULL, 0, NULL, NULL, 'KLX 140R: Moto de cross de tamaño mediano, equilibrada para adolescentes y adultos jóvenes.', NULL, 0, 1, 1158, 132),
 (767, 'KLX 230S', 2022, 'Enduro / offroad', 233, NULL, NULL, 'Air', 'Single cylinder, four-stroke', 6, 'Chain   (final drive)', '7.57', 'Electric', NULL, NULL, 0, NULL, NULL, 'KLX230: Modelo estándar de la KLX 230, versátil y manejable en cualquier terreno.', NULL, 0, 1, 1110, 133),
-(768, 'KLX230', 2022, 'Enduro / offroad', 233, NULL, NULL, 'Air', 'Single cylinder, four-stroke', 6, 'Chain   (final drive)', '7.57', 'Electric', NULL, NULL, 0, NULL, NULL, 'KLX 230S: Versión con suspensión más baja, perfecta para pilotos que prefieren una altura de asiento más accesible.', NULL, 0, 1, 1166, 133),
+(768, 'KLX230', 2022, 'Enduro / offroad', 233, NULL, NULL, 'Air', 'Single cylinder, four-stroke', 6, 'Chain   (final drive)', '7.57', 'Electric', NULL, NULL, 1, NULL, NULL, NULL, '../view/assets/images/motocicleta/KLX230.jpg', 0, 1, 1166, 133),
 (769, 'KLX300', 2022, 'Enduro / offroad', 292, NULL, NULL, 'Liquid', 'Single cylinder, four-stroke', 6, 'Chain   (final drive)', '7.57', 'Electric', NULL, NULL, 0, NULL, NULL, 'KLX300 SM: Versión supermoto, diseñada para ofrecer rendimiento en carreteras urbanas.', NULL, 0, 1, 1194, NULL),
 (770, 'KLX300 SM', 2022, 'Super motard', 292, NULL, NULL, 'Liquid', 'Single cylinder, four-stroke', 6, 'Chain   (final drive)', '7.57', 'Electric', NULL, NULL, 0, NULL, NULL, 'KLX300: Dual-sport potente, apta para el off-road y la carretera.', NULL, 0, 1, 1146, NULL),
 (771, 'KX 450SR', 2022, 'Cross / motocross', 449, NULL, NULL, 'Liquid', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '6.20', 'Electric', NULL, NULL, 0, NULL, NULL, 'KX100: Moto de cross para jóvenes pilotos, combina manejabilidad con potencia.', NULL, 0, 1, 1265, 110.2),
@@ -132,7 +164,7 @@ INSERT INTO `motocicleta` (`idMoto`, `nombreModelo`, `fechaFabricacion`, `tipoMo
 (779, 'KX65', 2022, 'Cross / motocross', 64, NULL, NULL, 'Liquid', 'Single cylinder, two-stroke', 6, 'Chain   (final drive)', '3.79', 'Kick', NULL, NULL, 0, NULL, NULL, 'KX85: Moto de cross juvenil, con mayor potencia y prestaciones que la KX65.', NULL, 0, 1, 955, 60),
 (780, 'KX85 ', 2022, 'Cross / motocross', 84, NULL, NULL, 'Liquid', 'Single cylinder, two-stroke', 6, 'Chain   (final drive)', '5.00', 'Kick', NULL, NULL, 0, NULL, NULL, 'KX65: Moto de cross para niños, excelente para iniciarse en el motocross.', NULL, 0, 1, 1100, 75),
 (781, 'Ninja 650 ', 2022, 'Sport', 649, 52, 38, 'Liquid', 'Twin, four-stroke', 6, 'Chain   (final drive)', '15.14', 'Electric', NULL, NULL, 0, NULL, NULL, 'Ninja 1000SX: Sport-touring de alto rendimiento, ideal para viajes largos y conducción deportiva.', NULL, 0, 1, 1146, 192.1),
-(782, 'Ninja 1000SX', 2022, 'Sport', 1043, 200, 146, 'Liquid', 'In-line four, four-stroke', 6, 'Chain   (final drive)', '17.00', 'Electric', NULL, NULL, 0, NULL, NULL, 'Ninja 650: Deportiva de media cilindrada, equilibrada entre rendimiento y comodidad.', NULL, 0, 1, 1191, 233.1),
+(782, 'Ninja 1000SX', 2022, 'Sport', 1043, 200, 146, 'Liquid', 'In-line four, four-stroke', 6, 'Chain   (final drive)', '17.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, '../view/assets/images/motocicleta/Ninja 100SX 2022.png', 0, 1, 1191, 233.1),
 (783, 'Ninja 1000SX Tourer', 2022, 'Sport', 1043, 142, 104, 'Liquid', 'In-line four, four-stroke', 6, 'Chain   (final drive)', '17.00', 'Electric', NULL, NULL, 0, NULL, NULL, 'Ninja 125: Motocicleta deportiva de pequeña cilindrada, perfecta para principiantes.', NULL, 0, 1, 1191, 235),
 (784, 'Ninja 125', 2022, 'Sport', 125, 15, 11, 'Liquid', 'Single cylinder, four-stroke', 6, 'Chain   (final drive)', '11.00', 'Electric', NULL, NULL, 0, NULL, NULL, 'Ninja 1000SX Tourer: Versión equipada para touring del Ninja 1000SX, con maletas y comodidades adicionales.', NULL, 0, 1, 1075, 149),
 (785, 'Ninja 125 Performance', 2022, 'Sport', 125, 15, 11, 'Liquid', 'Single cylinder, four-stroke', 6, 'Chain   (final drive)', '11.00', 'Electric', NULL, NULL, 0, NULL, NULL, 'Ninja 300: Deportiva ligera, ideal para nuevos pilotos que buscan estilo y rendimiento.', NULL, 0, 1, 1075, 149),
@@ -188,7 +220,7 @@ INSERT INTO `motocicleta` (`idMoto`, `nombreModelo`, `fechaFabricacion`, `tipoMo
 (835, 'Z900 SE', 2022, 'Naked bike', 948, NULL, NULL, 'Liquid', 'In-line four, four-stroke', 6, 'Chain   (final drive)', '17.03', 'Electric', NULL, NULL, 0, NULL, NULL, 'Z900 SE: Versión especial con componentes de alto rendimiento y mejoras en la suspensión.', NULL, 0, 1, 1115, 212.1),
 (836, 'Z900 SE Performance', 2022, 'Naked bike', 948, 125, 91, 'Liquid', 'In-line four, four-stroke', 6, 'Chain   (final drive)', '17.03', 'Electric', NULL, NULL, 0, NULL, NULL, 'Z900 SE Performance: Versión con accesorios adicionales para mejorar aún más el rendimiento.', NULL, 0, 1, 1115, 212.1),
 (837, 'Z900RS', 2022, 'Classic', 948, 110, 80, 'Liquid', 'In-line four, four-stroke', 6, 'Chain   (final drive)', '17.03', 'Electric', NULL, NULL, 0, NULL, NULL, 'Z900RS: Naked bike retro, que evoca el estilo de los años 70 con tecnología contemporánea.', NULL, 0, 1, 1181, 215.1),
-(838, 'Z900RS Cafe', 2022, 'Classic', 948, 110, 80, 'Liquid', 'In-line four, four-stroke', 6, 'Chain   (final drive)', '17.03', 'Electric', NULL, NULL, 0, NULL, NULL, 'Z900RS Cafe: Versión café racer de la Z900RS, con carenado frontal y asiento específico.', NULL, 0, 1, 1191, 214.6),
+(838, 'Z900RS Cafe', 2022, 'Classic', 948, 110, 80, 'Liquid', 'In-line four, four-stroke', 6, 'Chain   (final drive)', '17.03', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, '../view/assets/images/motocicleta/Z900RS cafe.jpg', 0, 1, 1191, 214.6),
 (839, 'Z900RS SE', 2022, 'Classic', 948, 110, 80, 'Liquid', 'In-line four, four-stroke', 6, 'Chain   (final drive)', '17.03', 'Electric', NULL, NULL, 0, NULL, NULL, 'Z900RS SE: Versión especial con componentes premium y detalles exclusivos.', NULL, 0, 1, 1181, 215.1),
 (840, 'Brute Force 300', 2021, 'ATV', 271, 22, 16, 'Liquid', 'Single cylinder, four-stroke', 2, 'Shaft drive (cardan)   (final drive)', '12.00', 'Electric', NULL, NULL, 0, NULL, NULL, 'Brute Force 300: Un ATV compacto, ideal para trabajos ligeros y recreación. Potente y maniobrable.', NULL, 0, 1, 1170, 243),
 (841, 'Brute Force 750 4x4i EPS', 2021, 'ATV', 749, 50, 37, 'Liquid', 'V2, four-stroke', 0, 'Shaft drive (cardan)   (final drive)', '19.00', 'Electric', NULL, NULL, 0, NULL, NULL, 'Brute Force 750 4x4i EPS: ATV robusto con dirección asistida electrónica, perfecto para terrenos difíciles.', NULL, 0, 1, 1220, 317),
@@ -197,7 +229,7 @@ INSERT INTO `motocicleta` (`idMoto`, `nombreModelo`, `fechaFabricacion`, `tipoMo
 (844, 'KFX90', 2021, 'ATV', 90, NULL, NULL, 'Air', 'Single cylinder, four-stroke', 0, 'Belt   (final drive)', '5.50', 'Electric', NULL, NULL, 0, NULL, NULL, 'KFX90: Quad juvenil con mayor potencia que el KFX50, ideal para jóvenes pilotos.', NULL, 0, 1, 925, 121),
 (845, 'ADV150', 2022, 'Scooter', 149, NULL, NULL, 'Liquid', 'Single cylinder, four-stroke', 0, 'Belt   (final drive)', '8.00', 'Electric', NULL, NULL, 0, NULL, NULL, 'ADV150: Scooter de aventura, combina características de off-road con comodidad urbana.', NULL, 0, 2, 1153, NULL),
 (846, 'ADV350', 2022, 'Scooter', 330, 29, 21, 'Liquid', 'Single cylinder, four-stroke', 0, 'Belt   (final drive)', '11.70', 'Electric', NULL, NULL, 0, NULL, NULL, 'ADV350: Scooter de mayor cilindrada para aventuras y viajes, con mayor comodidad y capacidad.', NULL, 0, 2, 1430, NULL),
-(847, 'Ace 125', 2022, 'Allround', 124, 9, 6, 'Air', 'V2, four-stroke', 4, 'Chain   (final drive)', '10.00', 'Kick', NULL, NULL, 0, NULL, NULL, 'Ace 125: Motocicleta ligera y accesible, ideal para principiantes y uso urbano.', NULL, 0, 2, 1059, NULL),
+(847, 'Ace 125', 2022, 'Allround', 124, 9, 6, 'Air', 'V2, four-stroke', 4, 'Chain   (final drive)', '10.00', 'Kick', NULL, NULL, 0, NULL, NULL, NULL, '../view/assets/images/motocicleta/Ace 125.jpg', 0, 2, 1059, NULL),
 (848, 'Activa', 2022, 'Scooter', 109, 8, 6, 'Air', 'Single cylinder, four-stroke', 0, 'Belt   (final drive)', '5.30', 'Electric & kick', NULL, NULL, 0, NULL, NULL, 'Activa: Scooter urbano, conocido por su fiabilidad y eficiencia.', NULL, 0, 2, 1156, 106),
 (849, 'Activa 125', 2022, 'Scooter', 123, 8, 6, 'NULL', 'Single cylinder, four-stroke', 0, 'Belt   (final drive)', '5.30', 'Electric & kick', NULL, NULL, 0, NULL, NULL, 'Activa 125: Versión de mayor cilindrada del Activa, ofrece más potencia y capacidad.', NULL, 0, 2, 1170, 109),
 (850, 'Africa Twin', 2022, 'Enduro / offroad', 1084, 101, 74, 'Liquid', 'Twin, four-stroke', 6, 'Chain   (final drive)', '24.80', 'Electric', NULL, NULL, 0, NULL, NULL, 'Africa Twin: Motocicleta de aventura de alta gama, conocida por su capacidad off-road y confort en largos viajes.', NULL, 0, 2, 1395, 238),
@@ -279,11 +311,11 @@ INSERT INTO `motocicleta` (`idMoto`, `nombreModelo`, `fechaFabricacion`, `tipoMo
 (926, 'Gold Wing Tour', 2022, 'Touring', 1833, 125, 91, 'Liquid', 'Six cylinder boxer, four-stroke', 6, 'Shaft drive (cardan)   (final drive)', '21.01', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 2, 1430, 385),
 (927, 'Grazia', 2022, 'Scooter', 123, 8, 6, 'Air', 'Single cylinder, four-stroke', 0, 'Belt   (final drive)', '5.30', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 2, 1167, 106),
 (928, 'Grom', 2022, 'Sport', 124, 10, 7, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '6.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 2, 1015, 103),
-(929, 'Hornet 2.0', 2022, 'Sport', 184, 17, 12, 'NULL', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '12.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 2, 1064, 142),
-(930, 'Livo                                        ', 2022, 'Allround', 109, 9, 6, 'Air', 'Single cylinder, four-stroke', 4, 'Chain   (final drive)', '9.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 2, 1116, 114),
-(931, 'MSX125 ', 2022, 'Sport', 124, 10, 7, 'Air', 'Single cylinder, four-stroke', 4, 'Chain   (final drive)', '6.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 2, 1015, 103),
+(929, 'Hornet 2.0', 2022, 'Sport', 184, 17, 12, 'NULL', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '12.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, '../view/assets/images/motocicleta/Hornet 2.webp', 0, 2, 1064, 142),
+(930, 'Livo                                        ', 2022, 'Allround', 109, 9, 6, 'Air', 'Single cylinder, four-stroke', 4, 'Chain   (final drive)', '9.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, '../view/assets/images/motocicleta/Livo.jpeg', 0, 2, 1116, 114),
+(931, 'MSX125 ', 2022, 'Sport', 124, 10, 7, 'Air', 'Single cylinder, four-stroke', 4, 'Chain   (final drive)', '6.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, '../view/assets/images/motocicleta/MXS125.jpeg', 0, 2, 1015, 103),
 (932, 'Metropolitan', 2022, 'Scooter', 49, NULL, NULL, 'Liquid', 'Single cylinder, four-stroke', 0, 'Belt   (final drive)', '4.54', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 2, NULL, 81.2),
-(933, 'Monkey 125', 2022, 'Allround', 124, 9, 7, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '5.68', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 2, 1030, 104),
+(933, 'Monkey 125', 2022, 'Allround', 124, 9, 7, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '5.68', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, '../view/assets/images/motocicleta/Monkey 125.png', 0, 2, 1030, 104),
 (934, 'Montesa 4 Ride                               ', 2022, 'Trial', 258, NULL, NULL, 'Liquid', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '4.30', 'Kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 2, 1160, NULL),
 (935, 'AG125', 2022, 'Enduro / offroad', 124, NULL, NULL, 'Air', 'Single cylinder, four-stroke', 0, 'Chain   (final drive)', '11.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1095, 113),
 (936, 'AG200F', 2022, 'Enduro / offroad', 196, NULL, NULL, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '10.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1155, 128),
@@ -305,13 +337,13 @@ INSERT INTO `motocicleta` (`idMoto`, `nombreModelo`, `fechaFabricacion`, `tipoMo
 (952, 'Grizzly EPS', 2022, 'ATV', 686, NULL, NULL, 'Liquid', 'Single cylinder, four-stroke', 0, 'Shaft drive (cardan)   (final drive)', '18.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1253, 318),
 (953, 'Grizzly EPS SE', 2022, 'ATV', 686, NULL, NULL, 'Liquid', 'Single cylinder, four-stroke', 0, 'Shaft drive (cardan)   (final drive)', '18.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1270, 342),
 (954, 'Grizzly EPS XT-R', 2022, 'ATV', 686, NULL, NULL, 'Liquid', 'Single cylinder, four-stroke', 0, 'Shaft drive (cardan)   (final drive)', '18.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1270, 355.2),
-(955, 'Kodiak 450', 2022, 'ATV', 421, NULL, NULL, 'Liquid', 'Single cylinder, four-stroke', 0, 'Shaft drive (cardan)   (final drive)', '14.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1160, 289);
-INSERT INTO `motocicleta` (`idMoto`, `nombreModelo`, `fechaFabricacion`, `tipoMoto`, `cilindrada`, `potencia1`, `potencia2`, `refrigeracion`, `tipoMotor`, `marchas`, `transmision`, `capacidad`, `arranque`, `tag`, `tipoCarnet`, `popularidad`, `precioMin`, `precioMax`, `descripcion`, `imagenMoto`, `suspendida`, `idFabricante`, `altura`, `peso`) VALUES
+(955, 'Kodiak 450', 2022, 'ATV', 421, NULL, NULL, 'Liquid', 'Single cylinder, four-stroke', 0, 'Shaft drive (cardan)   (final drive)', '14.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1160, 289),
 (956, 'Kodiak 450 EPS ', 2022, 'ATV', 421, NULL, NULL, 'Liquid', 'Single cylinder, four-stroke', 0, 'Shaft drive (cardan)   (final drive)', '14.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1160, 295),
-(957, 'MT-03', 2022, 'Sport', 321, 42, 31, 'Liquid', 'Twin, four-stroke', 6, 'Chain   (final drive)', '14.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1035, 168),
-(958, 'MT-07', 2022, 'Sport', 689, 74, 54, 'Liquid', 'Twin, four-stroke', 6, 'Chain   (final drive)', '14.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1105, 184.2),
+(957, 'MT-03', 2022, 'Sport', 321, 42, 31, 'Liquid', 'Twin, four-stroke', 6, 'Chain   (final drive)', '14.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1035, 168);
+INSERT INTO `motocicleta` (`idMoto`, `nombreModelo`, `fechaFabricacion`, `tipoMoto`, `cilindrada`, `potencia1`, `potencia2`, `refrigeracion`, `tipoMotor`, `marchas`, `transmision`, `capacidad`, `arranque`, `tag`, `tipoCarnet`, `popularidad`, `precioMin`, `precioMax`, `descripcion`, `imagenMoto`, `suspendida`, `idFabricante`, `altura`, `peso`) VALUES
+(958, 'MT-07', 2022, 'Sport', 689, 74, 54, 'Liquid', 'Twin, four-stroke', 6, 'Chain   (final drive)', '14.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, '../view/assets/images/motocicleta/MT-07.jpg', 0, 3, 1105, 184.2),
 (959, 'MT-07HO', 2022, 'Sport', 689, 74, 54, 'Liquid', 'Twin, four-stroke', 6, 'Chain   (final drive)', '14.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1105, 184.2),
-(960, 'MT-09', 2022, 'Naked bike', 890, NULL, NULL, 'Liquid', 'In-line three, four-stroke', 6, 'Chain   (final drive)', '14.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1191, 189.2),
+(960, 'MT-09', 2022, 'Naked bike', 890, NULL, NULL, 'Liquid', 'In-line three, four-stroke', 6, 'Chain   (final drive)', '14.00', 'Electric', NULL, NULL, 1, NULL, NULL, NULL, '../view/assets/images/motocicleta/MT-09.jpg', 0, 3, 1191, 189.2),
 (961, 'MT-09 SP', 2022, 'Naked bike', 890, NULL, NULL, 'Liquid', 'In-line three, four-stroke', 6, 'Chain   (final drive)', '14.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1191, 190.1),
 (962, 'MT-10', 2022, 'Naked bike', 998, 166, 121, 'Liquid', 'In-line four, four-stroke', 6, 'Chain   (final drive)', '17.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1165, 212),
 (963, 'MT-10 SP', 2022, 'Naked bike', 998, 164, 120, 'Liquid', 'In-line four, four-stroke', 6, 'Chain   (final drive)', '17.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1110, 210),
@@ -375,7 +407,7 @@ INSERT INTO `motocicleta` (`idMoto`, `nombreModelo`, `fechaFabricacion`, `tipoMo
 (1021, 'Tracer 9 ', 2022, 'Sport touring', 890, 119, 87, 'Liquid', 'In-line three, four-stroke', 6, 'Chain   (final drive)', '19.00', 'Electric', NULL, NULL, 0, NULL, NULL, 'Tracer 9: Una versión mejorada de la Tracer 7, equipada con un motor más potente y características avanzadas de turismo para una experiencia de conducción más emocionante.', NULL, 0, 3, 1430, 213),
 (1022, 'Tracer 9 GT', 2022, 'Sport touring', 890, 119, 87, 'Liquid', 'In-line three, four-stroke', 6, 'Chain   (final drive)', '19.00', 'Electric', NULL, NULL, 0, NULL, NULL, 'Tracer 9 GT: Una variante de lujo de la Tracer 9, equipada con características premium y tecnología avanzada para un mayor confort y conveniencia en viajes largos.', NULL, 0, 3, 1471, 220),
 (1023, 'Tricity 125', 2022, 'Scooter', 125, 12, 9, 'Liquid', 'Single cylinder, four-stroke', 0, 'Belt   (final drive)', '7.20', 'Electric', NULL, NULL, 0, NULL, NULL, 'Tricity 125: Una scooter de tres ruedas diseñada para ofrecer estabilidad y facilidad de manejo en entornos urbanos congestionados, con espacio de almacenamiento adicional y características de seguridad.', NULL, 0, 3, 1210, 164),
-(1024, 'Tricity 155', 2022, 'Scooter', 155, 15, 11, 'Liquid', 'Single cylinder, four-stroke', 0, 'Belt   (final drive)', '7.20', 'Electric', NULL, NULL, 0, NULL, NULL, 'Tricity 155: Una variante más potente de la Tricity 125, equipada con un motor de mayor cilindrada y características mejoradas de rendimiento.', NULL, 0, 3, 1210, 165),
+(1024, 'Tricity 155', 2022, 'Scooter', 155, 15, 11, 'Liquid', 'Single cylinder, four-stroke', 0, 'Belt   (final drive)', '7.20', 'Electric', NULL, NULL, 2, NULL, NULL, NULL, '../view/assets/images/motocicleta/tricity155.jpg', 0, 3, 1210, 165),
 (1025, 'AX4 115', 2022, 'Allround', 113, 11, 8, 'Air', 'Single cylinder, four-stroke', 4, 'Chain   (final drive)', '9.20', 'Electric & kick', NULL, NULL, 0, NULL, NULL, 'AX4 115: Una motocicleta económica diseñada para la conducción diaria en la ciudad, conocida por su bajo consumo de combustible y su facilidad de manejo.', NULL, 0, 4, 1050, 108),
 (1026, 'Access 125', 2022, 'Scooter', 124, 9, 6, 'Air', 'Single cylinder, four-stroke', 0, 'Belt   (final drive)', '5.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, 'Access 125: Una scooter de estilo urbano diseñada para ofrecer comodidad y rendimiento en la conducción diaria, con características modernas y eficientes.', NULL, 0, 4, 1160, 103),
 (1027, 'Address ', 2022, 'Scooter', 113, NULL, NULL, 'Air', 'Single cylinder, four-stroke', 0, 'Belt   (final drive)', '5.20', 'Electric & kick', NULL, NULL, 0, NULL, NULL, 'Address: Una scooter compacta y ágil diseñada para la movilidad urbana, con un diseño ligero y características prácticas para la conducción diaria.', NULL, 0, 4, 1095, 100),
@@ -503,10 +535,10 @@ INSERT INTO `motocicleta` (`idMoto`, `nombreModelo`, `fechaFabricacion`, `tipoMo
 (1179, 'Multistrada V4', 2021, 'Sport', 1158, 179, 131, 'Liquid', 'V4, four-stroke', 6, 'Chain   (final drive)', '22.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 5, NULL, 242),
 (1180, 'Multistrada V4 S Sport', 2021, 'Sport', 1158, 179, 131, 'Liquid', 'V4, four-stroke', 6, 'Chain   (final drive)', '22.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 5, NULL, 242),
 (1181, 'Multistrada V4S', 2021, 'Sport', 1158, 179, 131, 'Liquid', 'V4, four-stroke', 6, 'Chain   (final drive)', '22.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 5, NULL, 240),
-(1182, 'Panigale V2', 2021, 'Sport', 955, 155, 113, 'Liquid', 'V2, four-stroke', 6, 'Chain   (final drive)', '17.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 5, 1105, 200);
-INSERT INTO `motocicleta` (`idMoto`, `nombreModelo`, `fechaFabricacion`, `tipoMoto`, `cilindrada`, `potencia1`, `potencia2`, `refrigeracion`, `tipoMotor`, `marchas`, `transmision`, `capacidad`, `arranque`, `tag`, `tipoCarnet`, `popularidad`, `precioMin`, `precioMax`, `descripcion`, `imagenMoto`, `suspendida`, `idFabricante`, `altura`, `peso`) VALUES
+(1182, 'Panigale V2', 2021, 'Sport', 955, 155, 113, 'Liquid', 'V2, four-stroke', 6, 'Chain   (final drive)', '17.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 5, 1105, 200),
 (1183, 'Panigale V2 Bayliss', 2021, 'Sport', 955, 153, 112, 'Liquid', 'V2, four-stroke', 6, 'Chain   (final drive)', '17.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 5, 1105, 197),
-(1184, 'Panigale V4 R', 2021, 'Sport', 998, 221, 161, 'Liquid', 'V4, four-stroke', 6, 'Chain   (final drive)', '16.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 5, NULL, 193),
+(1184, 'Panigale V4 R', 2021, 'Sport', 998, 221, 161, 'Liquid', 'V4, four-stroke', 6, 'Chain   (final drive)', '16.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 5, NULL, 193);
+INSERT INTO `motocicleta` (`idMoto`, `nombreModelo`, `fechaFabricacion`, `tipoMoto`, `cilindrada`, `potencia1`, `potencia2`, `refrigeracion`, `tipoMotor`, `marchas`, `transmision`, `capacidad`, `arranque`, `tag`, `tipoCarnet`, `popularidad`, `precioMin`, `precioMax`, `descripcion`, `imagenMoto`, `suspendida`, `idFabricante`, `altura`, `peso`) VALUES
 (1185, 'Panigale V4 SP', 2021, 'Sport', 1103, 214, 156, 'Liquid', 'V4, four-stroke', 6, 'Chain   (final drive)', '16.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 5, NULL, 194),
 (1186, 'Scrambler 1100 Dark Pro', 2021, 'Classic', 1079, 86, 63, 'Air', 'V2, four-stroke', 6, 'Chain   (final drive)', '15.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 5, 1330, 206),
 (1187, 'Scrambler Desert Sled', 2021, 'Enduro / offroad', 803, 73, 53, 'Air', 'V2, four-stroke', 6, 'Chain   (final drive)', '13.50', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 5, 1213, 209),
@@ -570,7 +602,7 @@ INSERT INTO `motocicleta` (`idMoto`, `nombreModelo`, `fechaFabricacion`, `tipoMo
 (1245, '300 EXC TPI Erzbergrodeo', 2022, 'Enduro / offroad', 293, NULL, NULL, 'Liquid', 'Single cylinder, two-stroke', 6, 'Chain   (final drive)', '9.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 6, NULL, NULL),
 (1246, '300 EXC TPI Six Days', 2022, 'Enduro / offroad', 293, NULL, NULL, 'Liquid', 'Single cylinder, two-stroke', 6, 'Chain   (final drive)', '9.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 6, NULL, NULL),
 (1247, '300 XC TPI', 2022, 'Enduro / offroad', 293, NULL, NULL, 'Liquid', 'Single cylinder, two-stroke', 6, 'Chain   (final drive)', '8.50', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 6, NULL, NULL),
-(1248, '300 XC-W TPI', 2022, 'Enduro / offroad', 293, NULL, NULL, 'Liquid', 'Single cylinder, two-stroke', 6, 'Chain   (final drive)', '9.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 6, NULL, NULL),
+(1248, '300 XC-W TPI', 2022, 'Enduro / offroad', 293, NULL, NULL, 'Liquid', 'Single cylinder, two-stroke', 6, 'Chain   (final drive)', '9.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, '../view/assets/images/motocicleta/300 XC-W TPI.webp', 0, 6, NULL, NULL),
 (1249, '300 XC-W TPI Erzbergrodeo', 2022, 'Enduro / offroad', 293, NULL, NULL, 'Liquid', 'Single cylinder, two-stroke', 6, 'Chain   (final drive)', '8.50', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 6, NULL, NULL),
 (1250, '350 EXC-F', 2022, 'Enduro / offroad', 349, NULL, NULL, 'Liquid', 'Single cylinder, four-stroke', 6, 'Chain   (final drive)', '9.20', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 6, NULL, NULL),
 (1251, '350 EXC-F Factory', 2022, 'Enduro / offroad', 349, NULL, NULL, 'Liquid', 'Single cylinder, four-stroke', 6, 'Chain   (final drive)', '9.20', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 6, NULL, NULL),
@@ -602,7 +634,7 @@ INSERT INTO `motocicleta` (`idMoto`, `nombreModelo`, `fechaFabricacion`, `tipoMo
 (1277, '300 EXC TPI  Erzberg Rodeo', 2021, 'Enduro / offroad', 293, NULL, NULL, 'Liquid', 'Single cylinder, two-stroke', 6, 'Chain   (final drive)', '8.50', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 6, NULL, NULL),
 (1278, '300 EXC TPI Six Days', 2021, 'Enduro / offroad', 293, NULL, NULL, 'Liquid', 'Single cylinder, two-stroke', 6, 'Chain   (final drive)', '9.50', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 6, NULL, NULL),
 (1279, '300 XC TPI', 2021, 'Enduro / offroad', 293, NULL, NULL, 'Liquid', 'Single cylinder, two-stroke', 6, 'Chain   (final drive)', '8.50', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 6, NULL, NULL),
-(1280, '300 XC-W TPI', 2021, 'Enduro / offroad', 293, NULL, NULL, 'Liquid', 'Single cylinder, two-stroke', 6, 'Chain   (final drive)', '9.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 6, NULL, NULL),
+(1280, '300 XC-W TPI', 2021, 'Enduro / offroad', 293, NULL, NULL, 'Liquid', 'Single cylinder, two-stroke', 6, 'Chain   (final drive)', '9.00', 'Electric', NULL, NULL, 1, NULL, NULL, NULL, '../view/assets/images/motocicleta/300 XC.jpeg', 0, 6, NULL, NULL),
 (1281, '300 XC-W TPI Erzbergrodeo', 2021, 'Enduro / offroad', 293, NULL, NULL, 'Liquid', 'Single cylinder, two-stroke', 6, 'Chain   (final drive)', '8.50', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 6, NULL, NULL),
 (1282, '350 EXC TPI  Erzberg Rodeo', 2021, 'Enduro / offroad', 349, NULL, NULL, 'Liquid', 'Single cylinder, four-stroke', 6, 'Chain   (final drive)', '8.50', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 6, NULL, NULL),
 (1283, '350 EXC-F', 2021, 'Enduro / offroad', 349, NULL, NULL, 'Liquid', 'Single cylinder, four-stroke', 6, 'Chain   (final drive)', '9.20', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 6, NULL, NULL),
@@ -695,8 +727,8 @@ INSERT INTO `motocicleta` (`idMoto`, `nombreModelo`, `fechaFabricacion`, `tipoMo
 (1370, 'Street Bob 114', 2022, 'Custom / cruiser', 1868, NULL, NULL, 'Air', 'V2, four-stroke', 6, 'Belt   (final drive)', '13.20', 'Electric', NULL, NULL, 0, NULL, NULL, 'Street Bob 114: Cruiser minimalista con un potente motor de 114 cc y estilo clásico.', NULL, 0, 9, NULL, 297.1),
 (1371, 'Street Glide', 2022, 'Touring', 1746, 89, 65, 'Air', 'V2, four-stroke', 6, 'Belt   (final drive)', '22.71', 'Electric', NULL, NULL, 0, NULL, NULL, 'Street Glide: Touring con carenado batwing, perfecta para largos viajes con comodidad.', NULL, 0, 9, NULL, 376),
 (1372, 'Street Glide Special', 2022, 'Touring', 1868, 100, 73, 'Oil & air', 'V2, four-stroke', 6, 'Belt   (final drive)', '22.70', 'Electric', NULL, NULL, 0, NULL, NULL, 'Street Glide Special: Versión con características mejoradas y un diseño más moderno.', NULL, 0, 9, NULL, 375.1),
-(1373, 'Tri Glide Ultra', 2022, 'Touring', 1868, 100, 73, 'Air', 'V2, four-stroke', 6, 'Belt   (final drive)', '22.71', 'Electric', NULL, NULL, 0, NULL, NULL, 'Tri Glide Ultra: Trike de alta gama, con todas las comodidades para largos viajes.', NULL, 0, 9, NULL, 563.8),
-(1374, 'Ultra Limited', 2022, 'Touring', 1868, 100, 73, 'Oil & air', 'V2, four-stroke', 6, 'Belt   (final drive)', '22.71', 'Electric', NULL, NULL, 0, NULL, NULL, 'Ultra Limited: Touring de lujo, con características premium y comodidad excepcional.', NULL, 0, 9, NULL, 415.9),
+(1373, 'Tri Glide Ultra', 2022, 'Touring', 1868, 100, 73, 'Air', 'V2, four-stroke', 6, 'Belt   (final drive)', '22.71', 'Electric', NULL, NULL, 2, NULL, NULL, NULL, '../view/assets/images/motocicleta/tri_glide_ultra_2023.webp', 0, 9, NULL, 563.8),
+(1374, 'Ultra Limited', 2022, 'Touring', 1868, 100, 73, 'Oil & air', 'V2, four-stroke', 6, 'Belt   (final drive)', '22.71', 'Electric', NULL, NULL, 1, NULL, NULL, NULL, '../view/assets/images/motocicleta/ULTRA_limited.png', 0, 9, NULL, 415.9),
 (1375, 'Breakout', 2021, 'Custom / cruiser', 1868, 93, 68, 'Air', 'V2, four-stroke', 6, 'Belt   (final drive)', '13.20', 'Electric', NULL, NULL, 0, NULL, NULL, 'Breakout: Cruiser de diseño largo y bajo, con un motor potente y estilo imponente.', NULL, 0, 9, NULL, 305),
 (1376, 'CVO Limited', 2021, 'Touring', 1923, 105, 77, 'Oil & air', 'V2, four-stroke', 6, 'Belt   (final drive)', '22.71', 'Electric', NULL, NULL, 0, NULL, NULL, 'CVO Limited: Versión de lujo de Harley-Davidson, con características exclusivas y componentes premium.', NULL, 0, 9, NULL, 428.2),
 (1377, 'CVO Road Glide', 2021, 'Touring', 1923, 105, 77, 'Oil & air', 'V2, four-stroke', 6, 'Belt   (final drive)', '22.71', 'Electric', NULL, NULL, 0, NULL, NULL, 'CVO Road Glide: Touring de lujo con diseño exclusivo y tecnología avanzada.', NULL, 0, 9, NULL, 405.1),
@@ -713,21 +745,141 @@ INSERT INTO `motocicleta` (`idMoto`, `nombreModelo`, `fechaFabricacion`, `tipoMo
 (1388, 'Iron 883', 2021, 'Custom / cruiser', 883, 51, 37, 'Air', 'V2, four-stroke', 6, 'Belt   (final drive)', '12.50', 'Electric', NULL, NULL, 0, NULL, NULL, 'Iron 883: Sportster de entrada, conocida por su diseño oscuro y rendimiento accesible.', NULL, 0, 9, NULL, 256),
 (1389, 'Electra Glide Standard', 2020, 'Touring', 1746, 90, 66, 'Oil & air', 'V2, four-stroke', 6, 'Belt   (final drive)', '22.71', 'Electric', NULL, NULL, 0, NULL, NULL, 'Electra Glide Standard: Touring clásica de Harley-Davidson, famosa por su comodidad en largos viajes.', NULL, 0, 9, NULL, 372),
 (1390, 'FXDR 114', 2020, 'Custom / cruiser', 1868, 100, 73, 'NULL', 'V2, four-stroke', 6, 'Chain   (final drive)', '16.70', 'Electric', NULL, NULL, 0, NULL, NULL, 'FXDR 114: Cruiser de alto rendimiento, con diseño agresivo y motor potente.', NULL, 0, 9, NULL, 303),
-(1391, 'Fat Bob 114', 2020, 'Custom / cruiser', 1868, 94, 69, 'Air', 'V2, four-stroke', 6, 'Belt   (final drive)', '13.60', 'Electric', NULL, NULL, 0, NULL, NULL, 'Fat Bob 114: Cruiser con diseño robusto y motor potente de 114 cc.', NULL, 0, 9, NULL, 306);
+(1391, 'Fat Bob 114', 2020, 'Custom / cruiser', 1868, 94, 69, 'Air', 'V2, four-stroke', 6, 'Belt   (final drive)', '13.60', 'Electric', NULL, NULL, 0, NULL, NULL, 'Fat Bob 114: Cruiser con diseño robusto y motor potente de 114 cc.', NULL, 0, 9, NULL, 306),
+(1392, 'Fat Boy 114', 2020, 'Custom / cruiser', 1868, 100, 73, 'Air', 'V2, four-stroke', 6, 'Belt   (final drive)', '13.60', 'Electric', NULL, NULL, 0, NULL, NULL, 'Fat Boy 114: Icono de Harley-Davidson, con un motor potente y diseño clásico.', NULL, 0, 9, NULL, 306);
 INSERT INTO `motocicleta` (`idMoto`, `nombreModelo`, `fechaFabricacion`, `tipoMoto`, `cilindrada`, `potencia1`, `potencia2`, `refrigeracion`, `tipoMotor`, `marchas`, `transmision`, `capacidad`, `arranque`, `tag`, `tipoCarnet`, `popularidad`, `precioMin`, `precioMax`, `descripcion`, `imagenMoto`, `suspendida`, `idFabricante`, `altura`, `peso`) VALUES
-(1392, 'Fat Boy 114', 2020, 'Custom / cruiser', 1868, 100, 73, 'Air', 'V2, four-stroke', 6, 'Belt   (final drive)', '13.60', 'Electric', NULL, NULL, 0, NULL, NULL, 'Fat Boy 114: Icono de Harley-Davidson, con un motor potente y diseño clásico.', NULL, 0, 9, NULL, 306),
 (1393, 'Freewheeler', 2020, 'Custom / cruiser', 1868, 100, 73, 'Oil & air', 'V2, four-stroke', 6, 'Belt   (final drive)', '22.71', 'Electric', NULL, NULL, 0, NULL, NULL, 'Freewheeler: Trike de Harley-Davidson, con diseño clásico y estabilidad adicional.', NULL, 0, 9, NULL, 507.1),
 (1394, 'Heritage Classic', 2020, 'Custom / cruiser', 1746, 86, 63, 'Air', 'V2, four-stroke', 6, 'Belt   (final drive)', '18.90', 'Electric', NULL, NULL, 0, NULL, NULL, 'Heritage Classic: Cruiser de estilo retro, con detalles nostálgicos y modernas prestaciones.', NULL, 0, 9, NULL, 328),
 (1395, 'Iron 1200', 2020, 'Custom / cruiser', 1202, NULL, NULL, 'Air', 'V2, four-stroke', 6, 'Belt   (final drive)', '12.50', 'Electric', NULL, NULL, 0, NULL, NULL, 'Iron 1200: Sportster con motor de 1200 cc, conocida por su diseño oscuro y rendimiento accesible.', NULL, 0, 9, NULL, 255.8),
 (1396, 'Iron 883', 2020, 'Custom / cruiser', 883, 51, 37, 'Air', 'V2, four-stroke', 6, 'Belt   (final drive)', '12.50', 'Electric', NULL, NULL, 0, NULL, NULL, 'Iron 883: Sportster de entrada, famosa por su diseño oscuro y rendimiento accesible.', NULL, 0, 9, NULL, 256),
-(1397, 'C 400 GT', 2022, 'Scooter', 350, 34, 25, 'Liquid', 'Single cylinder, four-stroke', 0, 'Chain   (final drive)', '12.80', 'Electric', NULL, NULL, 0, NULL, NULL, 'C 400 GT: Scooter de BMW, diseñada para viajes urbanos y comodidad en trayectos largos.', NULL, 0, 10, 1305, 214.1),
-(1398, 'R nineT Scrambler', 2022, 'Naked bike', 1170, 109, 80, 'Oil & air', 'Two cylinder boxer, four-stroke', 6, 'Shaft drive (cardan)   (final drive)', '17.00', 'Electric', NULL, NULL, 0, NULL, NULL, 'R nineT Scrambler: Motocicleta de estilo retro, con capacidad todoterreno y diseño clásico.', NULL, 0, 10, 1330, NULL),
+(1397, 'C 400 GT', 2022, 'Scooter', 350, 34, 25, 'Liquid', 'Single cylinder, four-stroke', 0, 'Chain   (final drive)', '12.80', 'Electric', NULL, NULL, 2, NULL, NULL, NULL, '../view/assets/images/motocicleta/C400GT.jpg', 0, 10, 1305, 214.1),
+(1398, 'R nineT Scrambler', 2022, 'Naked bike', 1170, 109, 80, 'Oil & air', 'Two cylinder boxer, four-stroke', 6, 'Shaft drive (cardan)   (final drive)', '17.00', 'Electric', NULL, NULL, 3, NULL, NULL, NULL, '../view/assets/images/motocicleta/R nineT Scrambler.jpg', 0, 10, 1330, NULL),
 (1399, 'R nineT Scrambler', 2022, 'Naked bike', 1170, 109, 80, 'Oil & air', 'Two cylinder boxer, four-stroke', 6, 'Shaft drive (cardan)   (final drive)', '17.00', 'Electric', NULL, NULL, 0, NULL, NULL, 'R nineT Scrambler: Versión scrambler del R nineT, con características todoterreno y estilo vintage.', NULL, 0, 10, 1330, NULL),
-(1400, 'R18 The Wal', 2022, 'Prototype / concept model', 1800, 90, 66, 'NULL', 'Two cylinder boxer, four-stroke', 6, 'Shaft drive (cardan)   (final drive)', NULL, 'Electric', NULL, NULL, 0, NULL, NULL, 'R18 The Wal: Cruiser de BMW, conocida por su motor bóxer de gran cilindrada y diseño clásico.', NULL, 0, 10, NULL, NULL),
-(1401, 'S 1000 R', 2022, 'Naked bike', 999, 165, 120, 'Liquid', 'In-line four, four-stroke', 6, 'Chain   (final drive)', '17.50', 'Electric', NULL, NULL, 0, NULL, NULL, 'S 1000 R: Naked de alto rendimiento, basada en la S 1000 RR, con diseño agresivo y tecnología avanzada.', NULL, 0, 10, 1228, 199),
-(1402, 'S 1000 RR', 2022, 'Sport', 999, 205, 150, 'Liquid', 'In-line four, four-stroke', 6, 'Chain   (final drive)', '16.50', 'Electric', NULL, NULL, 0, NULL, NULL, 'S 1000 RR: Superdeportiva de BMW, famosa por su potencia, tecnología avanzada y rendimiento en pista.', NULL, 0, 10, 1151, 196.9),
-(1403, 'S 1000 XR', 2022, 'Sport', 999, 165, 120, 'Liquid', 'In-line four, four-stroke', 6, 'Chain   (final drive)', '20.00', 'Electric', NULL, NULL, 0, NULL, NULL, 'S 1000 XR: Motocicleta de aventura deportiva, combina la agilidad de una deportiva con la capacidad de touring.', NULL, 0, 10, 1411, 226),
-(1404, 'C 400 X', 2021, 'Scooter', 350, 34, 25, 'Liquid', 'Single cylinder, four-stroke', 0, 'Chain   (final drive)', '12.80', 'Electric', NULL, NULL, 0, NULL, NULL, 'C 400 X: Scooter urbano de BMW, conocida por su diseño moderno y eficiencia en la ciudad.', NULL, 0, 10, 1305, 204);
+(1400, 'R18 The Wal', 2022, 'Prototype / concept model', 1800, 90, 66, 'NULL', 'Two cylinder boxer, four-stroke', 6, 'Shaft drive (cardan)   (final drive)', NULL, 'Electric', NULL, NULL, 3, NULL, NULL, NULL, '../view/assets/images/motocicleta/R18_2022.jpg', 0, 10, NULL, NULL),
+(1401, 'S 1000 R', 2022, 'Naked bike', 999, 165, 120, 'Liquid', 'In-line four, four-stroke', 6, 'Chain   (final drive)', '17.50', 'Electric', NULL, NULL, 3, NULL, NULL, NULL, '../view/assets/images/motocicleta/s1000r_2022.jpg', 0, 10, 1228, 199),
+(1402, 'S 1000 RR', 2022, 'Sport', 999, 205, 150, 'Liquid', 'In-line four, four-stroke', 6, 'Chain   (final drive)', '16.50', 'Electric', NULL, NULL, 2, NULL, NULL, NULL, '../view/assets/images/motocicleta/S1000RR_2022.jpg', 0, 10, 1151, 196.9),
+(1403, 'S 1000 XR', 2022, 'Sport', 999, 165, 120, 'Liquid', 'In-line four, four-stroke', 6, 'Chain   (final drive)', '20.00', 'Electric', NULL, NULL, 1, NULL, NULL, NULL, '../view/assets/images/motocicleta/S1000XR.jpg', 0, 10, 1411, 226),
+(1404, 'C 400 X', 2021, 'Scooter', 350, 34, 25, 'Liquid', 'Single cylinder, four-stroke', 0, 'Chain   (final drive)', '12.80', 'Electric', NULL, NULL, 1, NULL, NULL, NULL, '../view/assets/images/motocicleta/C400X.jpg', 0, 10, 1305, 204),
+(1405, 'YBR125 ED', 2022, 'Allround', 124, 10, 7, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.00', 'Electric', NULL, NULL, 1, NULL, NULL, NULL, '../view/assets/images/motocicleta/YBR125ED.jfif', 0, 3, 1080, 123),
+(1406, 'YBR 110', 2018, 'Allround', 106, 8, 6, 'Air', 'Single cylinder, four-stroke', 4, 'Chain   (final drive)', '13.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1050, 123),
+(1407, 'YBR125', 2018, 'Naked bike', 123, 10, 7, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.60', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1100, 126),
+(1408, 'YBR 110', 2017, 'Allround', 106, 10, 7, 'Air', 'Single cylinder, four-stroke', 4, 'Chain   (final drive)', '13.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, NULL, 123),
+(1409, 'YBR125', 2017, 'Naked bike', 124, 10, 7, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1080, 126),
+(1410, 'YBR125 Custom', 2017, 'Custom / cruiser', 124, 10, 7, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '12.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1125, 129),
+(1411, 'YBR125', 2016, 'Naked bike', 124, 10, 7, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1080, 126),
+(1412, 'YBR125 Custom', 2016, 'Custom / cruiser', 124, 10, 7, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '12.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, NULL, 129),
+(1413, 'YBR125', 2015, 'Naked bike', 124, 10, 7, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1080, 126),
+(1414, 'YBR125 Custom', 2015, 'Custom / cruiser', 124, 10, 7, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '12.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, NULL, 129),
+(1415, 'YBR125', 2014, 'Naked bike', 124, 10, 7, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1080, 126),
+(1416, 'YBR125 Custom', 2014, 'Custom / cruiser', 124, 10, 7, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '12.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, NULL, 129),
+(1417, 'YBR125', 2013, 'Naked bike', 124, 10, 7, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1080, 125),
+(1418, 'YBR125 Custom', 2013, 'Custom / cruiser', 124, 10, 7, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '12.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, NULL, 129),
+(1419, 'YBR125', 2012, 'Naked bike', 124, 10, 7, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1080, 125),
+(1420, 'YBR125 Custom', 2012, 'Custom / cruiser', 124, 10, 7, 'Air', 'Single cylinder, four-stroke', 5, '', '12.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, NULL, 129),
+(1421, 'YBR125', 2011, 'Naked bike', 124, 10, 7, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1080, 125),
+(1422, 'YBR125 Custom', 2011, 'Custom / cruiser', 124, 10, 7, 'Air', 'Single cylinder, four-stroke', 5, '', '12.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1125, 129),
+(1423, 'YBR250', 2011, 'Sport', 249, 21, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '19.20', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, '../view/assets/images/motocicleta/YBR250.webp', 0, 3, 1065, 138),
+(1424, 'YBR 125', 2010, 'Naked bike', 124, 10, 7, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1080, 124),
+(1425, 'YBR125', 2009, 'Sport', 124, 10, 7, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1080, 124),
+(1426, 'YBR125 Custom', 2009, 'Custom / cruiser', 124, 10, 7, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '12.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1125, 129),
+(1427, 'YBR250', 2009, 'Naked bike', 249, 21, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '19.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1065, NULL),
+(1428, 'YBR125', 2008, 'Allround', 124, 10, 7, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1080, NULL),
+(1429, 'YBR125 Custom', 2008, 'Custom / cruiser', 124, 10, 7, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '12.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1125, NULL),
+(1430, 'YBR250', 2008, 'Allround', 249, 21, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '19.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1065, NULL),
+(1431, 'YBR 125', 2007, 'Sport', 124, 10, 7, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '12.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1080, NULL),
+(1432, 'YBR 250', 2007, 'Allround', 249, 21, 15, 'Air', 'Single cylinder, four-stroke', 0, 'Chain   (final drive)', '19.20', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1065, NULL),
+(1433, 'YBR 125', 2006, 'Naked bike', 124, 10, 7, 'Air', 'Single cylinder, four-stroke', 5, '', '12.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, 1080, NULL),
+(1434, 'YBR 125', 2005, 'Naked bike', 125, 10, 7, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '12.00', 'NULL', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 3, NULL, NULL),
+(1435, 'Classic 350', 2022, 'Classic', 349, 20, 14, 'Oil & air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, '../view/assets/images/motocicleta/Classic 350.png', 0, 8, 1090, 195),
+(1436, 'Continental GT 650', 2022, 'Classic', 648, 47, 34, 'Air', 'Twin, four-stroke', 6, 'Chain   (final drive)', '12.50', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, '../view/assets/images/motocicleta/Continental GT.jpg', 0, 8, 1069, 212),
+(1437, 'Himalayan', 2022, 'Enduro / offroad', 411, 25, 18, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '12.49', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, '../view/assets/images/motocicleta/HImalayan.png', 0, 8, 1360, 194),
+(1438, 'Interceptor 650', 2022, 'Classic', 648, 47, 34, 'Air', 'Twin, four-stroke', 6, 'Chain   (final drive)', '13.70', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, '../view/assets/images/motocicleta/Interceptor 650.webp', 0, 8, 1120, 217),
+(1439, 'Meteor 350', 2022, 'Classic', 349, 20, 15, 'Oil & air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '15.00', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, '../view/assets/images/motocicleta/Meteor 350.jpg', 0, 8, 1140, 191),
+(1440, ' Bullet 350', 2019, 'Classic', 346, 20, 15, 'NULL', 'Single cylinder, four-stroke', 0, '', '13.50', 'Kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1120, 185),
+(1441, ' Bullet 350 ES', 2019, 'Classic', 346, 20, 15, 'NULL', 'Single cylinder, four-stroke', 0, '', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1120, 189),
+(1442, ' Bullet Trials Work Replica 350', 2019, 'Classic', 346, 20, 15, 'NULL', 'Single cylinder, four-stroke', 0, '', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1123, 187),
+(1443, '500 T Bullet Trials', 2019, 'Classic', 499, 22, 16, 'Air', 'Single cylinder, four-stroke', 0, '', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1123, 192),
+(1444, 'Bullet 500', 2019, 'Classic', 499, 22, 16, 'Air', 'Single cylinder, four-stroke', 0, '', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1110, 196),
+(1445, 'Bullet Trials Works Replica 500', 2019, 'Classic', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1123, 196),
+(1446, 'Classic 350 Gunmetal Grey', 2019, 'Allround', 346, 20, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1090, 194),
+(1447, 'Classic 350 Redditch', 2019, 'Allround', 346, 20, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1090, 194),
+(1448, 'Classic 350 Signals', 2019, 'Classic', 346, 20, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1090, 194),
+(1449, 'Classic 500 ', 2019, 'Allround', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1090, 196),
+(1450, 'Classic 500 Pegasus', 2019, 'Classic', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1090, 194),
+(1451, 'Classic 500 Squadron Blue', 2019, 'Classic', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1090, 196),
+(1452, 'Classic 500 Stealth Black ', 2019, 'Classic', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1090, 196),
+(1453, 'Classic Chrome 500', 2019, 'Allround', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1050, 187),
+(1454, 'Classic Desert Storm', 2019, 'Allround', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1050, 196),
+(1455, 'Concept KX', 2019, 'Sport', 838, 90, 66, 'NULL', 'V2, two-stroke', 0, 'Chain   (final drive)', NULL, 'NULL', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 998, NULL),
+(1456, 'Continental GT 650', 2019, 'Allround', 648, 47, 34, 'Oil & air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1024, NULL),
+(1457, 'Himalayan', 2019, 'Enduro / offroad', 411, 25, 18, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '15.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1360, 194),
+(1458, 'Interceptor 650', 2019, 'Allround', 648, 47, 34, 'Air', 'Twin, four-stroke', 6, 'Chain   (final drive)', '13.70', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1165, 202),
+(1459, 'Thunderbird  X350', 2019, 'Classic', 346, 20, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '20.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1140, 197),
+(1460, 'Thunderbird 350', 2019, 'Classic', 346, 20, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '20.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1205, 197),
+(1461, 'Thunderbird 500', 2019, 'Allround', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '20.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1205, 199),
+(1462, 'Thunderbird X 500', 2019, 'Classic', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '20.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1140, 199),
+(1463, 'Bullet 350', 2018, 'Classic', 346, 20, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1030, 183),
+(1464, 'Bullet 500', 2018, 'Classic', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1090, 194),
+(1465, 'Bullet ES', 2018, 'Classic', 346, 20, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1120, 187),
+(1466, 'Classic 350 Gunmetal Grey', 2018, 'Classic', 346, 20, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1090, 192),
+(1467, 'Classic 500 Stealth Black ', 2018, 'Classic', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1090, 194),
+(1468, 'Continental GT', 2018, 'Allround', 535, 29, 21, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1070, 192),
+(1469, 'Custombike Dirty Duck', 2018, 'Enduro / offroad', 535, 29, 21, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1070, 198),
+(1470, 'Custombike Mo Powa', 2018, 'Classic', 499, NULL, NULL, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, NULL, NULL),
+(1471, 'Himalayan', 2018, 'Enduro / offroad', 411, 25, 18, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '15.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1360, 191),
+(1472, 'Interceptor 650', 2018, 'Allround', 648, 47, 34, 'Air', 'Twin, four-stroke', 6, 'Chain   (final drive)', '13.70', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1165, 203),
+(1473, 'Thunderbird 350', 2018, 'Classic', 346, 20, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '20.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1205, 195),
+(1474, 'Thunderbird 500', 2018, 'Classic', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '20.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1300, 197),
+(1475, 'Thunderbird X 350', 2018, 'Classic', 346, 20, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '20.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1140, 195),
+(1476, 'Thunderbird X 500', 2018, 'Classic', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '20.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1140, 197),
+(1477, 'Bullet 350', 2017, 'Classic', 346, 20, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1030, 180),
+(1478, 'Bullet 350 ES', 2017, 'Classic', 346, 20, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1030, 185),
+(1479, 'Bullet 500', 2017, 'Classic', 499, 26, 19, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1110, 193),
+(1480, 'Classic 350', 2017, 'Classic', 346, 20, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1080, 187),
+(1481, 'Classic 500', 2017, 'Classic', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1090, 190),
+(1482, 'Classic Battle Green ', 2017, 'Classic', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '14.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, '../view/assets/images/motocicleta/Classic Battle Green.png', 0, 8, 1050, 187),
+(1483, 'Classic Chrome', 2017, 'Classic', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '14.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1050, 187),
+(1484, 'Classic Desert Storm', 2017, 'Classic', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '14.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1050, 187),
+(1485, 'Classic Squadron Blue', 2017, 'Classic', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '14.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1090, 187),
+(1486, 'Continental GT', 2017, 'Allround', 535, 29, 21, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1070, 184),
+(1487, 'Himalayan', 2017, 'Enduro / offroad', 411, 25, 18, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '15.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1360, 182),
+(1488, 'Thunderbird 350', 2017, 'Classic', 346, 20, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '20.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1205, 192),
+(1489, 'Thunderbird 500', 2017, 'Classic', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '20.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1300, 195),
+(1490, 'Bullet 350', 2016, 'Classic', 346, 20, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1030, 180),
+(1491, 'Bullet 500', 2016, 'Classic', 499, 26, 19, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1110, 193),
+(1492, 'Bullet Electra', 2016, 'Classic', 346, 20, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1120, 187),
+(1493, 'Classic 350', 2016, 'Classic', 346, 20, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1080, 187),
+(1494, 'Classic 500', 2016, 'Classic', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1090, 190),
+(1495, 'Classic 500 C5 Chrome', 2016, 'Classic', 499, NULL, NULL, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '14.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1050, 187),
+(1496, 'Classic Battle Green ', 2016, 'Classic', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '14.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1050, 187),
+(1497, 'Classic Desert Storm', 2016, 'Classic', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '14.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1050, 187),
+(1498, 'Classic Squadron Blue', 2016, 'Classic', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '14.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1090, 187),
+(1499, 'Continental GT', 2016, 'Allround', 535, 29, 21, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1070, 184),
+(1500, 'Himalayan', 2016, 'Enduro / offroad', 411, 25, 18, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '15.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1360, 182),
+(1501, 'Thunderbird 350', 2016, 'Classic', 346, 20, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '20.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1205, 192),
+(1502, 'Thunderbird 500', 2016, 'Classic', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '20.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1300, 195),
+(1503, 'Bullet 350', 2015, 'Classic', 346, 20, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1030, 180),
+(1504, 'Bullet 500', 2015, 'Classic', 499, 26, 19, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1120, 193),
+(1505, 'Bullet 500 B5', 2015, 'Classic', 499, NULL, NULL, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1110, 193),
+(1506, 'Bullet 500 G5 Deluxe', 2015, 'Classic', 499, NULL, NULL, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '14.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1120, 187),
+(1507, 'Bullet Electra', 2015, 'Classic', 346, 20, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1120, 187),
+(1508, 'Classic 350', 2015, 'Classic', 346, 20, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1080, 187),
+(1509, 'Classic 500', 2015, 'Classic', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, '../view/assets/images/motocicleta/Classic 500.png', 0, 8, 1080, 190),
+(1510, 'Classic 500 C5 Chrome', 2015, 'Classic', 499, NULL, NULL, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '14.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1050, 187),
+(1511, 'Classic 500 C5 Classic', 2015, 'Classic', 499, NULL, NULL, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '14.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1120, 187),
+(1512, 'Classic 500 C5 Military', 2015, 'Classic', 499, NULL, NULL, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '14.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1050, 187),
+(1513, 'Classic Battle Green ', 2015, 'Classic', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '14.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1050, 187),
+(1514, 'Classic Chrome', 2015, 'Classic', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '14.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1080, 187),
+(1515, 'Classic Desert Storm', 2015, 'Classic', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '14.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1050, 187),
+(1516, 'Continental GT', 2015, 'Allround', 535, 29, 21, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1070, 184),
+(1517, 'Thunderbird 350', 2015, 'Classic', 346, 20, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '20.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1205, 192),
+(1518, 'Thunderbird 500', 2015, 'Classic', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '20.00', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1300, 195),
+(1519, 'Bullet 350', 2014, 'Classic', 346, 20, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1030, 180),
+(1520, 'Bullet 500', 2014, 'Classic', 499, 37, 27, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1120, 193),
+(1521, 'Bullet Electra', 2014, 'Classic', 346, 20, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, '../view/assets/images/motocicleta/Bullet Electra.webp', 0, 8, 1120, 187),
+(1522, 'Classic 350', 2014, 'Classic', 346, 20, 15, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1080, 187),
+(1523, 'Classic 500', 2014, 'Classic', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '13.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1080, 190),
+(1524, 'Classic Battle Green ', 2014, 'Classic', 499, 27, 20, 'Air', 'Single cylinder, four-stroke', 5, 'Chain   (final drive)', '14.50', 'Electric & kick', NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, 8, 1050, 187);
 
 -- --------------------------------------------------------
 
@@ -778,40 +930,44 @@ CREATE TABLE `registros` (
 --
 
 INSERT INTO `registros` (`idRegistro`, `fechaCambio`, `tipoCambio`, `descripcionCambios`, `idUsuario`) VALUES
-(1, '2024-05-28', 'usuario', 'Se ha vetado al usuario: 3', 3),
-(2, '2024-05-28', 'usuario', 'Se ha activado el usuario: 3', 3),
-(3, '2024-05-28', 'usuario', 'Se ha vetado al usuario: 3', 3),
-(4, '2024-05-28', 'usuario', 'Se ha activado el usuario: 3', 3),
-(5, '2024-05-28', 'usuario', 'Se ha vetado al usuario: 3', 3),
-(6, '2024-05-28', 'usuario', 'Se ha activado el usuario: 3', 3),
-(7, '2024-05-28', 'usuario', 'Se ha vetado al usuario: 3', 3),
-(8, '2024-05-28', 'usuario', 'Se ha activado el usuario: 3', 3),
-(9, '2024-05-28', 'usuario', 'Se ha vetado al usuario: 3', 3),
-(10, '2024-05-28', 'usuario', 'Se ha activado el usuario: 3', 3),
-(11, '2024-05-28', 'usuario', 'Se ha vetado al usuario: 3', 3),
-(12, '2024-05-28', 'usuario', 'Se ha activado el usuario: 3', 3),
-(13, '2024-05-28', 'usuario', 'Se ha vetado al usuario: 3', 3),
-(14, '2024-05-28', 'usuario', 'Se ha activado el usuario: 3', 3),
-(15, '2024-05-28', 'usuario', 'Se ha vetado al usuario: 3', 3),
-(16, '2024-05-28', 'usuario', 'Se ha activado el usuario: 3', 3),
-(17, '2024-05-28', 'usuario', 'Se ha vetado al usuario: 3', 3),
-(18, '2024-05-28', 'usuario', 'Se ha activado el usuario: 3', 3),
-(19, '2024-05-28', 'usuario', 'Se ha vetado al usuario: 3', 3),
-(20, '2024-05-28', 'usuario', 'Se ha activado el usuario: 3', 3),
-(21, '2024-05-28', 'usuario', 'Se ha vetado al usuario: 3', 3),
-(22, '2024-05-28', 'usuario', 'Se ha activado el usuario: 3', 3),
-(23, '2024-05-28', 'usuario', 'Se ha vetado al usuario: 3', 3),
-(24, '2024-05-28', 'usuario', 'Se ha activado el usuario: 3', 3),
-(25, '2024-05-28', 'usuario', 'Se ha vetado al usuario: 3', 3),
-(26, '2024-05-28', 'usuario', 'Se ha activado el usuario: 3', 3),
-(27, '2024-05-28', 'usuario', 'Se ha vetado al usuario: 3', 3),
-(28, '2024-05-28', 'usuario', 'Se ha vetado al usuario: 3', 3),
-(29, '2024-05-28', 'usuario', 'Se ha activado el usuario: 3', 3),
-(30, '2024-05-28', 'usuario', 'Se ha activado el usuario: 3', 3),
-(31, '2024-05-30', 'moto', 'Se ha Activado la motocicleta con id: 273', 3),
-(32, '2024-05-30', 'moto', 'Se ha Suspendido la motocicleta con id: 273', 3),
-(33, '2024-05-30', 'moto', 'Se ha Activado la motocicleta con id: 273', 3),
-(34, '2024-05-30', 'moto', 'Se ha Suspendido la motocicleta con id: 273', 3);
+(35, '2024-05-31', 'usuario', 'Se ha vetado al usuario: 14', 11),
+(36, '2024-05-31', 'usuario', 'Se ha activado el usuario: 14', 11),
+(37, '2024-05-31', 'usuario', 'Se ha vetado al usuario: 14', 11),
+(38, '2024-05-31', 'usuario', 'Se ha activado el usuario: 14', 11),
+(39, '2024-05-31', 'usuario', 'Se ha vetado al usuario: 14', 11),
+(40, '2024-05-31', 'usuario', 'Se ha activado el usuario: 14', 11),
+(41, '2024-05-31', 'usuario', 'Se ha vetado al usuario: 14', 11),
+(42, '2024-05-31', 'usuario', 'Se ha activado el usuario: 14', 11),
+(43, '2024-05-31', 'usuario', 'Se ha vetado al usuario: 14', 11),
+(44, '2024-05-31', 'usuario', 'Se ha activado el usuario: 14', 11),
+(45, '2024-05-31', 'usuario', 'Se ha vetado al usuario: 14', 11),
+(46, '2024-05-31', 'usuario', 'Se ha activado el usuario: 14', 11),
+(47, '2024-05-31', 'usuario', 'Se ha vetado al usuario: 14', 11),
+(48, '2024-05-31', 'usuario', 'Se ha activado el usuario: 14', 11),
+(49, '2024-05-31', 'usuario', 'Se ha vetado al usuario: 14', 11),
+(50, '2024-05-31', 'usuario', 'Se ha activado el usuario: 14', 11),
+(51, '2024-05-31', 'usuario', 'Se ha vetado al usuario: 14', 11),
+(52, '2024-05-31', 'usuario', 'Se ha activado el usuario: 14', 11),
+(53, '2024-05-31', 'usuario', 'Se ha vetado al usuario: 14', 11),
+(54, '2024-05-31', 'usuario', 'Se ha vetado al usuario: 15', 11),
+(55, '2024-05-31', 'usuario', 'Se ha activado el usuario: 15', 11),
+(56, '2024-05-31', 'usuario', 'Se ha cambiado los permisos a colab al usuario: 14', 11),
+(57, '2024-05-31', 'usuario', 'Se ha cambiado los permisos a user al usuario: 14', 11),
+(58, '2024-05-31', 'usuario', 'Se ha cambiado los permisos a colab al usuario: 14', 11),
+(59, '2024-05-31', 'usuario', 'Se ha cambiado los permisos a user al usuario: 15', 11),
+(60, '2024-05-31', 'usuario', 'Se ha cambiado los permisos a admin al usuario: 15', 11),
+(61, '2024-05-31', 'fabricante', 'Se han modificado los datos del Fabricante: 3', 11),
+(62, '2024-05-31', 'fabricante', 'Se han modificado los datos del Fabricante: 2', 11),
+(63, '2024-05-31', 'fabricante', 'Se han modificado los datos del Fabricante: 5', 11),
+(64, '2024-05-31', 'fabricante', 'Se han modificado los datos del Fabricante: 9', 11),
+(65, '2024-05-31', 'fabricante', 'Se han modificado los datos del Fabricante: 9', 11),
+(66, '2024-05-31', 'fabricante', 'Se han modificado los datos del Fabricante: 7', 11),
+(67, '2024-05-31', 'fabricante', 'Se han modificado los datos del Fabricante: 10', 11),
+(68, '2024-05-31', 'fabricante', 'Se han modificado los datos del Fabricante: 1', 11),
+(69, '2024-05-31', 'fabricante', 'Se han modificado los datos del Fabricante: 6', 11),
+(70, '2024-05-31', 'fabricante', 'Se han modificado los datos del Fabricante: 6', 11),
+(71, '2024-05-31', 'fabricante', 'Se han modificado los datos del Fabricante: 8', 11),
+(72, '2024-05-31', 'fabricante', 'Se han modificado los datos del Fabricante: 4', 11);
 
 -- --------------------------------------------------------
 
@@ -838,10 +994,13 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`idUsuario`, `nombreUsuario`, `apellido1`, `apellido2`, `username`, `email`, `password`, `fechaRegistro`, `fechaNacimiento`, `betado`, `tipoUsuario`) VALUES
-(1, 'testMW', 'testMW', 'testMW', 'testMW', 'testMW@testMW.com', '$2y$10$TG1.JnpGdTyIV.dzvDVWTeUYC6S5IWq1duzq2o', '2024-05-23', '0001-01-01', 1, 'colab'),
-(3, 'davidTest', 'davidTest', 'davidTest', 'davidTest2', 'davidTest@gmail.com', '$2y$10$9phQiaAMIpIs4Jj9QUgRI.LVl9u8XtjspKZmRcKANCtHfqHgN0NKG', '2024-05-25', '2000-10-10', 0, 'admin'),
-(4, 'acsadcas', 'ascascas', 'asdacasc', 'ascasdasc', 'ascasca', '$2y$10$DffKtW3dCpNWq9RQKGkTp.xgK1rVEZ2ySj9yWW0OCtx6.561q/wzS', '2024-05-30', '0012-12-12', 0, 'user'),
-(5, 'davidTest', 'davidTest', 'davidTest', 'davidTest', '200@cifpceuta.es', '$2y$10$zqt9kPa2qev8YOFifeVue.GiBw.qhYmAkb5SjNCfd77SGflWlsMFK', '2024-05-30', '2000-10-10', 0, 'user');
+(11, 'davidTestAdmin', 'davidTestAdmin', 'davidTestAdmin', 'davidTestAdmin', 'davidTest@gmail.com', '$2y$10$fq0BKR0181rlooXXOQg3v.xuviDxEi7JE8j28hfUwp/WzPzAU6nrW', '2024-05-31', '2000-10-10', 0, 'admin'),
+(12, 'davidTestColab', 'davidTestColab', 'davidTestColab', 'davidTestColab', 'david12Test@gmail.com', '$2y$10$orUinatSrJDo3FzWY6MjMuxlGaQydaydAR8cDlARonLjABTWNNpDq', '2024-05-31', '2000-10-10', 0, 'colab'),
+(13, 'davidTestUser', 'davidTestUser', 'davidTestUser', 'davidTestUser', 'davidrdgz21@gmail.com', '$2y$10$DNIFVk8UYC3ILVGE15ujwedO5TfUImJTNvwOJ3hu1Jst0FMqPC8oa', '2024-05-31', '2000-10-10', 0, 'user'),
+(14, 'davidraTestUser', 'davidraTestUser', 'davidraTestUser', 'davidraTestUser', 'davidraTestUser@gmail.com', '$2y$10$xoEQ0jLFbnwnTp0guXyKB.Z5vaUiH1F2wlLi0qSTpnIinTie0Qbj6', '2024-05-31', '2000-02-10', 1, 'colab'),
+(15, 'dawAdmin', 'dawAdmin', 'dawAdmin', 'dawAdmin123', 'dawadmin@gmail.com', '$2y$10$A6nkYgqsDPEOBKDjD4XeWuiRl4sSi1FIe2KVtytPNgj62vc9m7T86', '2024-05-31', '2000-10-10', 0, 'admin'),
+(16, 'dawColab', 'dawColab', 'dawColab', 'dawColab123', 'daw2Colab123@gmail.com', '$2y$10$vA8VJSP4UQiRY7x7W/oagOphGHQHL./emOFE0fnmxa3w7aJWpXYh.', '2024-05-31', '2000-10-10', 0, 'colab'),
+(17, 'dawUser', 'dawUser', 'dawUser', 'dawUser123', 'dawUser123@gmail.com', '$2y$10$3mX1qY4hIrr4UHlKqdNBo.g/gYkur.i.58.9L5s33uUPOCetplrg6', '2024-05-31', '2000-10-10', 0, 'user');
 
 --
 -- Índices para tablas volcadas
@@ -910,7 +1069,7 @@ ALTER TABLE `fabricante`
 -- AUTO_INCREMENT de la tabla `motocicleta`
 --
 ALTER TABLE `motocicleta`
-  MODIFY `idMoto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1405;
+  MODIFY `idMoto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1525;
 
 --
 -- AUTO_INCREMENT de la tabla `noticias`
@@ -928,13 +1087,13 @@ ALTER TABLE `ofertas`
 -- AUTO_INCREMENT de la tabla `registros`
 --
 ALTER TABLE `registros`
-  MODIFY `idRegistro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `idRegistro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Restricciones para tablas volcadas
