@@ -2,11 +2,7 @@
 <!-- Con este archivo traemos las motocicletas de cada marca. -->
 
 <!-- 
-    LISTA TRAIDAS (OFFSET)
 
-    KAWASAKI == 0
-    HONDA == 0
-    YAMAHA == 0 
  -->
 <?php
 
@@ -18,6 +14,7 @@ $key="XkPnmvHTmjVd0veY4ZQEcw==9XPtzIVTabrW67Yd";
 
 // echo "<br>$i<br>";
 
+                                            /* CAMBIAR MAKE + OFFSET EN CASO DE SER NECESARIO  */
 $url="https://api.api-ninjas.com/v1/motorcycles?make=Enfield&offset=60";
 
     // Inicializar cURL
