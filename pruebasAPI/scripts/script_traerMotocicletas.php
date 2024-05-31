@@ -18,7 +18,7 @@ $key="XkPnmvHTmjVd0veY4ZQEcw==9XPtzIVTabrW67Yd";
 
 // echo "<br>$i<br>";
 
-$url="https://api.api-ninjas.com/v1/motorcycles?make=bmw&offset=30";
+$url="https://api.api-ninjas.com/v1/motorcycles?make=Enfield&offset=60";
 
     // Inicializar cURL
 $curl = curl_init($url);
@@ -93,7 +93,7 @@ $sql = "INSERT INTO motocicleta (nombreModelo, fechaFabricacion, tipoMoto, cilin
             0, 
             ".(empty($altura) ? 'NULL' : $altura ) .",
             ".(empty($peso) ? 'NULL' : $peso ) .",
-            10
+            8
         )";
         
     print_r($sql);

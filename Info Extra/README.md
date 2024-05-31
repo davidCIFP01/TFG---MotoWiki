@@ -112,14 +112,8 @@ Con estos ítems podréis ir rellenando los siguientes apartados de la memoria:
   
 - Dedicada Marca + Funciones Extras  **(DISEÑO ✓ / MOBILE ✓ )**
 
-- Gestión de Usuarios / Administradores  **(DISEÑO ✓ / MOBILE ✓ )**
+- Gestión de Usuarios / Administradores  **(DISEÑO ✓ )**
 
-- Gestión y configuración API.  **(DISEÑO ✓ / MOBILE ✓ )**
+- Gestión y configuración API.  **(DISEÑO ✓  )**
 
 <!-- FALTA RETOCAR Y DAR ÚLTIMOS DETALLES AL DISEÑO -->
-
-
-## OTROS COMPONENTES 
-
-- Menú desplegable para marcas 
-- Scroll para imágenes ?¿

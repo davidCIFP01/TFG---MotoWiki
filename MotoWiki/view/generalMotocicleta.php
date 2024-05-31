@@ -61,13 +61,13 @@
 </script>
 
 <script>
-    paginacion = 0;   
+    paginacion = -1;   
     cantidadMotos = 10;
 
     document.getElementById("botonAntes").addEventListener("click",(ev)=>{
         paginacion--;
-        if(paginacion<1){
-            paginacion = 1;
+        if(paginacion<0){
+            paginacion = 0;
         }else{
             document.getElementById("contenedorGeneral").innerHTML = "";
 

@@ -10,6 +10,7 @@
         <div class="presentacionMotocicleta">
             
             <div class="contenedorImagenMotoMarca contenedorImagenMotoMarcaPresentacion">
+                <?= (empty($_SESSION) ? '<i class="fa-regular fa-star" data-src="./registro-inicioSesion.php" onclick="redirigirEnlace(this)" > </i>' : $Motocicleta->comprobarFavoritasUsuario($_SESSION['idUser'])) ?>
                 <img src="<?= $Motocicleta->__get("imagenMoto"); ?>" alt="fotoMotocicleta">
                 <button class="botonAzul" id="verOfertas"> Ver Ofertas</button>
             </div>
@@ -101,7 +102,7 @@
                     <td><?=  ( $Motocicleta->__get("capacidad") == null) ? "-" : $Motocicleta->__get("capacidad"); ?></td>
                     <td><?=  ( $Motocicleta->__get("arranque") == null) ? "-" : $Motocicleta->__get("arranque"); ?></td>
                     <td><?=  ( $Motocicleta->__get("tipoCarnet") == null) ? "-" : $Motocicleta->__get("tipoCarnet"); ?></td>
-                    <td> - </td>
+                    <td><?=  ( ($Motocicleta->__get("precioMin") == null ||  $Motocicleta->__get("precioMax") == null ) ? "-" : ($Motocicleta->__get("precioMax") + $Motocicleta->__get("precioMin"))/2  )?></td>
                     <td><?=  ( $Motocicleta->__get("altura") == null) ? "-" : $Motocicleta->__get("altura"); ?> mm</td>
                     <td><?=  ( $Motocicleta->__get("peso") == null) ? "-" : $Motocicleta->__get("peso"); ?> KG</td>
                 </tr>

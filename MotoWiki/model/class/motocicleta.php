@@ -258,9 +258,9 @@ class Motocicleta {
 
         $conexion = motowikiDB::conexionDB();
         if(isset($Fabricante)){
-            $sql = "SELECT * FROM motocicleta WHERE suspendida = 0 AND idFabricante = $Fabricante ORDER BY fechaFabricacion $modo, idMoto DESC LIMIT 10";
+            $sql = "SELECT * FROM motocicleta WHERE suspendida = 0 AND idFabricante = $Fabricante ORDER BY precioMin $modo, idMoto DESC LIMIT 10";
         }else{
-            $sql = "SELECT * FROM motocicleta WHERE suspendida = 0 ORDER BY fechaFabricacion $modo, idMoto DESC LIMIT 10";
+            $sql = "SELECT * FROM motocicleta WHERE suspendida = 0 ORDER BY precioMin $modo, idMoto DESC LIMIT 10";
         }
         // print_r($sql);
         $result = $conexion->query($sql);
