@@ -10,7 +10,7 @@
 
         <div class="presentacionMotocicleta">
             <div class="contenedorImagenMotoMarca contenedorImagenMotoMarcaPresentacion">
-                <img src="../view/assets/images/motocicleta/default_motocicleta.jpg" alt="fotoMotocicleta" id="enlaceFabricante" class="enlazado" data-src="<?= $Fabricante->__get("sitioWeb")?>">
+                <img src="<?= $Fabricante->__get("imagenFabricante")?>" alt="fotoMotocicleta" id="enlaceFabricante" class="enlazado" data-src="<?= $Fabricante->__get("sitioWeb")?>">
             </div>
             
             <div class="datosPresentacion">

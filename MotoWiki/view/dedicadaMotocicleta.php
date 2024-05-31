@@ -163,16 +163,20 @@
                     <tr>
                         <td>PRECIO</td>
                         <td>ENLACE</td>
-                        <td></td>
+                        <?php if(isset($_SESSION) && $_SESSION['tipoUsuario'] != "user"){ ?><td></td> <?php }?>
                     </tr>
                     <?php 
                         
                             foreach ($ofertas as $key => $objOferta) {
                                 echo '  <tr>
                                             <td>'.$objOferta->__get("precio").' €</td>
-                                            <td><a href="'.$objOferta->__get("enlaceOferta").'">ENLACE '. $key+1 .'</a></td>
-                                            <td><i class="fa-solid fa-trash-can borrarOferta" data-idOferta="'.$objOferta->__get("idOferta").'"></i></td>
-                                        </tr>';
+                                            <td><a href="'.$objOferta->__get("enlaceOferta").'">ENLACE '. $key+1 .'</a></td>';
+                                
+                                if(isset($_SESSION) && $_SESSION['tipoUsuario'] != "user"){
+                                    '<td><i class="fa-solid fa-trash-can borrarOferta" data-idOferta="'.$objOferta->__get("idOferta").'"></i></td>';
+                                }
+                                        
+                                            echo '</tr>';
                             }
                         }
                     ?>
