@@ -10,11 +10,16 @@ if( isset($_POST['enviarRegistro']) ){
     
     /* Añadir funcion con comprobaciones */
 
-    Usuario::registrarUsuario();
+    $completado = Usuario::registrarUsuario();
 
     // print_r($_SESSION);
 
-    header("Location: ../controller/registro-inicioSesion.php");
+    if($completado){
+        $resultado = Usuario::iniciarSesion();
+        header("Location: ../controller/inicio.php");
+    }else{
+        echo "<h2>El usuario o el email ya existen.</h2>";
+    }
     
     /* Añadir header a pagina de Inicio / Inicio de Sesion */
 

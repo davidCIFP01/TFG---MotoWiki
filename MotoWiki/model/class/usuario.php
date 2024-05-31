@@ -40,6 +40,14 @@ class Usuario {
     public static function registrarUsuario(){
         $conexion = motowikiDB::conexionDB();
 
+        $sqlComprobar = "SELECT username,email FROM usuario WHERE username = '".$_POST['registroUsername']."' OR email = '".$_POST['registroEmail']."'";
+
+        $result = $conexion->query($sqlComprobar);
+
+        if($result->num_rows>0){
+            return false;
+        }
+
         $sql = "INSERT 
         INTO usuario ( nombreUsuario, apellido1, apellido2, username, email, password, fechaRegistro, fechaNacimiento, betado,	tipoUsuario) 
         VALUES ( 
@@ -58,8 +66,21 @@ class Usuario {
 
             /* $sqlRegistro = "INSERT INTO cambiosRegistro (fechaCambio, tipoCambio, descripcionCambios, idUsuario)
             VALUES ('".date('Y-m-d H:i:s')."', 'REGISTRO USUARIO', 'Se ha registrado un nuevo usuario: ".."','-');"; */
+            return true;
 
+    }
 
+    public static function comprobarEmailUsername(){
+        $conexion = motowikiDB::conexionDB();
+        $sqlComprobar = "SELECT username,email FROM usuario WHERE username = '".$_POST['registroUsername']."' OR email = '".$_POST['registroEmail']."'";
+
+        $result = $conexion->query($sqlComprobar);
+        
+        if($result->num_rows>0){
+            return false;
+        }else{
+            return true;
+        }
     }
  
 
@@ -75,8 +96,8 @@ class Usuario {
 
     public static function iniciarSesion(){
         $conexion = motowikiDB::conexionDB();
-        $email_username = $_POST['username_email_inicio'];
-        $password = $_POST['passwordInicio'];
+        $email_username = (isset($_POST['username_email_inicio'])) ? $_POST['username_email_inicio'] : $_POST['registroUsername'] ;
+        $password = (isset($_POST['passwordInicio'])) ? $_POST['passwordInicio'] : $_POST['registroPwd'] ;
 
         $sql = "SELECT * FROM usuario WHERE username = '$email_username' OR email = '$email_username'";
         $result = $conexion->query($sql)->fetch_assoc();

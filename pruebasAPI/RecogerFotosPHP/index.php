@@ -18,11 +18,7 @@ foreach ($result->fetch_all() as $key => $value) {
 
 ?>
 
-
 <!-- 
-
-UDATE 
-
 
 UPDATE motocicleta SET descripcion = "" WHERE idMoto = 851;
 UPDATE motocicleta SET descripcion = "" WHERE idMoto = 852;

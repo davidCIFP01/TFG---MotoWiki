@@ -19,7 +19,7 @@
 
                     <div class="contenedorCampo">
                         <span>Username</span>
-                        <input type="text" class="campoRegistro" name="registroUsername" placeholder="Input Campo"  title="Entre 4 y 15 caracteres alfanuméricos" pattern="^[a-zA-Z0-9]{4,15}$" required>
+                        <input type="text" class="campoRegistro" name="registroUsername" id="registroUsername" placeholder="Input Campo"  title="Entre 4 y 15 caracteres alfanuméricos" pattern="^[a-zA-Z0-9]{4,15}$" required>
                     </div>
 
                     <div class="contenedorCampo">
@@ -44,7 +44,7 @@
                     
                     <div class="contenedorCampo">
                         <span>Email</span>
-                        <input type="text" class="campoRegistro" name="registroEmail" placeholder="Input Campo"  title="Correo electrónico válido" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}"  required>
+                        <input type="text" class="campoRegistro" name="registroEmail" id="registroEmail" placeholder="Input Campo"  title="Correo electrónico válido" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}"  required>
                     </div>
 
                     <div class="contenedorCampo">
@@ -118,41 +118,77 @@
                     ev.target.classList.add('invalido');
                 } else {
                     ev.target.classList.remove('invalido');
-                    
                 }
         })
     });
 
+
+    document.getElementById("submit").addEventListener("click",(ev)=>{
+        
+
+        fetch('../AJAX/comprobarEmailUsername.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    registroUsername: document.getElementById("registroUsername").value,
+                    registroEmail: document.getElementById("registroEmail").value
+                })
+        })
+        .then(response => response.text())
+            .then(data => {
+                console.log(data);
+                
+                if(data == "1" || data == true){
+                    // console.log("hola");
+                }else{
+                    ev.preventDefault();
+                    document.getElementById("seccionRegistro").innerHTML += data;
+                    
+                }
+                
+                
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+
+    })
+
+        
+
+
     document.getElementById("botonIniciarSesion").addEventListener("click", (ev) => {
-    const expReg1 = /^[\p{L}]+$/u; // Para nombres de usuario que son solo letras
-    const expReg2 = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/; // Para contraseñas
-    const expReg3 = /^[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}$/; // Para correos electrónicos
-    
-    const inputNameEmail = document.getElementById("username_email_inicio");
-    const inputPwd = document.getElementById("passwordInicio");
-    
-    let valid = true;
-    
-    // Validación del nombre de usuario o correo electrónico
-    if (!(expReg1.test(inputNameEmail.value) || expReg3.test(inputNameEmail.value))) {
-        inputNameEmail.classList.add("invalido");
-        valid = false;
-    } else {
-        inputNameEmail.classList.remove("invalido");
-    }
-    
-    // Validación de la contraseña
-    if (!expReg2.test(inputPwd.value)) {
-        inputPwd.classList.add("invalido");
-        valid = false;
-    } else {
-        inputPwd.classList.remove("invalido");
-    }
-    
-    if (!valid) {
-        ev.preventDefault();
-    }
-});
+        const expReg1 = /^[\p{L}]+$/u; // Para nombres de usuario que son solo letras
+        const expReg2 = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/; // Para contraseñas
+        const expReg3 = /^[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}$/; // Para correos electrónicos
+        
+        const inputNameEmail = document.getElementById("username_email_inicio");
+        const inputPwd = document.getElementById("passwordInicio");
+        
+        let valid = true;
+        
+        // Validación del nombre de usuario o correo electrónico
+        if (!(expReg1.test(inputNameEmail.value) || expReg3.test(inputNameEmail.value))) {
+            inputNameEmail.classList.add("invalido");
+            valid = false;
+        } else {
+            inputNameEmail.classList.remove("invalido");
+        }
+        
+        // Validación de la contraseña
+        if (!expReg2.test(inputPwd.value)) {
+            inputPwd.classList.add("invalido");
+            valid = false;
+        } else {
+            inputPwd.classList.remove("invalido");
+        }
+        
+        if (!valid) {
+            ev.preventDefault();
+        }
+    });
 
 
 </script>
