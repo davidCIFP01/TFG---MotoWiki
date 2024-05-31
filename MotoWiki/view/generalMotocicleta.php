@@ -62,7 +62,7 @@
 
 <script>
     paginacion = -1;   
-    cantidadMotos = 10;
+    cantidadMotos = 12;
 
     document.getElementById("botonAntes").addEventListener("click",(ev)=>{
         paginacion--;

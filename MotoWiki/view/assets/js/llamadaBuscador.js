@@ -58,7 +58,7 @@ function buscadorSinEnlacesGestionDatos(string){
     data = {
         modo: "ambas",
         textoBusqueda: string,
-        "gestionDatos": true
+        gestionDatos: true
     };
 
     url = "../AJAX/busquedaMotocicletaMarca.php"

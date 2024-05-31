@@ -72,7 +72,9 @@ hr{
 }
 
 
-
+.fa-star{
+    background-color: white;
+}
 
 .barraNavegadora{
     width: 100vw;
